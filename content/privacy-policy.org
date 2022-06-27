@@ -1,0 +1,53 @@
+#+setupfile: ../.org-templates/level/0.org
+#+title: Privacy Policy
+
+** Page under development*
+* Privacy Policy
+thewebmasterp.com is a privacy-friendly website that relies exclusively on open-source and self-hosted solutions to deliver some of its functionalities to its users. It does not collect much data about you, nor discloses it to third parties.
+
+All that this website is, is a public folder containing a bunch of static files that are served to you by Nginx web server. Nothing else, no real backend implemented by me, except a few self-hosted, open-source and privacy-friendly services which do the actual data collection (if any) and which are the reason for this privacy policy to even exist.
+
+*** Matomo
+[[https://matomo.org/][Matomo]], formerly Piwik, is a free and open-source web analytics application developed by a team of international developers, that runs on a PHP/MySQL webserver. It tracks online visits to one or more websites and displays reports on these visits for analysis.
+[[./img/matomo-privacy-badge.png]]
+#+BEGIN_QUOTE
+We believe in openness, privacy and 100% data ownership. Matomo’s mission is to liberate analytics and we are passionate about measuring for success. These core values are ingrained into everything we do here at Matomo and that will never change. -- [[https://matomo.org/][Matomo]]
+#+END_QUOTE
+
+My customization of Matomo:
+ + I've set Matomo to respect your "Do Not Track" preference.
+ + Old raw data (old visitor logs) are kept for no longer than 6 months.
+ + Your IP is anonymized - I can't see the last 2 bytes of it.
+
+Other than these few settings, my Matomo installation is a standard one, keeping the perfect balance between your privacy while both enabling me to see which pages are visited the most, where you came from, the browser and OS you use. Nothing sensitive.
+
+Of course, you have the choice to opt-out from being tracked by matomo:
+#+BEGIN_EXPORT html
+<iframe
+      style="border: 0; height: 200px; width: 600px;"
+      src="https://matomo.thewebmasterp.com/index.php?module=CoreAdminHome&action=optOut&language=en&fontColor=33d17a"
+      ></iframe>
+#+END_EXPORT
+
+My Matomo instance is available at ~matomo.thewebmasterp.com~
+*** Remark42
+[[https://remark42.com/][Remark42]] is a Privacy-focused lightweight commenting engine. From its main website:
+
++ Remark42 is trying to be very sensitive to any private or semi-private information.
++ Authentication is requesting the minimal possible scope from authentication providers and all extra information returned by them is immediately dropped and not stored in any form.
++ Generally, Remark42 keeps user ID, username and avatar link only. None of these fields exposed directly - ID and name hashed, avatar proxied.
++ There is no tracking of any sort.
++ Login mechanic uses JWT stored in a cookie (HttpOnly, secured). The second cookie (XSRF_TOKEN) is a random ID preventing CSRF.
++ There is no cross-site login, i.e., user's behavior can't be analyzed across independent sites running Remark42.
++ There are no third-party analytic services involved.
++ Users can request all information Remark42 knows about them and receive the export in the gz file.
++ Supports complete cleanup of all information related to user's activity by user's "deleteme" request.
++ Cookie lifespan can be restricted to session-only.
++ All potentially sensitive data stored by Remark42 hashed and encrypted.
+
+  
+  My Remark42 instance is available at ~remark42.thewebmasterp.com~
+** Contact me
+This should be a component
+
+  

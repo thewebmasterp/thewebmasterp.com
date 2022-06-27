@@ -1,0 +1,47 @@
+#about .figure-number {
+  display: none;
+}
+#about p {
+  text-indent: 1em;
+}
+#about #text-aboutme {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
+}
+#about #text-aboutme figure {
+  grid-rows: 1/2;
+  grid-columns: 1/2;
+}
+#about #text-aboutme figure #me {
+  border-radius: var(--border-radius);
+}
+#about #text-aboutme div {
+  grid-rows: 1/2;
+  grid-columns: 2/3;
+  padding-left: 1em;
+}
+
+@media only screen and (max-width: 800px) {
+  #about #text-aboutme {
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
+  }
+  #about #text-aboutme figure {
+    grid-rows: 1/2;
+    grid-columns: 1/2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #about #text-aboutme figure #me {
+    max-width: 50% !important;
+  }
+  #about #text-aboutme div {
+    grid-rows: 2/3;
+    grid-columns: 1/2;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */

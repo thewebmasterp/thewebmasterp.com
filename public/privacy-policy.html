@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2022-06-27 Mon 13:25 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy</title>
+<meta name="author" content="thewebmasterp" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="./css/style.css" /><script src="./js/script.js"></script><script src="./js/matomoInit.js"></script>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav id='topnav'>
+<a class='homeLink' href='index.html'>Home</a>
+<a class='blogLink' href='blog.html'>Blog</a>
+<a class='aboutLink' href='about.html'>About</a>
+<div class='sparse'>
+<div class='theme-changer'></div>
+</div>
+</nav>
+</div>
+<div id="content" class="content">
+
+<div id="outline-container-org65294ed" class="outline-3">
+<h3 id="org65294ed">Page under development*</h3>
+</div>
+<div id="outline-container-org84a7c90" class="outline-2">
+<h2 id="org84a7c90">Privacy Policy</h2>
+<div class="outline-text-2" id="text-org84a7c90">
+<p>
+thewebmasterp.com is a privacy-friendly website that relies exclusively on open-source and self-hosted solutions to deliver some of its functionalities to its users. It does not collect much data about you, nor discloses it to third parties.
+</p>
+
+<p>
+All that this website is, is a public folder containing a bunch of static files that are served to you by Nginx web server. Nothing else, no real backend implemented by me, except a few self-hosted, open-source and privacy-friendly services which do the actual data collection (if any) and which are the reason for this privacy policy to even exist.
+</p>
+</div>
+
+<div id="outline-container-org33d854c" class="outline-4">
+<h4 id="org33d854c">Matomo</h4>
+<div class="outline-text-4" id="text-org33d854c">
+<p>
+<a href="https://matomo.org/">Matomo</a>, formerly Piwik, is a free and open-source web analytics application developed by a team of international developers, that runs on a PHP/MySQL webserver. It tracks online visits to one or more websites and displays reports on these visits for analysis.
+<img src="./img/matomo-privacy-badge.png" alt="matomo-privacy-badge.png">
+</p>
+<blockquote>
+<p>
+We believe in openness, privacy and 100% data ownership. Matomo’s mission is to liberate analytics and we are passionate about measuring for success. These core values are ingrained into everything we do here at Matomo and that will never change. &#x2013; <a href="https://matomo.org/">Matomo</a>
+</p>
+</blockquote>
+
+<p>
+My customization of Matomo:
+</p>
+<ul class="org-ul">
+<li>I've set Matomo to respect your "Do Not Track" preference.</li>
+<li>Old raw data (old visitor logs) are kept for no longer than 6 months.</li>
+<li>Your IP is anonymized - I can't see the last 2 bytes of it.</li>
+</ul>
+
+<p>
+Other than these few settings, my Matomo installation is a standard one, keeping the perfect balance between your privacy while both enabling me to see which pages are visited the most, where you came from, the browser and OS you use. Nothing sensitive.
+</p>
+
+<p>
+Of course, you have the choice to opt-out from being tracked by matomo:
+</p>
+<iframe
+      style="border: 0; height: 200px; width: 600px;"
+      src="https://matomo.thewebmasterp.com/index.php?module=CoreAdminHome&action=optOut&language=en&fontColor=33d17a"
+      ></iframe>
+
+<p>
+My Matomo instance is available at <code>matomo.thewebmasterp.com</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgeada8ff" class="outline-4">
+<h4 id="orgeada8ff">Remark42</h4>
+<div class="outline-text-4" id="text-orgeada8ff">
+<p>
+<a href="https://remark42.com/">Remark42</a> is a Privacy-focused lightweight commenting engine. From its main website:
+</p>
+
+<ul class="org-ul">
+<li>Remark42 is trying to be very sensitive to any private or semi-private information.</li>
+<li>Authentication is requesting the minimal possible scope from authentication providers and all extra information returned by them is immediately dropped and not stored in any form.</li>
+<li>Generally, Remark42 keeps user ID, username and avatar link only. None of these fields exposed directly - ID and name hashed, avatar proxied.</li>
+<li>There is no tracking of any sort.</li>
+<li>Login mechanic uses JWT stored in a cookie (HttpOnly, secured). The second cookie (XSRF_TOKEN) is a random ID preventing CSRF.</li>
+<li>There is no cross-site login, i.e., user's behavior can't be analyzed across independent sites running Remark42.</li>
+<li>There are no third-party analytic services involved.</li>
+<li>Users can request all information Remark42 knows about them and receive the export in the gz file.</li>
+<li>Supports complete cleanup of all information related to user's activity by user's "deleteme" request.</li>
+<li>Cookie lifespan can be restricted to session-only.</li>
+<li>All potentially sensitive data stored by Remark42 hashed and encrypted.</li>
+</ul>
+
+
+<p>
+My Remark42 instance is available at <code>remark42.thewebmasterp.com</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgc628310" class="outline-3">
+<h3 id="orgc628310">Contact me</h3>
+<div class="outline-text-3" id="text-orgc628310">
+<p>
+This should be a component
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<footer>
+    <div id='socmedia'>
+    </div>
+    <div id='info'>
+    </div>
+    <div id='bottom'>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

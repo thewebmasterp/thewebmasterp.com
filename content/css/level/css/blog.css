@@ -1,0 +1,15 @@
+#blog .figure-number {
+  display: none;
+}
+
+#blog #entries ul {
+  list-style-type: none;
+}
+
+#blog #entries > .org-ul {
+  padding-left: 0;
+}
+
+/*# sourceMappingURL=blog.css.map */
+
+/*# sourceMappingURL=blog.css.map */

@@ -1,0 +1,13 @@
+#+setupfile: ../.org-templates/level/0.org
+#+title: index
+
+* Welcome to my website!
+:PROPERTIES:
+:CUSTOM_ID: welcome
+:END:
+
+Hi, I am a Software engineer specializing in the field of JavaScript and its ecosystem. I am also an advocate of Free and open-source software. [[../about.html][Read more...]]
+
+Let my *new* [[./blog.org][blog]] be a place where you'll find anything in the range of "ricing your window manager with JavaScript" to "Reversing a binary tree", or just a source of inspiration.
+
+Note: Still in development!

@@ -1,0 +1,69 @@
+[17:01:27.384] Global cache location '/home/master/.cache/typescript/4.5', safe file path '/usr/lib/node_modules/typescript/lib/typingSafeList.json', types map path /usr/lib/node_modules/typescript/lib/typesMap.json
+[17:01:27.385] Processing cache location '/home/master/.cache/typescript/4.5'
+[17:01:27.385] Trying to find '/home/master/.cache/typescript/4.5/package.json'...
+[17:01:27.389] Loaded content of '/home/master/.cache/typescript/4.5/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.595"},"devDependencies":{"@types/color-convert":"^2.0.0","@types/color-name":"^1.1.1","@types/object-assign":"^4.0.30","@types/prompts":"^2.0.14","@types/react":"^18.0.5","@types/require-directory":"^2.1.2","@types/wrap-ansi":"^8.0.1","@types/yar":"^9.1.1","@types/yargs":"^17.0.10","@types/yargs-parser":"^21.0.0"}}
+[17:01:27.390] Loaded content of '/home/master/.cache/typescript/4.5/package-lock.json'
+[17:01:27.405] Adding entry into typings cache: 'color-convert' => '/home/master/.cache/typescript/4.5/node_modules/@types/color-convert/index.d.ts'
+[17:01:27.408] Adding entry into typings cache: 'color-name' => '/home/master/.cache/typescript/4.5/node_modules/@types/color-name/index.d.ts'
+[17:01:27.411] Adding entry into typings cache: 'object-assign' => '/home/master/.cache/typescript/4.5/node_modules/@types/object-assign/index.d.ts'
+[17:01:27.415] Adding entry into typings cache: 'prompts' => '/home/master/.cache/typescript/4.5/node_modules/@types/prompts/index.d.ts'
+[17:01:27.420] Adding entry into typings cache: 'react' => '/home/master/.cache/typescript/4.5/node_modules/@types/react/index.d.ts'
+[17:01:27.422] Adding entry into typings cache: 'require-directory' => '/home/master/.cache/typescript/4.5/node_modules/@types/require-directory/index.d.ts'
+[17:01:27.424] Adding entry into typings cache: 'wrap-ansi' => '/home/master/.cache/typescript/4.5/node_modules/@types/wrap-ansi/index.d.ts'
+[17:01:27.427] Adding entry into typings cache: 'yar' => '/home/master/.cache/typescript/4.5/node_modules/@types/yar/index.d.ts'
+[17:01:27.430] Adding entry into typings cache: 'yargs' => '/home/master/.cache/typescript/4.5/node_modules/@types/yargs/index.d.ts'
+[17:01:27.433] Adding entry into typings cache: 'yargs-parser' => '/home/master/.cache/typescript/4.5/node_modules/@types/yargs-parser/index.d.ts'
+[17:01:27.433] Finished processing cache location '/home/master/.cache/typescript/4.5'
+[17:01:27.434] Process id: 206133
+[17:01:27.434] NPM location: /usr/local/bin/npm (explicit '--npmLocation' not  provided)
+[17:01:27.434] validateDefaultNpmLocation: false
+[17:01:27.434] Npm config file: /home/master/.cache/typescript/4.5/package.json
+[17:01:27.434] Updating types-registry npm package...
+[17:01:27.434] Exec: /usr/local/bin/npm install --ignore-scripts types-registry@latest
+[17:01:29.203]     Succeeded. stdout:
+    
+    up to date, audited 30 packages in 1s
+
+found 0 vulnerabilities
+
+[17:01:29.204] Updated types-registry npm package
+[17:01:31.976] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/usr/lib/node_modules/typescript/lib/lib.es5.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/usr/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.core.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.full.d.ts","/home/master/Projects/thewebmasterp.com/content/js/script.js"],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/master/Projects/thewebmasterp.com/content/js","kind":"discover"}
+[17:01:31.997] Loaded safelist from types map file '/usr/lib/node_modules/typescript/lib/typesMap.json'
+[17:01:31.997] Explicitly included types: []
+[17:01:31.998] Inferred typings from unresolved imports: []
+[17:01:31.998] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/Projects/thewebmasterp.com/content/js/bower_components","/home/master/Projects/thewebmasterp.com/content/js/node_modules"]}
+[17:01:31.998] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/Projects/thewebmasterp.com/content/js/bower_components","/home/master/Projects/thewebmasterp.com/content/js/node_modules"]}
+[17:01:31.998] DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/bower_components
+[17:01:31.999] DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[17:01:32.006] Elapsed:: 6.814532995223999ms DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[17:01:32.006] DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/node_modules
+[17:01:32.006] DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[17:01:32.006] Elapsed:: 0.10784400254487991ms DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[17:01:32.006] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[17:01:32.007] Response has been sent.
+[17:01:32.007] No new typings were requested as a result of typings discovery
+[15:59:09.644] Got install request {"projectName":"/dev/null/inferredProject2*","fileNames":["/usr/lib/node_modules/typescript/lib/lib.es5.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/usr/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.core.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.full.d.ts","/home/master/Projects/thewebmasterp.com/content/js/matomo.js"],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/master/Projects/thewebmasterp.com/content/js","kind":"discover"}
+[15:59:09.644] Explicitly included types: []
+[15:59:09.644] Inferred typings from unresolved imports: []
+[15:59:09.644] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/Projects/thewebmasterp.com/content/js/bower_components","/home/master/Projects/thewebmasterp.com/content/js/node_modules"]}
+[15:59:09.644] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/Projects/thewebmasterp.com/content/js/bower_components","/home/master/Projects/thewebmasterp.com/content/js/node_modules"]}
+[15:59:09.645] DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/bower_components
+[15:59:09.645] DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/bower_components 1 undefined Project: /dev/null/inferredProject2* watcher already invoked: false
+[15:59:09.645] Elapsed:: 0.019352003931999207ms DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/bower_components 1 undefined Project: /dev/null/inferredProject2* watcher already invoked: false
+[15:59:09.645] DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/node_modules
+[15:59:09.645] DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/node_modules 1 undefined Project: /dev/null/inferredProject2* watcher already invoked: false
+[15:59:09.645] Elapsed:: 0.01380300521850586ms DirectoryWatcher:: Added:: WatchInfo: /home/master/Projects/thewebmasterp.com/content/js/node_modules 1 undefined Project: /dev/null/inferredProject2* watcher already invoked: false
+[15:59:09.645] Sending response:
+    {"projectName":"/dev/null/inferredProject2*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[15:59:09.645] Response has been sent.
+[15:59:09.645] No new typings were requested as a result of typings discovery
+[12:34:30.454] Got install request {"projectName":"/dev/null/inferredProject2*","fileNames":["/usr/lib/node_modules/typescript/lib/lib.es5.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/usr/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.core.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.full.d.ts","/home/master/Projects/thewebmasterp.com/content/js/matomoInit.js"],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/master/Projects/thewebmasterp.com/content/js","kind":"discover"}
+[12:34:30.458] Explicitly included types: []
+[12:34:30.459] Inferred typings from unresolved imports: []
+[12:34:30.459] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/Projects/thewebmasterp.com/content/js/bower_components","/home/master/Projects/thewebmasterp.com/content/js/node_modules"]}
+[12:34:30.459] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/Projects/thewebmasterp.com/content/js/bower_components","/home/master/Projects/thewebmasterp.com/content/js/node_modules"]}
+[12:34:30.460] Sending response:
+    {"projectName":"/dev/null/inferredProject2*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[12:34:30.460] Response has been sent.
+[12:34:30.460] No new typings were requested as a result of typings discovery

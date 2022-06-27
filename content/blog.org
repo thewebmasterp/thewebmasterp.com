@@ -1,0 +1,13 @@
+#+setupfile: ../.org-templates/level/0.org
+#+title: blog
+
+* Baby footsteps
+Since this is a new blog, it has very few articles that don't need any special classification yet. I'll list them all right there:
+
+#+HTML: <div id="entries">
+#+INCLUDE: "blog/index.org" :lines "3-"
+#+HTML: </div>
+
+
+
+

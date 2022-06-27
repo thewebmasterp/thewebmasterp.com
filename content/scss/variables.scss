@@ -1,0 +1,192 @@
+$darkth-accent-bg: #1b2327;
+$darkth-bg: #273338;
+$darkth-text: #bfdce8;  
+$darkth-text-light: #8daab6;
+$darkth-border: #5b7884;
+$darkth-accent: #65fece;
+$darkth-code: #d9302c;
+$darkth-preformatted: #ffffff;
+$darkth-disabled: #294652;
+$darkth-marked: #eaa23f;
+
+$lighth-accent-bg: #ffffff;
+$lighth-bg: #bfdce8;          
+$lighth-text: #273338;
+$lighth-text-light: #294652;
+$lighth-border: #5b7884;
+$lighth-accent: #eaa23f;
+$lighth-code: #d9302c;
+$lighth-preformatted: #1b2327;
+$lighth-disabled: #8daab6;
+$lighth-marked: #65fece;
+
+
+html {	
+	/* Dark theme */
+
+	--accent-bg: #{$darkth-accent-bg};
+	--bg: #{$darkth-bg};
+	--text: #{$darkth-text};
+	--text-light: #{$darkth-text-light} ;
+	--border: #{$darkth-border};
+	--accent: #{$darkth-accent};
+	--code: #{$darkth-code};
+	--preformatted: #{$darkth-preformatted};
+	--disabled: #{$darkth-disabled};
+	--marked: #{$darkth-marked};
+	
+	//--accent-bg: #1b2327;
+	//--bg: #273338;
+	//--text: #bfdce8;  
+	//--text-light: #8daab6;
+	//--border: #5b7884;
+	//--accent: #65fece;
+	//--code: #d9302c;
+	//--preformatted: #ffffff;
+	//--disabled: #294652;
+	//--marked: #eaa23f;
+	
+	//--accent-bg: #091423;
+	//--bg: #182538;
+	//--text: #e6eefd;
+	//--text-light: #41536b;
+	//--border: #384a80;
+	//--accent: #00a600;
+	//--code: #d81b60;
+	//--preformatted: #e6e9f2;
+	//--disabled: #00031a;
+	//--marked: #FFE987;
+	
+	//--bg: #212121;
+	//--accent-bg: #2b2b2b;
+	//--text: #dcdcdc;
+	//--text-light: #ababab;
+	//--border: #666;
+	//--accent: #ffb300;
+	//--code: #f06292;
+	//--preformatted: #ccc;
+	//--disabled: #111;
+	//--marked: #ffdd33;
+
+	&[data-theme=light] {
+		/* Light theme */
+
+		--accent-bg: #{$lighth-accent-bg};
+		--bg: #{$lighth-bg};          
+		--text: #{$lighth-text};
+		--text-light: #{$lighth-text-light};
+		--border: #{$lighth-border};
+		--accent: #{$lighth-accent};
+		--code: #{$lighth-code};
+		--preformatted: #{$lighth-preformatted};
+		--disabled: #{$lighth-disabled};
+		--marked: #{$lighth-marked};
+		
+		//--accent-bg: #ffffff;
+		//--bg: #bfdce8;          
+		//--text: #273338;
+		//--text-light: #294652;
+		//--border: #5b7884;
+		//--accent: #eaa23f;
+		//--code: #d9302c;
+		//--preformatted: #1b2327;
+		//--disabled: #8daab6;
+		//--marked: #65fece;
+
+		//--accent-bg: #fff;
+		//--bg: #ecf1fb;
+		//--text: #151e38;
+		//--text-light: #384a80;
+		//--border: #9eb3de;
+		//--accent: #00a600;
+		//--code: #d81b60;
+		//--preformatted: #2d3754;
+		//--disabled: #e6e9f2;
+		//--marked: #FFE987;
+		
+		//--bg: #fff;
+		//--accent-bg: #f5f7ff;
+		//--text: #212121;
+		//--text-light: #585858;
+		//--border: #d8dae1;
+		//--accent: #0d47a1;
+		//--code: #d81b60;
+		//--preformatted: #444;
+		//--disabled: #efefef;
+		//--marked: #ffdd33;
+	}
+}
+
+// Font config
+
+// MONO - "JetBrainsMono"
+@font-face { //normal
+	font-family: "JetBrainsMono";
+	src: url('./fonts/JetBrainsMono/jetbrainsmono-regular-webfont.woff2') format('woff2'),
+         url('./fonts/JetBrainsMono/jetbrainsmono-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face { //bold
+	font-family: "JetBrainsMono";
+	src: url('./fonts/JetBrainsMono/jetbrainsmono-bold-webfont.woff2') format('woff2'),
+         url('./fonts/JetBrainsMono/jetbrainsmono-bold-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face { //italic
+	font-family: "JetBrainsMono";
+	src: url('./fonts/JetBrainsMono/jetbrainsmono-italic-webfont.woff2') format('woff2'),
+         url('./fonts/JetBrainsMono/jetbrainsmono-italic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face { //bold-italic
+	font-family: "JetBrainsMono";
+	src: url('./fonts/JetBrainsMono/jetbrainsmono-bolditalic-webfont.woff2') format('woff2'),
+		 url('./fonts/JetBrainsMono/jetbrainsmono-bolditalic-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+
+// SANS - "OpenSans"
+@font-face { //normal
+	font-family: "Open Sans";
+	src: url('./fonts/OpenSans/OpenSans-Regular.woff2') format('woff2'),
+         url('./fonts/OpenSans/OpenSans-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face { //bold
+	font-family: "Open Sans";
+	src: url('./fonts/OpenSans/OpenSans-Bold.woff2') format('woff2'),
+         url('./fonts/OpenSans/OpenSans-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face { //italic
+	font-family: "Open Sans";
+	src: url('./fonts/OpenSans/OpenSans-Italic.woff2') format('woff2'),
+         url('./fonts/OpenSans/OpenSans-Italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face { //bold-italic
+	font-family: "Open Sans";
+	src: url('./fonts/OpenSans/OpenSans-BoldItalic.woff2') format('woff2'),
+		 url('./fonts/OpenSans/OpenSans-BoldItalic.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+
+html {
+  --sans-font: "Open Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+     "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica,
+     "Helvetica Neue", sans-serif;
+  --mono-font: JetBrainsMono, Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --border-radius: 1em;
+}

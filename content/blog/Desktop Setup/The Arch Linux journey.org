@@ -1,0 +1,83 @@
+#+setupfile: ../../../.org-templates/level/1.org
+#+title: The Arch Linux journey
+#+description: This is an example description of this article
+
+* How the story begins
+I was a very curious Windows user. This got me infected with spyware which eventually resulted in me losing the first funds I ever made with blood and sweat from freelance JavaScript programming and even put me in debt but this is a whole other story of its own.
+ This heartbreaking for a 15yr old situation made me jump into Linux (Arch Linux) with the hope of a better future.
+
+* What is Arch Linux?
+For the unenglightened, Arch Linux is one (if not the most) customizable Linux distributions. It is minimalistic because it comes with almost no software in comparison to other distros. It is also the most popular rolling-release distribution, which is good if you want to live on the bleeding edge and get the latest available versions of software.
+
+* Hustle and pride
+The general rule is that with freedom comes responsibility and Arch makes no exception. You get the freedom to choose which software you want on your system, how to configure it, etc. But this comes with the price of experiencing the consequences of your choices.
+ The ones able to pay the price of responsibility will make the right choices and flourish.
+ The ones unable to be responsible will make the wrong choices and suffer the consequences.
+ In the current context, being responsible means being educated on the choices you're about to make.
+ To use Arch Linux as your main OS in this technological world, for the most part, means that you're withstanding its demands, which means that you have a certain amount of responsibility i.e. You're to some degree educated on the topic of information technologies. And since Arch is one of the most customizable operating systems, it requires more "responsibility" than let's say Windows, Mac, or even distros like Ubuntu, which in return comes with more perks. That is the reason why Arch Linux users are so proud of calling themselves ones.
+
+#+CAPTION: First rule of Arch: Tell everyone you use Arch. ([[https://www.reddit.com/r/linuxmasterrace/comments/9csf2i/btw_i_use_arch/][source]])
+#+NAME:   fig:SED-HR4049
+[[./../../img/tellthemall.jpg]]
+
+ Another reason for their pride is that Arch *is not for normies*, as stated in the beloved by all Linux users [[https://wiki.archlinux.org/][Arch Wiki]]:
+
+#+BEGIN_QUOTE
+ The distribution is intended to *fill the needs of those contributing to it*, rather than trying to appeal to as many users as possible -- [[https://wiki.archlinux.org/title/Arch_Linux#:~:text=the%20distribution%20is%20intended%20to%20fill%20the%20needs%20of%20those%20contributing%20to%20it%2C%20rather%20than%20trying%20to%20appeal%20to%20as%20many%20users%20as%20possible][About Arch Linux]]
+#+END_QUOTE
+
+ And if a normie wants to become part of these elite Arch Linux Power Users, he/she shall HUSTLE!
+ Of course, the gods will tell you that an infidel like you, who's never touched Linux stands no chance of running Arch - They will tell you to first f**k yourself and go learn Ubuntu or something "easy" (a bit exaggerated here 🤭😁) and only then look up to Arch, but let me whisper in your ear: THEY ARE WRONG! - And I stand firm behind my whisper, as I, myself, am proud that Arch was my first touch to Linux! And you can do it as well if you have the balls of course (and a whole quarantine - You'll need time). 
+
+** The purge begins with the installation process
+You can't simply insert a disk with a burned Arch Linux installation ISO to it and expect to be presented with the nice installation GUI (Graphical User Interface) that most operating systems come with - Arch doesn't have one of course.
+Instead, you get a black Command Line Interface (CLI) like this:
+
+#+CAPTION: The unfriendly, dark CLI.
+#+NAME:   fig:SED-HR4049
+[[./../../img/blackCLI.png]]
+
+Then, with the help of the [[https://wiki.archlinux.org/title/installation_guide][Arch Linux Installation guide]] you can start trying to install it. First, I suggest you do it on a VM (Virtual Machine) like [[https://www.virtualbox.org/][VirtualBox]] and once you get it successful, you may try it on your real machine.
+If you fail - Don't worry, that's normal so keep trying. This is a test, a purge. You get through it, you learn some things about how the OS works.
+Back in 2019, I had to try four or six times until I successfully installed Arch on a VM and then three or more times on my real machine. There's always something going wrong but solving the problem teaches you a lot of things by itself.
+
+For those of you interested in getting started, here are some links I found to be useful:
++ [[https://archlinux.org/][The official Arch Linux website]] - With its blog and forum, it's the most reliable source of Arch Linux wisdom. 
++ [[https://wiki.archlinux.org/title/Installation_guide][The official Arch Linux Installation guide]]
++ [[https://www.youtube.com/watch?v=4PBqpX0_UOc&ab_channel=LukeSmith][Luke Smith's "Full Arch Linux Install (SAVAGE Edition!)"]] - Great supplementation to the official installation guide.
+You won't be blamed for asking stupid questions on:
++ [[https://www.reddit.com/r/archlinux/][The Arch Linux Subreddit]]
++ [[https://www.facebook.com/groups/archlinuxen/][The Arch Linux Facebook Group]]
+You will be blamed for asking stupid questions on:
++ [[https://bbs.archlinux.org/][The Arch Linux Forums]]
+
+** When you install it, that's when the real hustle begins.
+If you plan to use Arch as your desktop operating system, you're now presented with three hypothetic choices of how to interact with it:
+
+1. Use it as is
+   You're okay with this black and dirty Command Line Interface? Sure, it's fully functional but using it as your daily desktop interface? You should come from another planet or be a god or something...
+2. Install a DE (Desktop Environment)
+   Examples of such are KDE, Cinnamon, GNOME, Xfce. The closest interface you can get to your old Windows or macOS. It has all the usual icons, menus, toolbars, folders, wallpapers, and settings all in a nice GUI, etc.
+3. Install a WM (Window Manager)
+   If you're anything like me, you'd fall in love with it from first sight:
+
+   #+CAPTION: Showing off my i3wm setup.
+   #+NAME:   fig:SED-HR4049
+   [[./../../img/i3isawesome.png]]
+ 
+   And if you're even more like me, you wouldn't follow a primary instinct blindly. You'd make your research and realize WMs not only look cool (not good. COOL) but they offer a lot of benefits to the serious desktop user.
+
+   And since this is me, as you might've already guessed - A user preferring WMs in comparison to the other two choices, in these series of posts I will walk you through my configuration so you can gain from my experience.
+* Tuning the system
+As I mentioned earlier, once you've installed Arch it's simply a black CLI. Even if you install a WM, it will look ugly at first and will have no other functions except, well, managing your windows. And this shouldn't scare you, good software is known that it "does one thing and does it well" as defined by the [[https://en.wikipedia.org/wiki/Unix_philosophy][Unix philosophy]].
+ From now on, you're the master of your fate. It's like you've just grown up - Rather than have your mama take care and wipe your ass (Windows, macOS) you now have to do it yourself, you choose what happens with "you".
+ There will be many ways to go from here, just like, using the same comparison, choosing a career path, or what to do with your life in general.
+
+ + If you miss that you don't have notifications, go set up dunst (notification daemon).
+ + If you miss your browser, install Firefox.
+ + If you care about your desktop looking nice, go rice it. If not, you're not supposed to do so.
+
+ The possibilities of tuning are endless and the ones people choose will solely depend on their personality. Therefore, stone by stone you build your own, custom system that's accustomed for your needs, by your values and principles.
+** My tune
+Let this section serve you as a reference to some of my other articles which describe in detail how I set up certain functionalities that I thought are worth sharing:
+

@@ -1,0 +1,29 @@
+#+setupfile: ../.org-templates/level/0.org
+#+title: about
+
+* About
+** Me
+:PROPERTIES:
+:CUSTOM_ID: aboutme
+:END:
+#+ATTR_HTML: :id me
+#+CAPTION: If you see me irl say hi pls.
+ [[./img/me.jpg]]
+
+Hi, I am Zdravko Dimov or just thewebmasterp. I am a Software engineer working in the field of JavaScript and its ecosystem - Mongo, Express, React, Node, etc. Based in Bulgaria.
+ 
+I am also an advocate of [[https://www.gnu.org/philosophy/free-sw.html][Free and open-source software]], both contributing to it and using it, some of my favorite examples of such being [[https://archlinux.org/about/][Arch Linux]] and [[https://www.gnu.org/software/emacs/][GNU Emacs]].
+
+In my spare time, I like doing Aikido.
+** My Projects
+T O D O: Fill it in
+** My Writings
+I've been actively working on [[https://www.instagram.com/webmaster_project/][webmaster_project]] - Without false modesty, it is the most in-depth coverage of various JavaScript concepts available on Instagram, from early 2019 to middle 2021.
+
+At the end of May 2022, after a while of keeping my mouth shut and just coding, I felt that my view on things has changed and webmaster_project, with its JavaScript-centric content and audience, is no longer the right stage for my voice, burning to speak out in a broader than "Just JavaScript" fashion. This was how this blog was born.
+** Let's get connected!
+T O D O: Fill it in
+
+
+
+

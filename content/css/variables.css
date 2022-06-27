@@ -1,0 +1,87 @@
+html {
+  /* Dark theme */
+  --accent-bg: #1b2327;
+  --bg: #273338;
+  --text: #bfdce8;
+  --text-light: #8daab6 ;
+  --border: #5b7884;
+  --accent: #65fece;
+  --code: #d9302c;
+  --preformatted: #ffffff;
+  --disabled: #294652;
+  --marked: #eaa23f;
+}
+
+html[data-theme=light] {
+  /* Light theme */
+  --accent-bg: #ffffff;
+  --bg: #bfdce8;
+  --text: #273338;
+  --text-light: #294652;
+  --border: #5b7884;
+  --accent: #eaa23f;
+  --code: #d9302c;
+  --preformatted: #1b2327;
+  --disabled: #8daab6;
+  --marked: #65fece;
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("./fonts/JetBrainsMono/jetbrainsmono-regular-webfont.woff2") format("woff2"), url("./fonts/JetBrainsMono/jetbrainsmono-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("./fonts/JetBrainsMono/jetbrainsmono-bold-webfont.woff2") format("woff2"), url("./fonts/JetBrainsMono/jetbrainsmono-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("./fonts/JetBrainsMono/jetbrainsmono-italic-webfont.woff2") format("woff2"), url("./fonts/JetBrainsMono/jetbrainsmono-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("./fonts/JetBrainsMono/jetbrainsmono-bolditalic-webfont.woff2") format("woff2"), url("./fonts/JetBrainsMono/jetbrainsmono-bolditalic-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans/OpenSans-Regular.woff2") format("woff2"), url("./fonts/OpenSans/OpenSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans/OpenSans-Bold.woff2") format("woff2"), url("./fonts/OpenSans/OpenSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans/OpenSans-Italic.woff2") format("woff2"), url("./fonts/OpenSans/OpenSans-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans/OpenSans-BoldItalic.woff2") format("woff2"), url("./fonts/OpenSans/OpenSans-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+html {
+  --sans-font: "Open Sans", -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+     "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica,
+     "Helvetica Neue", sans-serif;
+  --mono-font: JetBrainsMono, Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --border-radius: 1em;
+}
+
+/*# sourceMappingURL=variables.css.map */
+
+/*# sourceMappingURL=variables.css.map */

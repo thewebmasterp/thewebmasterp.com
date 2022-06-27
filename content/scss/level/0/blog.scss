@@ -1,0 +1,14 @@
+#blog {
+	.figure-number {
+		//Do not number image captions
+		display: none;
+	}
+	#entries {
+		ul {
+			list-style-type: none;
+		}
+		&>.org-ul {
+			padding-left: 0;
+		}
+	}
+}

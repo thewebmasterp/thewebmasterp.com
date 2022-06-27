@@ -1,0 +1,209 @@
+html {	
+	.fill-1 {
+		opacity: 1;
+	}
+	.fill-2 {
+		opacity: 0;
+	}
+	#fakeBg-1, #fakeBg-2 {
+		.fill-1 {
+			background-image: linear-gradient(0,
+				rgba($darkth-bg, 1) 0%,
+				rgba($darkth-bg, 0.3) 50%,
+				rgba($darkth-bg, 0.15) 65%,
+				rgba($darkth-bg, 0.075) 75.5%,
+				rgba($darkth-bg, 0.037) 82.85%,
+				rgba($darkth-bg, 0.019) 88%,
+				rgba($darkth-bg, 0) 100%
+			);
+		}
+		.fill-2 {
+			background-image: linear-gradient(0,
+				rgba($darkth-text, 1) 0%,
+				rgba($darkth-text, 0.3) 50%,
+				rgba($darkth-text, 0.15) 65%,
+				rgba($darkth-text, 0.075) 75.5%,
+				rgba($darkth-text, 0.037) 82.85%,
+				rgba($darkth-text, 0.019) 88%,
+				rgba($darkth-text, 0) 100%
+			);
+		}
+	}
+	#fakeBg-3, #fakeBg-4 {
+		.fill-1 {
+			background: $darkth-bg;
+		}
+		.fill-2 {
+			background: $darkth-text;
+		}
+	}
+	
+	&[data-theme=light] {
+		.fill-1 {
+			opacity: 0;
+		}
+		.fill-2 {
+			opacity: 1;
+		}
+	}
+}
+#index {
+	overflow: hidden !important;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	display: block;
+	.figure-number {
+		//Do not number image captions
+		display: none;
+	}
+	#parallax {
+		perspective: 1px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		scroll-behavior: smooth;
+		background-color: #09904c; // Same as bg image dominant col
+		.layer {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.img {
+				width: 100%;
+				height: 100%;
+				grid-row: 1/2;
+				grid-column: 1/4;
+				background-position: 50% 100%;
+				background-repeat: no-repeat;
+				background-size: cover;	
+			}
+			// Use this formula for layer speed control:
+			// scale( 1 + (translateZ * -1) / perspective )
+			&.layer-0 {
+				transform: translateZ(-6px) scale(7);
+				.img {
+					background-image: url('../img/parallax/avatar.png');
+				}
+			}
+			&.layer-1 {
+				transform: translateZ(-6px) scale(7);
+				.img.hands1 {
+					background-image: url('../img/parallax/hands1.png');
+				}
+				.img.hands2 {
+					background-image: url('../img/parallax/hands2.png');
+				}
+				.img.hands3 {
+					background-image: url('../img/parallax/hands3.png');
+				}
+			}
+			&.layer-2 {
+				transform: translateZ(-6px) scale(7);
+				.img.eyes1 {
+					background-image: url('../img/parallax/eyes1.png');
+				}
+				.img.eyes2 {
+					background-image: url('../img/parallax/eyes2.png');
+				}
+			}
+			&.layer-3 {
+				transform: translateZ(-4px) scale(5) translateY(-16vh);
+				.img {
+					background-image: url('../img/parallax/fog1.png');
+				}
+			}
+			&.layer-4 {
+				transform: translateZ(-2px) scale(3) translateY(-18vh);
+				.img {
+					background-image: url('../img/parallax/fog2.png');
+				}
+			}
+			&.layer-5 {
+				transform: translateZ(-1px) scale(2) translateY(-20vh);
+				.img {
+					background-image: url('../img/parallax/fog3.png');
+				}
+			}
+			&.layer-6 {
+				// This is the content layer; No transforms here.
+			}
+			// Note: There's a media query below. If you change anything, look it
+			// up as well.
+		}
+	}
+	#preConPosWrapper {
+		position: relative;
+		top: 105vh;
+		display: grid;
+		grid-template-rows: 42px 420px auto auto;
+		grid-template-columns: 1fr min(63rem, 90%) 1fr;
+		.fakeBg {
+			background: var(--bg);
+			&#fakeBg-1 {
+				grid-column: 1/2;
+				grid-row: 1/3;
+			}
+			&#fakeBg-2 {
+				grid-column: 3/4;
+				grid-row: 1/3;
+			}
+			&#fakeBg-3 {
+				grid-column: 1/2;
+				grid-row: span 5;
+			}
+			&#fakeBg-4 {
+				grid-column: 3/4;
+				grid-row: span 5;
+			}
+			&#fakeBg-1, &#fakeBg-2, &#fakeBg-3, &#fakeBg-4{
+				position: relative;
+				background-color: transparent;
+				.fill-1, .fill-2 {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					transition: opacity 300ms ease-in;
+				}
+			}
+		}
+		#preamble {
+			grid-row: 1/2;
+			grid-column: 2/3;
+		}
+		#content {
+			grid-row: 2/4;
+			grid-column: 2/3;
+		}
+		#postamble {
+			grid-row: 4/5;
+			grid-column: 2/3
+		}
+		#welcome {
+			color: #FFFFFF; //Welcome's color shouldn't change, despite theme.
+			margin-top: 0;
+			padding-top: 0;
+			position: relative;
+			bottom: 130vh;
+			opacity: 0;
+			transition-property: opacity, bottom;
+			transition-duration: 500ms, 1300ms;
+			transition-timing-function: cubic-bezier(0.065, 0.225, 0.235, 0.420), cubic-bezier(0.065, 0.225, 0.235, 0.420);
+		}
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	#preConPosWrapper {
+		grid-template-columns: auto !important;
+	}
+}

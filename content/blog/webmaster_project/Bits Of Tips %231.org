@@ -1,0 +1,65 @@
+#+setupfile: ../../../.org-templates/level/1.org
+#+title: Bits Of Tips #1
+#+description: Bits of Tips is a series of posts containing bits of practical JavaScript tips and tricks.
+* Numeric Separators
+  It is a simple stylistic improvement that will make your code a bit more comprehensible by human beings.
+  
+  #+begin_src js
+
+    // Use _ to separate numerals
+    // for better readability
+
+    // Separators in decimal numbers
+    let dec_num = 1_000_000_000 // === 1000000000 
+    let dec_int_num = 100_000.05 // === 100000.05
+    let dec_fra_num = 10.000_055 // === 10.000_055
+
+    // Separators in binary numbers
+    let bin_num = 0b1010_0001_1000_0101
+
+    // Separators in octal numbers
+    let oct_num = 0o2_2_5_6
+
+    // Separators in hex numbers
+    let hex_num = 0xA0_B0_C0
+
+    // Separators in BigInts
+    let bint_num = 1_000_000_000_000_000_000_000n
+    
+  #+end_src
+* Defined vs Declared
+The declaration is the creation of a reference in a scope. Unless the reference is assigned a value it is undefined by default. Definition, on the other hand, could refer to assigned value or documentation of an expected data type 
+(for languages that support it).
+
+This example should clear the fog:
+
+#+begin_src js
+
+  b; //undeclared and undefined
+  b = 1; //undeclared and defined
+  let a; //declared and undefined
+  let a = 1; //declared and defined
+  
+#+end_src
+* Debunking complex Destructuring Assignments
+This bit assumes that you already understand destructuring and explains to you how to "de-bug" or "de-bunk" or understand complex destructuring.
+
+#+begin_src js
+
+  // You simply do your destructuring
+  const letters = [{a: 1, b: 2}, {a: 3, b: 4}]
+  // Tra, la, laa....
+  let [{a: a1, b: b1}, {a: a2, b: b2}] = letters
+
+
+  // Then to check if you've been correct,
+  // compare the logged value of this:
+  console.log( [{a: a1, b: b1}, {a: a2, b: b2}] )
+  // with the actual object "letters"
+  console.log(letters)
+
+  // If they hold the same contents,
+  // your destructuring is good.
+  
+#+end_src
+
