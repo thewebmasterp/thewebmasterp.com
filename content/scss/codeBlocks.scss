@@ -116,10 +116,10 @@ pre span.org-diff-removed                {color:#A60000;}
 pre span.linenr                          {
 	background-color: $darkth-disabled;
 	color: $darkth-text;
-	line-hegith: 30px;
-	padding-top: 0.6em;
-	padding-bottom: 0.6em;
-	padding-left: 0.3em;
-	margin-right: 0.3em;
+	padding-left: 0.1em;
+	margin-right: 0.1em;
 	user-select: none;
+	display: inline-block;
+	min-width: 2em;
+	text-align: right;
 }

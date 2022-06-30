@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-06-27 Mon 16:32 -->
+<!-- 2022-06-30 Thu 14:44 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Bits Of Tips #1</title>
@@ -9,7 +9,7 @@
 <meta name="description" content="
 Bits of Tips is a series of posts containing bits of practical JavaScript tips and tricks." />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" href="../../css/style.css" /><script type="module" src="../../js/index.js"></script><script src="../../js/matomoInit.js"></script>
+<link rel="stylesheet" href="../../css/style.min.css" /><script src="../../js/app.min.js"></script>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -33,6 +33,7 @@ Bits of Tips is a series of posts containing bits of practical JavaScript tips a
 </head>
 <body>
 <div id="preamble" class="status">
+<script>0</script>
 <nav id='topnav'>
 <a class='homeLink' href='/index.html'>Home</a>
 <a class='blogLink' href='/blog.html'>Blog</a>
@@ -63,27 +64,27 @@ It is a simple stylistic improvement that will make your code a bit more compreh
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js">
-    <span class="org-comment-delimiter">// </span><span class="org-comment">Use _ to separate numerals</span>
-    <span class="org-comment-delimiter">// </span><span class="org-comment">for better readability</span>
-
-    <span class="org-comment-delimiter">// </span><span class="org-comment">Separators in decimal numbers</span>
-    <span class="org-keyword">let</span> <span class="org-variable-name">dec_num</span> = 1_000_000_000 <span class="org-comment-delimiter">// </span><span class="org-comment">=== 1000000000 </span>
-    <span class="org-keyword">let</span> <span class="org-variable-name">dec_int_num</span> = 100_000.05 <span class="org-comment-delimiter">// </span><span class="org-comment">=== 100000.05</span>
-    <span class="org-keyword">let</span> <span class="org-variable-name">dec_fra_num</span> = 10.000_055 <span class="org-comment-delimiter">// </span><span class="org-comment">=== 10.000_055</span>
-
-    <span class="org-comment-delimiter">// </span><span class="org-comment">Separators in binary numbers</span>
-    <span class="org-keyword">let</span> <span class="org-variable-name">bin_num</span> = 0b1010_0001_1000_0101
-
-    <span class="org-comment-delimiter">// </span><span class="org-comment">Separators in octal numbers</span>
-    <span class="org-keyword">let</span> <span class="org-variable-name">oct_num</span> = 0o2_2_5_6
-
-    <span class="org-comment-delimiter">// </span><span class="org-comment">Separators in hex numbers</span>
-    <span class="org-keyword">let</span> <span class="org-variable-name">hex_num</span> = 0xA0_B0_C0
-
-    <span class="org-comment-delimiter">// </span><span class="org-comment">Separators in BigInts</span>
-    <span class="org-keyword">let</span> <span class="org-variable-name">bint_num</span> = 1_000_000_000_000_000_000_000n
-    
+<pre class="src src-js"><span class="linenr"> 1: </span>
+<span class="linenr"> 2: </span>    <span class="org-comment-delimiter">// </span><span class="org-comment">Use _ to separate numerals</span>
+<span class="linenr"> 3: </span>    <span class="org-comment-delimiter">// </span><span class="org-comment">for better readability</span>
+<span class="linenr"> 4: </span>
+<span class="linenr"> 5: </span>    <span class="org-comment-delimiter">// </span><span class="org-comment">Separators in decimal numbers</span>
+<span class="linenr"> 6: </span>    <span class="org-keyword">let</span> <span class="org-variable-name">dec_num</span> = 1_000_000_000 <span class="org-comment-delimiter">// </span><span class="org-comment">=== 1000000000 </span>
+<span class="linenr"> 7: </span>    <span class="org-keyword">let</span> <span class="org-variable-name">dec_int_num</span> = 100_000.05 <span class="org-comment-delimiter">// </span><span class="org-comment">=== 100000.05</span>
+<span class="linenr"> 8: </span>    <span class="org-keyword">let</span> <span class="org-variable-name">dec_fra_num</span> = 10.000_055 <span class="org-comment-delimiter">// </span><span class="org-comment">=== 10.000_055</span>
+<span class="linenr"> 9: </span>
+<span class="linenr">10: </span>    <span class="org-comment-delimiter">// </span><span class="org-comment">Separators in binary numbers</span>
+<span class="linenr">11: </span>    <span class="org-keyword">let</span> <span class="org-variable-name">bin_num</span> = 0b1010_0001_1000_0101
+<span class="linenr">12: </span>
+<span class="linenr">13: </span>    <span class="org-comment-delimiter">// </span><span class="org-comment">Separators in octal numbers</span>
+<span class="linenr">14: </span>    <span class="org-keyword">let</span> <span class="org-variable-name">oct_num</span> = 0o2_2_5_6
+<span class="linenr">15: </span>
+<span class="linenr">16: </span>    <span class="org-comment-delimiter">// </span><span class="org-comment">Separators in hex numbers</span>
+<span class="linenr">17: </span>    <span class="org-keyword">let</span> <span class="org-variable-name">hex_num</span> = 0xA0_B0_C0
+<span class="linenr">18: </span>
+<span class="linenr">19: </span>    <span class="org-comment-delimiter">// </span><span class="org-comment">Separators in BigInts</span>
+<span class="linenr">20: </span>    <span class="org-keyword">let</span> <span class="org-variable-name">bint_num</span> = 1_000_000_000_000_000_000_000n
+<span class="linenr">21: </span>    
 </pre>
 </div>
 </div>
@@ -101,12 +102,12 @@ This example should clear the fog:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js">
-  b; <span class="org-comment-delimiter">//</span><span class="org-comment">undeclared and undefined</span>
-  b = 1; <span class="org-comment-delimiter">//</span><span class="org-comment">undeclared and defined</span>
-  <span class="org-keyword">let</span> <span class="org-variable-name">a</span>; <span class="org-comment-delimiter">//</span><span class="org-comment">declared and undefined</span>
-  <span class="org-keyword">let</span> <span class="org-variable-name">a</span> = 1; <span class="org-comment-delimiter">//</span><span class="org-comment">declared and defined</span>
-  
+<pre class="src src-js"><span class="linenr">1: </span>
+<span class="linenr">2: </span>  b; <span class="org-comment-delimiter">//</span><span class="org-comment">undeclared and undefined</span>
+<span class="linenr">3: </span>  b = 1; <span class="org-comment-delimiter">//</span><span class="org-comment">undeclared and defined</span>
+<span class="linenr">4: </span>  <span class="org-keyword">let</span> <span class="org-variable-name">a</span>; <span class="org-comment-delimiter">//</span><span class="org-comment">declared and undefined</span>
+<span class="linenr">5: </span>  <span class="org-keyword">let</span> <span class="org-variable-name">a</span> = 1; <span class="org-comment-delimiter">//</span><span class="org-comment">declared and defined</span>
+<span class="linenr">6: </span>  
 </pre>
 </div>
 </div>
@@ -119,22 +120,22 @@ This bit assumes that you already understand destructuring and explains to you h
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js">
-  <span class="org-comment-delimiter">// </span><span class="org-comment">You simply do your destructuring</span>
-  <span class="org-keyword">const</span> <span class="org-variable-name">letters</span> = [{a: 1, b: 2}, {a: 3, b: 4}]
-  <span class="org-comment-delimiter">// </span><span class="org-comment">Tra, la, laa....</span>
-  <span class="org-keyword">let</span> [{a: <span class="org-variable-name">a1</span>, b: <span class="org-variable-name">b1</span>}, {a: <span class="org-variable-name">a2</span>, b: <span class="org-variable-name">b2</span>}] = letters
-
-
-  <span class="org-comment-delimiter">// </span><span class="org-comment">Then to check if you've been correct,</span>
-  <span class="org-comment-delimiter">// </span><span class="org-comment">compare the logged value of this:</span>
-  console.log( [{a: a1, b: b1}, {a: a2, b: b2}] )
-  <span class="org-comment-delimiter">// </span><span class="org-comment">with the actual object "letters"</span>
-  console.log(letters)
-
-  <span class="org-comment-delimiter">// </span><span class="org-comment">If they hold the same contents,</span>
-  <span class="org-comment-delimiter">// </span><span class="org-comment">your destructuring is good.</span>
-  
+<pre class="src src-js"><span class="linenr"> 1: </span>
+<span class="linenr"> 2: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">You simply do your destructuring</span>
+<span class="linenr"> 3: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">letters</span> = [{a: 1, b: 2}, {a: 3, b: 4}]
+<span class="linenr"> 4: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">Tra, la, laa....</span>
+<span class="linenr"> 5: </span>  <span class="org-keyword">let</span> [{a: <span class="org-variable-name">a1</span>, b: <span class="org-variable-name">b1</span>}, {a: <span class="org-variable-name">a2</span>, b: <span class="org-variable-name">b2</span>}] = letters
+<span class="linenr"> 6: </span>
+<span class="linenr"> 7: </span>
+<span class="linenr"> 8: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">Then to check if you've been correct,</span>
+<span class="linenr"> 9: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">compare the logged value of this:</span>
+<span class="linenr">10: </span>  console.log( [{a: a1, b: b1}, {a: a2, b: b2}] )
+<span class="linenr">11: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">with the actual object "letters"</span>
+<span class="linenr">12: </span>  console.log(letters)
+<span class="linenr">13: </span>
+<span class="linenr">14: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">If they hold the same contents,</span>
+<span class="linenr">15: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">your destructuring is good.</span>
+<span class="linenr">16: </span>  
 </pre>
 </div>
 </div>
@@ -152,7 +153,7 @@ This bit assumes that you already understand destructuring and explains to you h
   <footer>
      <div class='theme-changer'></div>
      Copyright 2022 thewebmasterp. <br>
-     Last updated 2022-06-24 Fri 15:42. <br>
+     Last updated 2022-06-28 Tue 14:23. <br>
      This blog was built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.0.91 (<a href="https://orgmode.org">Org</a> mode 9.5.2) and <a href='#'>the code</a> was open sourced. Hosted on <a href='../img/host.jpg'>my home Raspberry Pi</a>.
   </footer>
 </div>

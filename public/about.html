@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-06-27 Mon 16:32 -->
+<!-- 2022-06-30 Thu 14:44 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>about</title>
 <meta name="author" content="thewebmasterp" />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" href="./css/style.css" /><script type="module" src="./js/index.js"></script><script src="./js/matomoInit.js"></script>
+<link rel="stylesheet" href="./css/style.min.css" /><script src="./js/app.min.js"></script>
 <script>
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
@@ -31,6 +31,7 @@
 </head>
 <body>
 <div id="preamble" class="status">
+<script>0</script>
 <nav id='topnav'>
 <a class='homeLink' href='index.html'>Home</a>
 <a class='blogLink' href='blog.html'>Blog</a>
@@ -50,25 +51,31 @@
 <h3 id="aboutme">Me</h3>
 <div class="outline-text-3" id="text-aboutme">
 
-<figure id="org276b4ad">
+<figure id="orgf949db6">
 <img src="./img/me.jpg" alt="me.jpg" id="me">
 
 <figcaption><span class="figure-number">Figure 1: </span>If you see me irl say hi pls.</figcaption>
 </figure>
 
 <p>
-Hi, I am Zdravko Dimov or just thewebmasterp. I am a Software engineer working in the field of JavaScript and its ecosystem - Mongo, Express, React, Node, etc. Based in Bulgaria.
+Hi, I am Zdravko Dimov, aka thewebmasterp.
+(📍 Dobrich, Bulgaria)
 </p>
 
 <p>
-I am also an advocate of <a href="https://www.gnu.org/philosophy/free-sw.html">Free and open-source software</a>, both contributing to it and using it, some of my favorite examples of such being <a href="https://archlinux.org/about/">Arch Linux</a> and <a href="https://www.gnu.org/software/emacs/">GNU Emacs</a>.
+I am a self-taught front-end web developer specializing in JavaScript and its ecosystem, aiming at full-stack and a broader understanding of software development.
 </p>
 
 <p>
-In my spare time, I like doing Aikido.
+I love <a href="https://www.gnu.org/philosophy/free-sw.html">Free and open-source software</a> and some of its deserving-a-mention representatives like <a href="https://archlinux.org/about/">Arch Linux</a> and <a href="https://www.gnu.org/software/emacs/">GNU Emacs</a> are deeply ingrained into my development workflow, just like the moral principles they convey.
+</p>
+
+<p>
+In my spare time, I do Aikido.
 </p>
 </div>
 </div>
+
 <div id="outline-container-org6d8fa7a" class="outline-3">
 <h3 id="org6d8fa7a">My Projects</h3>
 <div class="outline-text-3" id="text-org6d8fa7a">
@@ -81,12 +88,67 @@ T O D O: Fill it in
 <h3 id="org17c6278">My Writings</h3>
 <div class="outline-text-3" id="text-org17c6278">
 <p>
-I've been actively working on <a href="https://www.instagram.com/webmaster_project/">webmaster_project</a> - Without false modesty, it is the most in-depth coverage of various JavaScript concepts available on Instagram, from early 2019 to middle 2021.
+I've been actively working on <a href="https://www.instagram.com/webmaster_project/">webmaster_project</a> (2019 - 2021) - Without false modesty, it is the most in-depth coverage of various JavaScript concepts available on Instagram.
 </p>
 
 <p>
-At the end of May 2022, after a while of keeping my mouth shut and just coding, I felt that my view on things has changed and webmaster_project, with its JavaScript-centric content and audience, is no longer the right stage for my voice, burning to speak out in a broader than "Just JavaScript" fashion. This was how this blog was born.
+At the end of May 2022, after a while of keeping my mouth shut and just coding, I felt that my view on things has changed and webmaster_project, with its JavaScript-centric content and audience, is no longer the right stage for my voice, burning to speak out in a broader than "Just JavaScript" fashion. This was why this blog was born, as well as out of the necessity of selling my skills to potential allies.
 </p>
+</div>
+</div>
+
+<div id="outline-container-org15cf6c8" class="outline-3">
+<h3 id="org15cf6c8">Colophon</h3>
+<div class="outline-text-3" id="text-org15cf6c8">
+<p>
+Or more about the technology behind this website.
+</p>
+</div>
+<div id="outline-container-orgbd39e09" class="outline-4">
+<h4 id="orgbd39e09">Build</h4>
+<div class="outline-text-4" id="text-orgbd39e09">
+<p>
+This website uses <a href="https://github.com/emacs-mirror/emacs/blob/master/lisp/org/ox-publish.el">ox-publish</a> to convert <a href="https://www.gnu.org/software/emacs/">Emacs</a> <a href="https://orgmode.org/">Org Mode</a> files into static HTML files as well as <a href="https://webpack.js.org/">Webpack</a> to bundle, compile and minify <a href="https://sass-lang.com/">Sass</a> and js files (into a single, optimized CSS or js file).
+</p>
+</div>
+</div>
+<div id="outline-container-orgd8f9698" class="outline-4">
+<h4 id="orgd8f9698">Deployment</h4>
+<div class="outline-text-4" id="text-orgd8f9698">
+<p>
+For deploying the build to <a href="./img/host.jpg">my Raspberry Pi B</a>  and Github (so that you guys can see <a href="https://github.com/thewebmasterp/thewebmasterp.com">the source code</a>) a few things happen:
+</p>
+<ol class="org-ol">
+<li>Locally
+<ol class="org-ol">
+<li>I do a <code>git push</code>.</li>
+<li>This pushes my commits to the remote repository located on the Raspberry Pi.</li>
+<li>A local <a href="https://git-scm.com/">git</a> hook is triggered that copies files from the main repository to a separate one which is then pushed to a source code hosting service (Github).</li>
+</ol></li>
+<li>On the Raspberry Pi
+<ol class="org-ol">
+<li>A push is received.</li>
+<li>This triggers a hook that does a few things:
+<ol class="org-ol">
+<li>It creates a new <a href="https://www.docker.com/">Docker</a> image out of the already mentioned build.</li>
+<li>It replaces the old container (running the old image) with a brand new container (running the newly generated one).</li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc5deaba" class="outline-4">
+<h4 id="orgc5deaba">Backend</h4>
+<div class="outline-text-4" id="text-orgc5deaba">
+<p>
+ For the backend, I try not to reinvent the wheel and just stick to self-hosting the best bug-proven, free and open-source software available, each instance residing into its own Docker container, isolated from the rest, ready to serve its API for our needs.
+Currently I self-host the following services:
+</p>
+<ul class="org-ul">
+<li><a href="https://remark42.com/">Remark42</a>: Commenting Engine; located at <code>remark42.thewebmasterp.com</code></li>
+<li><a href="https://matomo.org/">Matomo</a>: Web Analytics; located at <code>matomo.thewebmasterp.com</code></li>
+</ul>
+</div>
 </div>
 </div>
 <div id="outline-container-org0eb2bf9" class="outline-3">

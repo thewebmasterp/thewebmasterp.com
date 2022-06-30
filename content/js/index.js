@@ -1,8 +1,16 @@
+import any from './actions/any'
+import indexPage from './actions/indexPage'
+import aboutPage from './actions/aboutPage'
+import blog from './actions/blog'
+import blogPage from './actions/blogPage'
+import blogArticle from './actions/blogArticle'
+
 const CONFIG = {
   defaultTheme: 'dark',
   themeAttribute: 'data-theme',
 }
 
+/*
 const any = sp => {
   sp.log(sp.entryName)
 
@@ -386,7 +394,8 @@ Author: <a href="/about.html">${author}</a>
   } else if (sp.load) {
   } else if (sp.unload) {
   }
-}
+  }
+  */
 
 class Rule {
   constructor(name, condition, action, id) {

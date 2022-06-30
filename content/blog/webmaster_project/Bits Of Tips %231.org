@@ -4,7 +4,7 @@
 * Numeric Separators
   It is a simple stylistic improvement that will make your code a bit more comprehensible by human beings.
   
-  #+begin_src js
+  #+begin_src js -n
 
     // Use _ to separate numerals
     // for better readability
@@ -33,7 +33,7 @@ The declaration is the creation of a reference in a scope. Unless the reference 
 
 This example should clear the fog:
 
-#+begin_src js
+#+begin_src js -n
 
   b; //undeclared and undefined
   b = 1; //undeclared and defined
@@ -44,7 +44,7 @@ This example should clear the fog:
 * Debunking complex Destructuring Assignments
 This bit assumes that you already understand destructuring and explains to you how to "de-bug" or "de-bunk" or understand complex destructuring.
 
-#+begin_src js
+#+begin_src js -n
 
   // You simply do your destructuring
   const letters = [{a: 1, b: 2}, {a: 3, b: 4}]

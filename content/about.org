@@ -10,17 +10,42 @@
 #+CAPTION: If you see me irl say hi pls.
  [[./img/me.jpg]]
 
-Hi, I am Zdravko Dimov or just thewebmasterp. I am a Software engineer working in the field of JavaScript and its ecosystem - Mongo, Express, React, Node, etc. Based in Bulgaria.
- 
-I am also an advocate of [[https://www.gnu.org/philosophy/free-sw.html][Free and open-source software]], both contributing to it and using it, some of my favorite examples of such being [[https://archlinux.org/about/][Arch Linux]] and [[https://www.gnu.org/software/emacs/][GNU Emacs]].
+Hi, I am Zdravko Dimov, aka thewebmasterp.
+(📍 Dobrich, Bulgaria)
 
-In my spare time, I like doing Aikido.
+I am a self-taught front-end web developer specializing in JavaScript and its ecosystem, aiming at full-stack and a broader understanding of software development.
+
+I love [[https://www.gnu.org/philosophy/free-sw.html][Free and open-source software]] and some of its deserving-a-mention representatives like [[https://archlinux.org/about/][Arch Linux]] and [[https://www.gnu.org/software/emacs/][GNU Emacs]] are deeply ingrained into my development workflow, just like the moral principles they convey.
+
+In my spare time, I do Aikido.
+
 ** My Projects
 T O D O: Fill it in
 ** My Writings
-I've been actively working on [[https://www.instagram.com/webmaster_project/][webmaster_project]] - Without false modesty, it is the most in-depth coverage of various JavaScript concepts available on Instagram, from early 2019 to middle 2021.
+I've been actively working on [[https://www.instagram.com/webmaster_project/][webmaster_project]] (2019 - 2021) - Without false modesty, it is the most in-depth coverage of various JavaScript concepts available on Instagram.
 
-At the end of May 2022, after a while of keeping my mouth shut and just coding, I felt that my view on things has changed and webmaster_project, with its JavaScript-centric content and audience, is no longer the right stage for my voice, burning to speak out in a broader than "Just JavaScript" fashion. This was how this blog was born.
+ At the end of May 2022, after a while of keeping my mouth shut and just coding, I felt that my view on things has changed and webmaster_project, with its JavaScript-centric content and audience, is no longer the right stage for my voice, burning to speak out in a broader than "Just JavaScript" fashion. This was why this blog was born, as well as out of the necessity of selling my skills to potential allies.
+ 
+** Colophon
+Or more about the technology behind this website.
+*** Build
+This website uses [[https://github.com/emacs-mirror/emacs/blob/master/lisp/org/ox-publish.el][ox-publish]] to convert [[https://www.gnu.org/software/emacs/][Emacs]] [[https://orgmode.org/][Org Mode]] files into static HTML files as well as [[https://webpack.js.org/][Webpack]] to bundle, compile and minify [[https://sass-lang.com/][Sass]] and js files (into a single, optimized CSS or js file).
+*** Deployment
+For deploying the build to [[./img/host.jpg][my Raspberry Pi B]]  and Github (so that you guys can see [[https://github.com/thewebmasterp/thewebmasterp.com][the source code]]) a few things happen:
+1. Locally
+   1. I do a ~git push~.
+   2. This pushes my commits to the remote repository located on the Raspberry Pi.
+   3. A local [[https://git-scm.com/][git]] hook is triggered that copies files from the main repository to a separate one which is then pushed to a source code hosting service (Github).
+2. On the Raspberry Pi
+   1. A push is received.
+   2. This triggers a hook that does a few things:
+      1. It creates a new [[https://www.docker.com/][Docker]] image out of the already mentioned build.
+      2. It replaces the old container (running the old image) with a brand new container (running the newly generated one).
+*** Backend
+ For the backend, I try not to reinvent the wheel and just stick to self-hosting the best bug-proven, free and open-source software available, each instance residing into its own Docker container, isolated from the rest, ready to serve its API for our needs.
+Currently I self-host the following services:
++ [[https://remark42.com/][Remark42]]: Commenting Engine; located at ~remark42.thewebmasterp.com~
++ [[https://matomo.org/][Matomo]]: Web Analytics; located at ~matomo.thewebmasterp.com~
 ** Let's get connected!
 T O D O: Fill it in
 

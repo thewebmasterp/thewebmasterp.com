@@ -53,7 +53,8 @@
 
 ;; Preambles
 (defvar pages-html-preamble
-  "<nav id='topnav'>
+  "<script>0</script>
+<nav id='topnav'>
 <a class='homeLink' href='index.html'>Home</a>
 <a class='blogLink' href='blog.html'>Blog</a>
 <a class='aboutLink' href='about.html'>About</a>
@@ -63,7 +64,8 @@
 </nav>")
 
 (defvar blog-html-preamble
-  "<nav id='topnav'>
+  "<script>0</script>
+<nav id='topnav'>
 <a class='homeLink' href='/index.html'>Home</a>
 <a class='blogLink' href='/blog.html'>Blog</a>
 <a class='aboutLink' href='/about.html'>About</a>
@@ -137,7 +139,7 @@
 		 :base-directory "./content"
 		 :publishing-directory "./public"
 		 :publishing-function org-publish-attachment
-		 :base-extension "css\\|map\\|txt\\|jpg\\|gif\\|png\\|svg\\|js\\|woff\\|woff2\\|html"
+		 :base-extension "txt\\|jpg\\|gif\\|png\\|svg\\|woff\\|woff2\\|html"
 		 :recursive t)
 
 		("thewebmasterp.com"
