@@ -1,5 +1,5 @@
 const aboutPage = sp => {
-  sp.log(sp.entryName)
+  sp.log(`${sp.entryName} - ${sp.status}`)
   if (sp.DOMContentLoaded) {
     // Set the active navigation entry
     sp.setActiveNavEntr('aboutLink')

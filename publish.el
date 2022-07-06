@@ -55,9 +55,9 @@
 (defvar pages-html-preamble
   "<script>0</script>
 <nav id='topnav'>
-<a class='homeLink' href='index.html'>Home</a>
-<a class='blogLink' href='blog.html'>Blog</a>
-<a class='aboutLink' href='about.html'>About</a>
+<a class='homeLink' href='index.html' title='The index, landing page of this website'>Home</a>
+<a class='blogLink' href='blog.html' title='My articles'>Blog</a>
+<a class='aboutLink' href='about.html' title='About the website and its owner'>About</a>
 <div class='sparse'>
 <div class='theme-changer'></div>
 </div>
@@ -66,9 +66,9 @@
 (defvar blog-html-preamble
   "<script>0</script>
 <nav id='topnav'>
-<a class='homeLink' href='/index.html'>Home</a>
-<a class='blogLink' href='/blog.html'>Blog</a>
-<a class='aboutLink' href='/about.html'>About</a>
+<a class='homeLink' href='/index.html' title='The index, landing page of this website'>Home</a>
+<a class='blogLink' href='/blog.html' title='My articles'>Blog</a>
+<a class='aboutLink' href='/about.html' title='About the website and its owner'>About</a>
 <div class='sparse'>
 <div class='theme-changer'></div>
 </div> 
@@ -83,15 +83,51 @@
 ;;     This blog was built with %c and <a href='#'>the code</a> was open sourced. Hosted on <a href='img/host.jpg'>my home Raspberry Pi</a>.
 ;;   </footer>")
 
+
+;;(defvar pages-html-postamble
+;;  "<footer>
+;;    <div id='socmedia'>
+;;    </div>
+;;    <div id='info'>
+;;    </div>
+;;    <div id='bottom'>
+;;    </div>
+;;  </footer>")
 (defvar pages-html-postamble
-  "<footer>
-    <div id='socmedia'>
-    </div>
-    <div id='info'>
-    </div>
-    <div id='bottom'>
-    </div>
-  </footer>")
+  "<xml>
+     <socmedia>
+       <entry>
+         <label>Github</label>
+         <href>https://github.com/thewebmasterp</href>
+         <icon>github.svg</icon>
+       </entry>
+       <entry>
+         <label>Instagram</label>
+         <href>https://www.instagram.com/webmaster_project</href>
+         <icon>instagram.svg</icon>
+       </entry>
+       <entry>
+         <label>Twitter</label>
+         <href>https://twitter.com/thewebmasterp</href>
+         <icon>twitter.svg</icon>
+       </entry>
+       <entry>
+         <label>Codepen</label>
+         <href>https://codepen.io/thewebmasterp</href>
+         <icon>codepen.svg</icon>
+       </entry>
+     </socmedia>
+     <subscribe>
+       <cta>Don't miss new content!</cta>
+     </subscribe>
+     <info>
+       <contact>
+
+       </contact>
+       <pages>
+       </pages>
+     </info>
+   </xml>")
 
 (defvar blog-html-postamble
   "<div id='remark42'></div>
@@ -139,7 +175,7 @@
 		 :base-directory "./content"
 		 :publishing-directory "./public"
 		 :publishing-function org-publish-attachment
-		 :base-extension "txt\\|jpg\\|gif\\|png\\|svg\\|woff\\|woff2\\|html"
+		 :base-extension "txt\\|jpg\\|gif\\|png\\|svg\\|webmanifest\\|woff\\|woff2\\|html"
 		 :recursive t)
 
 		("thewebmasterp.com"

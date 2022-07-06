@@ -1,0 +1,85 @@
+#contact {
+	.figure-number {
+		//Do not number image captions
+		display: none;
+	}
+	.center {
+		height: auto;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 3em;
+	}
+	#contactme {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: left;
+		flex-direction: column;
+		.entry {
+			display: grid;
+			height: auto;
+			width: 100%;
+			grid-template-columns: auto;
+			grid-template-rows: auto auto;
+			input, textarea {
+				width: 100%;
+			}
+			textarea {
+				resize: vertical;
+			}
+		}
+		#submit {			
+			grid-column: 2/3;
+			/*
+			color: var(--accent-bg);
+			transition: color 300ms ease-in;
+			border: 1px solid transparent;
+			&:hover {
+				background-color: var(--code);
+				transition: 300ms background-color !important;
+				font-weight: 700;
+			}
+			&:focus {
+				filter: none;
+				//background-color: var(--accent) !important;
+				transition: none;
+				outline-width: 3px;
+				border-color: var(--marked);
+			}*/
+		}
+	}
+}
+/*
+@media only screen and (min-width: 900px) {
+	html {
+		#contact {
+			#contactme {
+				// width: 70%;
+				width: 100%;
+			}
+		}
+	}
+}*/
+
+@media only screen and (min-width: 600px) {
+	html {
+		#contact {
+			#contactme {
+				.entry {
+					grid-template-columns: 3fr 7fr;
+					grid-template-rows: auto
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	html {
+		#contact {
+			
+		}
+	}
+}

@@ -1,5 +1,5 @@
 const blogPage = sp => {
-  sp.log(sp.entryName)
+  sp.log(`${sp.entryName} - ${sp.status}`)
   if (sp.DOMContentLoaded) {
     // Replace default section headings (arch/ js/ for example) with custom ones
     const mapTo = {

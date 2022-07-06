@@ -1,0 +1,32 @@
+#+setupfile: ../.org-templates/level/0.org
+#+title: Contact
+
+* Contact me
+by filling in the following form.
+
+#+begin_export html
+<div class="center">
+  <form id="contactme" action="mailto:zdimovv@thewebmasterp.com?subject=No subject" method="post" enctype="text/plain">
+    <div class="entry">
+      <label for="name">Your name</label>
+      <input name="name" type="text" placeholder="Jane Doe" id="name" required/>
+    </div>
+    <div class="entry">
+      <label for="email">Your email</label>
+      <input name="email" type="email" placeholder="email@example.com" id="email" required/>
+    </div>
+    <div class="entry">
+      <label for="subject">Subject</label>
+      <input name="subject" type="text" placeholder="The topic of your message" id="subject"/>
+    </div>
+    <div class="entry">
+      <label for="text">Your message</label>
+      <textarea name="text" rows="7" placeholder="I am a bad developer if you see this placeholder and not a joke" id="message"></textarea>
+    </div>
+    <div class="entry">
+      <input type="submit" value="Send" id="submit" title="Send me your email"/>
+    </div>
+  </form>
+</div>
+
+#+end_export

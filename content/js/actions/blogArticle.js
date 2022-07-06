@@ -1,5 +1,5 @@
 const blogArticle = sp => {
-  sp.log(sp.entryName)
+  sp.log(`${sp.entryName} - ${sp.status}`)
   if (sp.DOMContentLoaded) {
     // Get date passed through an html comment inside <head>
     const date = document.head.innerHTML

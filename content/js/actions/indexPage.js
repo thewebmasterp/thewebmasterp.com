@@ -1,5 +1,5 @@
 const indexPage = sp => {
-  sp.log(sp.entryName)
+  sp.log(`${sp.entryName} - ${sp.status}`)
 
   // Welcome the user with a nice falling-from-the-sky message
   const welcomeUs = () => {

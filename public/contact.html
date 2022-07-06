@@ -4,7 +4,7 @@
 <!-- 2022-07-06 Wed 10:00 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Blog</title>
+<title>Contact</title>
 <meta name="author" content="thewebmasterp" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" href="./css/style.min.css" />
@@ -48,24 +48,35 @@
 </div>
 <div id="content" class="content">
 
-<div id="outline-container-orgadcffed" class="outline-2">
-<h2 id="orgadcffed">Baby footsteps</h2>
-<div class="outline-text-2" id="text-orgadcffed">
+<div id="outline-container-orgc4460d7" class="outline-2">
+<h2 id="orgc4460d7">Contact me</h2>
+<div class="outline-text-2" id="text-orgc4460d7">
 <p>
-Since this is a new blog, it has very few articles that don't need any special classification yet. I'll list them all right there:
+by filling in the following form.
 </p>
 
-<div id="entries">
-<ul class="org-ul">
-<li><b>Desktop Setup/</b>
-<ul class="org-ul">
-<li><span class="timestamp">[2022-06-09]</span> <a href="blog/Desktop Setup/The Arch Linux journey.html">The Arch Linux journey</a></li>
-</ul></li>
-<li><b>webmaster_project/</b>
-<ul class="org-ul">
-<li><span class="timestamp">[2022-06-09]</span> <a href="blog/webmaster_project/Bits Of Tips %231.html">Bits Of Tips #1</a></li>
-</ul></li>
-</ul>
+<div class="center">
+  <form id="contactme" action="mailto:zdimovv@thewebmasterp.com?subject=No subject" method="post" enctype="text/plain">
+    <div class="entry">
+      <label for="name">Your name</label>
+      <input name="name" type="text" placeholder="Jane Doe" id="name" required/>
+    </div>
+    <div class="entry">
+      <label for="email">Your email</label>
+      <input name="email" type="email" placeholder="email@example.com" id="email" required/>
+    </div>
+    <div class="entry">
+      <label for="subject">Subject</label>
+      <input name="subject" type="text" placeholder="The topic of your message" id="subject"/>
+    </div>
+    <div class="entry">
+      <label for="text">Your message</label>
+      <textarea name="text" rows="7" placeholder="I am a bad developer if you see this placeholder and not a joke" id="message"></textarea>
+    </div>
+    <div class="entry">
+      <input type="submit" value="Send" id="submit" title="Send me your email"/>
+    </div>
+  </form>
 </div>
 </div>
 </div>

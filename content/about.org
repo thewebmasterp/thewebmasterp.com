@@ -1,5 +1,5 @@
 #+setupfile: ../.org-templates/level/0.org
-#+title: about
+#+title: About
 
 * About
 ** Me
@@ -13,11 +13,43 @@
 Hi, I am Zdravko Dimov, aka thewebmasterp.
 (📍 Dobrich, Bulgaria)
 
-I am a self-taught front-end web developer specializing in JavaScript and its ecosystem, aiming at full-stack and a broader understanding of software development.
+I am a self-taught front-end web developer specializing in JavaScript and its ecosystem, aiming at full-stack and a broader understanding of software engineering.
 
 I love [[https://www.gnu.org/philosophy/free-sw.html][Free and open-source software]] and some of its deserving-a-mention representatives like [[https://archlinux.org/about/][Arch Linux]] and [[https://www.gnu.org/software/emacs/][GNU Emacs]] are deeply ingrained into my development workflow, just like the moral principles they convey.
 
 In my spare time, I do Aikido.
+
+
+To [[./contact.org][contact me]], E-mail ~zdimovv~ at ~thewebmasterp.com~.
+
+#+begin_export html
+<div class="socMediaBox">
+  <xml>
+    <socmedia>
+      <entry>
+        <label>Github</label>
+        <href>https://github.com/thewebmasterp</href>
+        <icon>github.svg</icon>
+      </entry>
+      <entry>
+        <label>Instagram</label>
+        <href>https://www.instagram.com/webmaster_project</href>
+        <icon>instagram.svg</icon>
+      </entry>
+      <entry>
+        <label>Twitter</label>
+        <href>https://twitter.com/thewebmasterp</href>
+        <icon>twitter.svg</icon>
+      </entry>
+      <entry>
+        <label>Codepen</label>
+        <href>https://codepen.io/thewebmasterp</href>
+        <icon>codepen.svg</icon>
+      </entry>
+    </socmedia>
+  </xml>
+</div>
+#+end_export
 
 ** My Projects
 T O D O: Fill it in

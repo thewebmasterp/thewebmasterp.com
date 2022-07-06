@@ -12,10 +12,10 @@
 
 @import './level/0/index';
 @import './level/0/about';
+@import './level/0/contact';
 @import './level/0/blog';
 
 @import './level/1/article';
-
 
 html {
 	body {
@@ -64,11 +64,12 @@ html {
 					font-weight: bold;
 					text-decoration-thickness: 2px;
 					color: var(--accent-bg);
+					transition: color 300ms ease-in;
 					&:link, &:visited {
 						//color: var(--bg);
 					}
 					&:hover {
-						transition: 300ms background-color !important;
+						transition: none;
 						background-color: var(--code);
 					}
 					&:active {
@@ -109,6 +110,7 @@ html {
 			}
 			h1, h2, h3, h4, h5, h6 {
 				color: var(--preformatted);
+				transition: background-color 300ms ease-in, color 300ms ease-in;
 			}
 			#table-of-contents {
 				display: none;
@@ -116,27 +118,82 @@ html {
 			p {
 				cursor: text;
 			}
+			input, textarea {
+				transition: background-color 300ms ease-in, color 300ms ease-in;
+				&:focus {
+					color: var(--text-light);
+					outline: 2px solid var(--text-light);
+					transition: none;
+				}
+			}
+			input[type="submit"] {
+				color: var(--accent-bg);
+				transition: color 300ms ease-in;
+				border: 1px solid transparent;
+				&:hover {
+					background-color: var(--code);
+					transition: none;
+					font-weight: 700;
+					border-color: transparent !important;
+				}
+				&:focus {
+					filter: none;
+					transition: none;
+					font-weight: 700;
+				}
+			}
 		}
 
 		#postamble {
 			footer {
-				background-color: var(--disabled);
+				//background-color: var(--disabled);
+				background-color: var(--accent-bg);
 				border-top: 2px solid var(--accent);
 				transition: background-color 300ms ease-in, color 300ms ease-in;
 				display: grid;
-				grid-template-rows: auto 20vh auto;
+				grid-template-rows: auto auto auto auto;
 				grid-template-columns: auto;
 				#socmedia {
 					grid-row: 1/2;
+					height: calc(42px*2);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				#subscribe {
+					grid-row: 2/3;
+					display: grid;
+					grid-template-rows: auto auto;
+					grid-template-columns: 1fr 1fr 1fr;
+					#cta {
+						grid-row: 1/2;
+						grid-column: span 3;
+						margin: 0;
+					}
+					#subTwitter {
+						grid-row: 2/3;
+						grid-column: 1/2;
+						height: 200px;
+					}
+					#subEmail {
+						grid-row: 2/3;
+						grid-column: 2/3;
+					}
+					#subRss {
+						grid-row: 2/3;
+						grid-column: 3/4;
+					}
 				}
 				#info {
+					/*
 					grid-row: 2/3;
 					display: grid;
 					grid-template-rows: auto;
 					grid-template-columns: 1fr 1fr 1fr;
+					*/
 				}
 				#bottom {
-					grid-row: 3/4;
+					grid-row: 4/5;
 				}
 			}
 			#remark42 {
@@ -249,8 +306,48 @@ html {
 				}
 			}
 			#content {
+				min-width: calc(1000px - 2em);
 				#table-of-contents {
 					display: block;
+				}
+			}
+		}
+	}
+}
+
+.socMediaBox {
+	width: auto;
+    height: 42px;
+	display: flex;
+	.profile {
+		display: block !important;
+		width: 42px !important;
+		height: 42px !important;
+		i {
+			//display: inline-block;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			svg {
+				width: calc(42px/1.5);
+				height: calc(42px/1.5);
+				fill: var(--accent) !important;
+				& * {
+					fill: var(--accent) !important;
+				}
+				/*
+				&>*:hover {
+					fill: var(--code) !important;
+				}*/
+			}
+			&:hover {
+				svg {
+					fill: var(--code) !important;
+					& * {
+						fill: var(--code) !important;
+					}
 				}
 			}
 		}
