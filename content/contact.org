@@ -2,6 +2,10 @@
 #+title: Contact
 
 * Contact me
+:PROPERTIES:
+:ID:       693ea20d-23c9-4ade-882f-de8876092457
+:PUBDATE:  <2022-07-06 Wed 17:58>
+:END:
 by filling in the following form.
 
 #+begin_export html

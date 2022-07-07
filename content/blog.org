@@ -1,8 +1,12 @@
 #+setupfile: ../.org-templates/level/0.org
 #+title: Blog
 
-* Baby footsteps
-Since this is a new blog, it has very few articles that don't need any special classification yet. I'll list them all right there:
+* Blog
+:PROPERTIES:
+:ID:       e7beb0b6-6915-4033-a03f-a1bdda7f415c
+:PUBDATE:  <2022-07-06 Wed 17:58>
+:END:
+This is a new blog, hence the small number of articles. Please leave your feedback either by [[./contact.org][contacting me]] or in the comment section available under each article!
 
 #+HTML: <div id="entries">
 #+INCLUDE: "blog/index.org" :lines "3-"

@@ -30,7 +30,7 @@ const any = sp => {
     if (!withIdOnly[0]) {
       sp.err('No matching rules for the current page!')
     }
-    document.body.setAttribute('id', withIdOnly[0].id || 'undefined')
+    document.body.setAttribute('id', withIdOnly[0]?.id || 'undefined')
 
     // Every link pointing to an outside website should be opened in a new tab
     // Every link href should be formatted (I understand JS more than elisp... sry)

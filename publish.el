@@ -5,6 +5,8 @@
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("elpa" . "https://elpa.gnu.org/packages/")))
 
+(add-to-list 'load-path ".packages")
+
 ;; Initialize the package system
 (package-initialize)
 (unless package-archive-contents
@@ -24,6 +26,7 @@
 
 ;; Load the publishing system
 (require 'ox-publish)
+(require 'ox-rss)
 
 ;; Customize the HTML output
 (setq org-html-validation-link nil             ;; Don't show validation link
@@ -116,34 +119,78 @@
          <href>https://codepen.io/thewebmasterp</href>
          <icon>codepen.svg</icon>
        </entry>
+       <entry>
+         <label>Blog RSS Feed</label>
+         <href>/blog.xml</href>
+         <icon>rss.svg</icon>
+       </entry>
      </socmedia>
      <subscribe>
-       <cta>Don't miss new content!</cta>
+       <cta></cta>
      </subscribe>
      <info>
-       <contact>
-
-       </contact>
-       <pages>
-       </pages>
      </info>
    </xml>")
 
 (defvar blog-html-postamble
   "<div id='remark42'></div>
-  <script>
-	var remark_config = {
-		host: 'https://remark42.thewebmasterp.com',
-		site_id: 'remark42.thewebmasterp.com',
-	}
-  </script>
-  <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement('script'),c='.js',d=n.head||n.body;'noModule'in r?(r.type='module',c='.mjs'):r.async=!0,r.defer=!0,r.src=remark_config.host+'/web/'+e[o]+c,d.appendChild(r)}}(remark_config.components||['embed'],document);</script>
-  <footer>
-     <div class='theme-changer'></div>
-     Copyright 2022 %a. <br>
-     Last updated %C. <br>
-     This blog was built with %c and <a href='#'>the code</a> was open sourced. Hosted on <a href='../img/host.jpg'>my home Raspberry Pi</a>.
-  </footer>")
+   <script>
+   	 var remark_config = {
+	 	host: 'https://remark42.thewebmasterp.com',
+	 	site_id: 'remark42.thewebmasterp.com',
+	 }
+   </script>
+   <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement('script'),c='.js',d=n.head||n.body;'noModule'in r?(r.type='module',c='.mjs'):r.async=!0,r.defer=!0,r.src=remark_config.host+'/web/'+e[o]+c,d.appendChild(r)}}(remark_config.components||['embed'],document);</script>
+   <xml>
+     <socmedia>
+       <entry>
+         <label>Github</label>
+         <href>https://github.com/thewebmasterp</href>
+         <icon>github.svg</icon>
+       </entry>
+       <entry>
+         <label>Instagram</label>
+         <href>https://www.instagram.com/webmaster_project</href>
+         <icon>instagram.svg</icon>
+       </entry>
+       <entry>
+         <label>Twitter</label>
+         <href>https://twitter.com/thewebmasterp</href>
+         <icon>twitter.svg</icon>
+       </entry>
+       <entry>
+         <label>Codepen</label>
+         <href>https://codepen.io/thewebmasterp</href>
+         <icon>codepen.svg</icon>
+       </entry>
+       <entry>
+         <label>Blog RSS Feed</label>
+         <href>/blog.xml</href>
+         <icon>rss.svg</icon>
+       </entry>
+     </socmedia>
+     <subscribe>
+       <cta></cta>
+     </subscribe>
+     <info>
+     </info>
+   </xml>")
+
+;;(defvar blog-html-postamble
+;;  "<div id='remark42'></div>
+;;  <script>
+;;	var remark_config = {
+;;		host: 'https://remark42.thewebmasterp.com',
+;;		site_id: 'remark42.thewebmasterp.com',
+;;	}
+;;  </script>
+;;  <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement('script'),c='.js',d=n.head||n.body;'noModule'in r?(r.type='module',c='.mjs'):r.async=!0,r.defer=!0,r.src=remark_config.host+'/web/'+e[o]+c,d.appendChild(r)}}(remark_config.components||['embed'],document);</script>
+;;  <footer>
+;;     <div class='theme-changer'></div>
+;;     Copyright 2022 %a. <br>
+;;     Last updated %C. <br>
+;;     This blog was built with %c and <a href='#'>the code</a> was open sourced. Hosted on <a href='../img/host.jpg'>my home Raspberry Pi</a>.
+;;  </footer>")
 
 ;; Define the publishing project
 (setq org-publish-project-alist
@@ -178,8 +225,20 @@
 		 :base-extension "txt\\|jpg\\|gif\\|png\\|svg\\|webmanifest\\|woff\\|woff2\\|html"
 		 :recursive t)
 
+		("blog-rss"
+		 :base-directory "./content"
+		 :base-extension "org"
+		 ;; :rss-image-url ""
+		 :recursive nil
+		 :rss-extension "xml"
+		 :publishing-directory "./public"
+		 :publishing-function (org-rss-publish-to-rss)
+		 :section-numbers nil
+		 :exclude "about\\|index\\|contact\\|privacy-policy"
+		 :table-of-contents nil)
+
 		("thewebmasterp.com"
-		 :components ("pages" "blog" "static"))
+		 :components ("pages" "blog" "static" "blog-rss"))
 		))
 
 ;; Generate the site output

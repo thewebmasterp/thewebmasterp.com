@@ -2,12 +2,22 @@
 #+title: Privacy Policy
 
 ** Page under development*
+:PROPERTIES:
+:ID:       9c0721e3-9164-49ff-9064-0eb62f323194
+:END:
 * Privacy Policy
+:PROPERTIES:
+:ID:       cc0517dc-33b7-464d-a017-4185eacaa3e3
+:PUBDATE:  <2022-07-06 Wed 17:58>
+:END:
 thewebmasterp.com is a privacy-friendly website that relies exclusively on open-source and self-hosted solutions to deliver some of its functionalities to its users. It does not collect much data about you, nor discloses it to third parties.
 
 All that this website is, is a public folder containing a bunch of static files that are served to you by Nginx web server. Nothing else, no real backend implemented by me, except a few self-hosted, open-source and privacy-friendly services which do the actual data collection (if any) and which are the reason for this privacy policy to even exist.
 
 *** Matomo
+:PROPERTIES:
+:ID:       be312461-5508-4589-b400-36034189cc20
+:END:
 [[https://matomo.org/][Matomo]], formerly Piwik, is a free and open-source web analytics application developed by a team of international developers, that runs on a PHP/MySQL webserver. It tracks online visits to one or more websites and displays reports on these visits for analysis.
 [[./img/matomo-privacy-badge.png]]
 #+BEGIN_QUOTE
@@ -31,6 +41,9 @@ Of course, you have the choice to opt-out from being tracked by matomo:
 
 My Matomo instance is available at ~matomo.thewebmasterp.com~
 *** Remark42
+:PROPERTIES:
+:ID:       2327e0b1-4d81-4800-a9ad-24c4a2dfd76f
+:END:
 [[https://remark42.com/][Remark42]] is a Privacy-focused lightweight commenting engine. From its main website:
 
 + Remark42 is trying to be very sensitive to any private or semi-private information.
@@ -48,6 +61,9 @@ My Matomo instance is available at ~matomo.thewebmasterp.com~
   
   My Remark42 instance is available at ~remark42.thewebmasterp.com~
 ** Contact me
-This should be a component
+:PROPERTIES:
+:ID:       690abf32-39f2-4d36-b8a5-7c694e694009
+:END:
+For questions, E-mail ~zdimovv~ at ~thewebmasterp.com~ or simply use the [[./contact.org][contact form]].
 
   

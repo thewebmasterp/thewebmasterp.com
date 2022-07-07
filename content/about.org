@@ -2,9 +2,14 @@
 #+title: About
 
 * About
+:PROPERTIES:
+:ID:       83442888-e471-4295-af31-119cc3137ca1
+:PUBDATE:  <2022-07-06 Wed 17:57>
+:END:
 ** Me
 :PROPERTIES:
 :CUSTOM_ID: aboutme
+:ID:       e8c5dd9c-042e-4d5f-97ee-dd495bebf555
 :END:
 #+ATTR_HTML: :id me
 #+CAPTION: If you see me irl say hi pls.
@@ -52,17 +57,32 @@ To [[./contact.org][contact me]], E-mail ~zdimovv~ at ~thewebmasterp.com~.
 #+end_export
 
 ** My Projects
+:PROPERTIES:
+:ID:       f12f0ef8-d115-457f-8be3-04ea2cfc02b8
+:END:
 T O D O: Fill it in
 ** My Writings
+:PROPERTIES:
+:ID:       08d899ca-7967-4847-933d-3ddb80a87a3e
+:END:
 I've been actively working on [[https://www.instagram.com/webmaster_project/][webmaster_project]] (2019 - 2021) - Without false modesty, it is the most in-depth coverage of various JavaScript concepts available on Instagram.
 
  At the end of May 2022, after a while of keeping my mouth shut and just coding, I felt that my view on things has changed and webmaster_project, with its JavaScript-centric content and audience, is no longer the right stage for my voice, burning to speak out in a broader than "Just JavaScript" fashion. This was why this blog was born, as well as out of the necessity of selling my skills to potential allies.
  
 ** Colophon
+:PROPERTIES:
+:ID:       35401c86-1bc8-43c3-8a7f-78a52ef77d1e
+:END:
 Or more about the technology behind this website.
 *** Build
+:PROPERTIES:
+:ID:       d8dfcc1e-77b2-4d28-bcc1-f7f1191fa712
+:END:
 This website uses [[https://github.com/emacs-mirror/emacs/blob/master/lisp/org/ox-publish.el][ox-publish]] to convert [[https://www.gnu.org/software/emacs/][Emacs]] [[https://orgmode.org/][Org Mode]] files into static HTML files as well as [[https://webpack.js.org/][Webpack]] to bundle, compile and minify [[https://sass-lang.com/][Sass]] and js files (into a single, optimized CSS or js file).
 *** Deployment
+:PROPERTIES:
+:ID:       bc2ac0e5-d787-4f69-93bd-e00aae6f1baf
+:END:
 For deploying the build to [[./img/host.jpg][my Raspberry Pi B]]  and Github (so that you guys can see [[https://github.com/thewebmasterp/thewebmasterp.com][the source code]]) a few things happen:
 1. Locally
    1. I do a ~git push~.
@@ -74,11 +94,17 @@ For deploying the build to [[./img/host.jpg][my Raspberry Pi B]]  and Github (so
       1. It creates a new [[https://www.docker.com/][Docker]] image out of the already mentioned build.
       2. It replaces the old container (running the old image) with a brand new container (running the newly generated one).
 *** Backend
+:PROPERTIES:
+:ID:       bdce058e-fda8-4e27-937b-533595cf82c5
+:END:
  For the backend, I try not to reinvent the wheel and just stick to self-hosting the best bug-proven, free and open-source software available, each instance residing into its own Docker container, isolated from the rest, ready to serve its API for our needs.
 Currently I self-host the following services:
 + [[https://remark42.com/][Remark42]]: Commenting Engine; located at ~remark42.thewebmasterp.com~
 + [[https://matomo.org/][Matomo]]: Web Analytics; located at ~matomo.thewebmasterp.com~
 ** Let's get connected!
+:PROPERTIES:
+:ID:       8215a0b0-9eb6-4d4b-ab01-96e2148f37ef
+:END:
 T O D O: Fill it in
 
 
