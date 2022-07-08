@@ -234,7 +234,7 @@
 		 :publishing-directory "./public"
 		 :publishing-function (org-rss-publish-to-rss)
 		 :section-numbers nil
-		 :exclude "about\\|index\\|contact\\|privacy-policy"
+		 :exclude "about\\|index\\|contact\\|privacy-policy\\|50x\\|404"
 		 :table-of-contents nil)
 
 		("thewebmasterp.com"
