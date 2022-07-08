@@ -1,4 +1,19 @@
 #+setupfile: ../.org-templates/level/0.org
 #+title: Index
 
-Error 404! This page is not available.
+* Error 404
+Page not found! Return to the [[./index.html][home]] page.
+#+begin_export html
+<style>
+  #err404 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+<div id="err404">
+  <img src="./img/404.svg" alt="Error 404, page not found!"/>
+</div>
+#+end_export
