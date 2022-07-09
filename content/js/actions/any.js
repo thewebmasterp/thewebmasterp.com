@@ -131,7 +131,6 @@ const any = sp => {
 
     // Remove the colon at the end of code line number
     ;[...document.getElementsByClassName('linenr')].forEach(line => {
-      console.log('ha', line)
       line.innerHTML = line.innerHTML.slice(0, -2).concat(' ')
     })
 
