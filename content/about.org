@@ -101,11 +101,6 @@ For deploying the build to [[./img/host.jpg][my Raspberry Pi B]]  and Github (so
 Currently I self-host the following services:
 + [[https://remark42.com/][Remark42]]: Commenting Engine; located at ~remark42.thewebmasterp.com~
 + [[https://matomo.org/][Matomo]]: Web Analytics; located at ~matomo.thewebmasterp.com~
-** Let's get connected!
-:PROPERTIES:
-:ID:       8215a0b0-9eb6-4d4b-ab01-96e2148f37ef
-:END:
-T O D O: Fill it in
 
 
 
