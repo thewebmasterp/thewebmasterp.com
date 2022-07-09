@@ -139,7 +139,8 @@ const any = sp => {
     const footer = footerGenerator(
       document.getElementById('postamble').getElementsByTagName('xml')[0]
     )
-    postamble.innerHTML += footer.outerHTML
+    //postamble.innerHTML += footer.outerHTML
+    postamble.appendChild(footer)
 
     // Process .socMediaBox
     const socMediaBoxes = document.getElementsByClassName('socMediaBox')
