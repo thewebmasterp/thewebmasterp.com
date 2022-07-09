@@ -4,7 +4,7 @@ const blog = sp => {
     // Set the active navigation entry
     sp.setActiveNavEntr('blogLink')
   } else if (sp.load) {
-  } else if (sp.unload) {
+  } else if (sp.beforeunload) {
   }
 }
 

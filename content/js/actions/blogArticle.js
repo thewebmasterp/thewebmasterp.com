@@ -24,7 +24,7 @@ Author: <a href="/about.html">${author}</a>
       .getElementsByTagName('header')[0]
     header.innerHTML = header.innerHTML + meta + descriptionHTML
   } else if (sp.load) {
-  } else if (sp.unload) {
+  } else if (sp.beforeunload) {
   }
 }
 

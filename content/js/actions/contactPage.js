@@ -52,7 +52,7 @@ const contactPage = sp => {
       .getElementById('message')
       .setAttribute('placeholder', jokes[randomJokeIndex])
   } else if (sp.load) {
-  } else if (sp.unload) {
+  } else if (sp.beforeunload) {
   }
 }
 

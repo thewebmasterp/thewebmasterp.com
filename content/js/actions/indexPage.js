@@ -10,6 +10,11 @@ const indexPage = sp => {
     return welcomeUs //Returns itself (needed for addEventListener in this case)
   }
 
+  // When the index page is reloaded, its scroll should always start from top. Else, there's a bug with the #mask.
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual'
+  }
+
   if (sp.DOMContentLoaded) {
     // Set the active navigation entry
     sp.setActiveNavEntr('homeLink')
@@ -123,7 +128,7 @@ const indexPage = sp => {
       window.addEventListener('resize', welcomeUs(), true) //Not a typo: Call welcomeUs initially and then on resize. (Notice that welcomeUs returns itself)
     }, 150)
   } else if (sp.load) {
-  } else if (sp.unload) {
+  } else if (sp.beforeunload) {
   }
 }
 

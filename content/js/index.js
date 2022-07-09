@@ -96,7 +96,7 @@ const main = (event, config) => {
     status: status,
     DOMContentLoaded: status === 'DOMContentLoaded',
     load: status === 'load',
-    unload: status === 'unload',
+    beforeunload: status === 'beforeunload',
     html: document.documentElement,
     head: document.head,
     body: document.body,
@@ -139,4 +139,4 @@ const mainCaller = event => {
 }
 window.addEventListener('DOMContentLoaded', mainCaller) // DOM loaded
 window.addEventListener('load', mainCaller) // DOM + static loaded
-window.addEventListener('unload', mainCaller) // unloaded (pressing back, visiting link ...)
+window.addEventListener('beforeunload', mainCaller) // unloaded (pressing back, visiting link ...)

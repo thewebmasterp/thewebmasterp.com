@@ -155,7 +155,7 @@ const any = sp => {
         console.error('missing xml in .socMediaBox!')
       }
     })
-  } else if (sp.unload) {
+  } else if (sp.beforeunload) {
   }
 }
 

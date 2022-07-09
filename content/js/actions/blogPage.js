@@ -34,7 +34,7 @@ const blogPage = sp => {
       })
     })
   } else if (sp.load) {
-  } else if (sp.unload) {
+  } else if (sp.beforeunload) {
   }
 }
 

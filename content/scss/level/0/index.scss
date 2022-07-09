@@ -49,6 +49,26 @@ html {
 }
 
 #index {
+	#mask {
+		width: 100vw;
+		opacity: 0;
+		height: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		background-color: #273338;
+		transition: height 0ms 400ms, opacity 400ms 0ms;
+	}
+	&.preload {
+		#parallax { // In index
+			overflow: hidden !important;
+		}
+		#mask {
+			opacity: 1;
+			height: 100vh;
+		}
+	}
 	overflow: hidden !important;
 	height: 100%;
 	width: 100%;
@@ -133,7 +153,6 @@ html {
 		grid-template-rows: 42px 420px auto auto;
 		grid-template-columns: auto;
 		width: 100%;
-		min
 		.fakeBg {
 			background: var(--bg);
 			&#fakeBg-1 {

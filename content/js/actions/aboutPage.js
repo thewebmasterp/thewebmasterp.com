@@ -15,7 +15,7 @@ const aboutPage = sp => {
       document.getElementById('me').addEventListener('click', sp.openImageOn)
     })
   } else if (sp.load) {
-  } else if (sp.unload) {
+  } else if (sp.beforeunload) {
   }
 }
 

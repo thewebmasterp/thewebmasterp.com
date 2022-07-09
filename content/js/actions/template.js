@@ -6,7 +6,7 @@ const template = sp => {
     // When the skeleton of the page is loaded (without images, scripts, styles, pres, etc)
   } else if (sp.load) {
     // When the whole page is loaded. Warning! Unfound files or slowly loading ones will block this event.
-  } else if (sp.unload) {
+  } else if (sp.beforeunload) {
     // Right before the page is closed I believe.
   }
 }
