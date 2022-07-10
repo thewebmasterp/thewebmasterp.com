@@ -18,8 +18,9 @@
 @import './level/1/article';
 
 html {
-	font-size: calc(0.875em + 0.125vw);
+	font-size: 16px;
 	body {
+		font-size: calc(0.875em + 0.125vw);
 		&.preload {
 			// Until the body and it's contents've all fully loaded the DOM tree, do not apply any transitions
 			transition: none !important;
