@@ -56,7 +56,7 @@
 
 ;; Preambles
 (defvar pages-html-preamble
-  "<div id='mask'></div>
+  "<div id='mask'> <div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div> </div>
 <script>0</script>
 <nav id='topnav'>
 <a class='homeLink' href='index.html' title='The index, landing page of this website'>Home</a>
@@ -68,7 +68,7 @@
 </nav>")
 
 (defvar blog-html-preamble
-  "<div id='mask'></div>
+  "<div id='mask'><div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div></div>
 <script>0</script>
 <nav id='topnav'>
 <a class='homeLink' href='/index.html' title='The index, landing page of this website'>Home</a>
