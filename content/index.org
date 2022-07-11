@@ -9,7 +9,7 @@
 :PUBDATE:  <2022-07-06 Wed 17:58>
 :END:
 
-Hi, I am a self-taught *front-end web developer* specializing in *JavaScript* and its ecosystem.
+Hi, I am a self-taught *front-end web developer* specializing in *JavaScript* and its ecosystem, including React.
 >_ Read more [[./about.org][about]] me.
 
 Let my *new* blog be a place where you'll find anything JavaScript / Linux related.

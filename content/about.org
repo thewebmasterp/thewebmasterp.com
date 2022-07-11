@@ -18,7 +18,7 @@
 Hi, I am Zdravko Dimov, aka thewebmasterp.
 (📍 Dobrich, Bulgaria)
 
-I am a self-taught front-end web developer specializing in JavaScript and its ecosystem, aiming at full-stack and a broader understanding of software engineering.
+I am a self-taught *front-end web developer* specializing in *JavaScript* and its ecosystem, including React, aiming at full-stack and a broader understanding of software engineering.
 
 I love [[https://www.gnu.org/philosophy/free-sw.html][Free and open-source software]] and some of its deserving-a-mention representatives like [[https://archlinux.org/about/][Arch Linux]] and [[https://www.gnu.org/software/emacs/][GNU Emacs]] are deeply ingrained into my development workflow, just like the moral principles they convey.
 

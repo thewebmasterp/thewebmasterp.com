@@ -1125,7 +1125,7 @@ html {
       grid-column: 2; }
     html body #preamble {
       position: sticky;
-      top: 0;
+      top: -1px;
       height: 42px;
       width: 100%;
       display: block;
