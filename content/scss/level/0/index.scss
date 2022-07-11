@@ -252,6 +252,10 @@ html {
 		#content {
 			grid-row: 2/4;
 			grid-column: 2/3;
+			p {
+				margin: 2.5em 0 2.5em 0;
+				text-indent: 1em;
+			}
 		}
 		#postamble {
 			grid-row: 4/5;

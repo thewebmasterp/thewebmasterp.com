@@ -1,5 +1,6 @@
 #+setupfile: ../.org-templates/level/0.org
 #+title: Index
+#+OPTIONS: \n:t
 
 * Welcome to my website!
 :PROPERTIES:
@@ -8,8 +9,12 @@
 :PUBDATE:  <2022-07-06 Wed 17:58>
 :END:
 
-Hi, I am a Software engineer specializing in the field of JavaScript and its ecosystem. I am also an advocate of Free and open-source software. [[./about.org][Read more...]]
+Hi, I am a self-taught *front-end web developer* specializing in *JavaScript* and its ecosystem.
+>_ Read more [[./about.org][about]] me.
 
-Let my *new* [[./blog.org][blog]] be a place where you'll find anything in the range of "ricing your window manager with JavaScript" to "Reversing a binary tree", or just a source of inspiration.
+Let my *new* blog be a place where you'll find anything JavaScript / Linux related.
+>_ Take a look at the [[./blog.org][blog]].
 
-Note: Still in development!
+Just started looking for a *remote JavaScript / React* position recently. If you know a good company I should apply to, [[./contact.org][hit me up]]! Until I get this job, I am open for freelance projects as well.
+
+Enjoy your stay! 😊

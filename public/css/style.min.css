@@ -938,6 +938,9 @@ html[data-theme=light] .fill-2 {
     #index #preConPosWrapper #content {
       grid-row: 2/4;
       grid-column: 2/3; }
+      #index #preConPosWrapper #content p {
+        margin: 2.5em 0 2.5em 0;
+        text-indent: 1em; }
     #index #preConPosWrapper #postamble {
       grid-row: 4/5;
       grid-column: 2/3; }
@@ -1208,6 +1211,8 @@ html {
           filter: none;
           transition: none;
           font-weight: 700; }
+      html body #content iframe {
+        width: 100% !important; }
     html body #postamble footer {
       background-color: var(--accent-bg);
       border-top: 2px solid var(--accent);

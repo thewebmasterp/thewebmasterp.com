@@ -25,7 +25,7 @@ I love [[https://www.gnu.org/philosophy/free-sw.html][Free and open-source softw
 In my spare time, I do Aikido.
 
 
-To [[./contact.org][contact me]], E-mail ~zdimovv~ at ~thewebmasterp.com~.
+To [[./contact.org][contact me]], E-mail ~zdimovv~ at ~thewebmasterp.com~ or hit me up on social media.
 
 #+begin_export html
 <div class="socMediaBox">
@@ -60,15 +60,33 @@ To [[./contact.org][contact me]], E-mail ~zdimovv~ at ~thewebmasterp.com~.
 :PROPERTIES:
 :ID:       f12f0ef8-d115-457f-8be3-04ea2cfc02b8
 :END:
-T O D O: Fill it in
+TODO: List your projects here
 ** My Writings
 :PROPERTIES:
 :ID:       08d899ca-7967-4847-933d-3ddb80a87a3e
 :END:
 I've been actively working on [[https://www.instagram.com/webmaster_project/][webmaster_project]] (2019 - 2021) - Without false modesty, it is the most in-depth coverage of various JavaScript concepts available on Instagram.
 
- At the end of May 2022, after a while of keeping my mouth shut and just coding, I felt that my view on things has changed and webmaster_project, with its JavaScript-centric content and audience, is no longer the right stage for my voice, burning to speak out in a broader than "Just JavaScript" fashion. This was why this blog was born, as well as out of the necessity of selling my skills to potential allies.
+At the end of May 2022, after a while of keeping my mouth shut and just coding, I felt that my view on things has changed and webmaster_project, with its JavaScript-centric content and audience, is no longer the right stage for my voice, burning to speak out in a broader than "Just JavaScript" fashion. This was why this blog was born, as well as out of the necessity of selling my skills to potential allies.
+** Work Experience, My Journey, Getting Personal
+Well, this year (2022) I've just graduated from high school. I started doing graphic design 5 years ago since this was the specialty of my class.
+
+This got me interested in HTML and CSS, soon after that, I had to learn JavaScript which eventually turned into my beloved programming language. Now I know that there's no such a thing as a favorite language, it's all the same, the same patterns repeating over and over in most programming languages and it's all about the problem solving;
+
+Back on topic, soon after that I started [[https://www.instagram.com/webmaster_project/][webmaster_project]] where I covered many JavaScript & React concepts, Algorithms & DS, people liked it so I got a few little gigs (all by their request), like modifying a Shopify theme, teaching JavaScript and Algorithms & DS to beginners (the guy got a job lol) and even writing JavaScript homeworks for university students haha. I regret doing this evil... Anyway, it got me some #goodForAKid bucks.
+
+Then I lost it all... 😵💸. I got hacked. Spyware or something. [[https://www.google.com/search?q=dd+disk+destroyer&client=firefox-b-d&sxsrf=ALiCzsY0HsDygDjQRwOxu3HwvTA_rmHg5A%3A1657544747729&ei=KyDMYs3xK9ioxc8P69Wx8A0&ved=0ahUKEwiNs4yv8_D4AhVYVPEDHetqDN4Q4dUDCA0&uact=5&oq=dd+disk+destroyer&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECc6BwgAEEcQsAM6BwgAELADEEM6CggAEOQCELADGAE6DwguENQCEMgDELADEEMYAjoICC4QgAQQ1AI6BAgAEEM6BQgAEIAEOgcIIxDqAhAnOgcILhDUAhBDOgsILhCABBDHARDRAzoKCAAQgAQQhwIQFDoFCAAQkQI6BggAEB4QFjoICAAQHhAWEAo6BQghEKABOggIABCABBDJAzoKCC4QxwEQ0QMQQzoECC4QQzoICAAQHhAPEBZKBAhBGABKBAhGGAFQ1AdYlTZgpjdoCnABeAGAAcECiAHnKJIBCDAuMTkuNy4xmAEAoAEBsAEKyAERwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz][dd]] Windows. Install Arch Linux (Read more about my [[./blog/Desktop Setup/The Arch Linux journey.org][Arch Linux Journey]]). Which led me to a whole year away from JavaScript and full involvement in the exploration of Linux. Then, after doing math for a few months because I understood it will help me with programming, I was back with the Code Explainer (live link soon) built with React, hosted on my [[./img/host.jpg][Raspberry Pi]] (same I use for this website) which I got part-by-part from China (No budget ¯\_(ツ)_/¯ who knows why... 🥲).
+
+The last year or so, the main topic of my work has been "Scripting i3 window manager with JavaScript", I built [[https://www.npmjs.com/~thewebmasterp][some npm packages]] like the config-modules (link soon) and I also got into Emacs.
+
+A few months before graduating, I set this goal that I want to get a job with JavaScript and since then I've been revising my definitive guide, solving katas on [[https://www.codewars.com/users/thewebmasterp][Code Wars]], building this website and fixing bugs in my portfolio projects.
+
+I used to be very active over at [[https://www.instagram.com/webmaster_project/][Instagram]] which contains many highlights of my programming journey.
+
+*** Getting personal 
+ A word about my personality is that I hate being rejected & being cheeky which turns into a whole philosophy of "Be the best so that you'll be the one needed, not the one in need".
  
+  For good or bad, I am a perfectionist - Just look at this website - It is simple but perfect. Hell, look at it, it has a [[./SomeStupidPage.org][404 page]] and a bunch of other error pages, if you send the joke that you see on the [[./contact.org][contact me]] page in the message section, the mail will auto reply with the answer, It has a nice spinning loader, dark and light color themes, a beautiful parallax effect (on the [[./index.org][home]] page) made with CSS only, custom Webpack config and as I am speaking about this website...
 ** Colophon
 :PROPERTIES:
 :ID:       35401c86-1bc8-43c3-8a7f-78a52ef77d1e
