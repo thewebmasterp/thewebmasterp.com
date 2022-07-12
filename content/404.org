@@ -1,8 +1,15 @@
 #+setupfile: ../.org-templates/level/0.org
+#+html_head_extra: <link rel="stylesheet" href="https://thewebmasterp.com/css/style.min.css" />
+#+html_head_extra: <script src="https://thewebmasterp.com/js/app.min.js"></script>
+#+html_head_extra: <link rel="apple-touch-icon" sizes="180x180" href="https://thewebmasterp.com/img/meta/apple-touch-icon.png">
+#+html_head_extra: <link rel="icon" type="image/png" sizes="32x32" href="https://thewebmasterp.com/img/meta/favicon-32x32.png">
+#+html_head_extra: <link rel="icon" type="image/png" sizes="16x16" href="https://thewebmasterp.com/img/meta/favicon-16x16.png">
+#+html_head_extra: <link rel="manifest" href="https://thewebmasterp.com/site.webmanifest">
+
 #+title: Index
 
 * Error 404
-Page not found! Return to the [[./index.html][home]] page.
+Page not found! Return to the [[https://thewebmasterp.com/][home]] page.
 #+begin_export html
 <style>
   #err404 {
@@ -14,6 +21,6 @@ Page not found! Return to the [[./index.html][home]] page.
   }
 </style>
 <div id="err404">
-  <img src="./img/404.svg" alt="Error 404, page not found!"/>
+  <img src="https://thewebmasterp.com/img/404.svg" alt="Error 404, page not found!"/>
 </div>
 #+end_export

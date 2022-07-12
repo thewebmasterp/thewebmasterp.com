@@ -33,7 +33,7 @@ const footerGenerator = xml => {
   const info = document.createElement('div')
   info.id = 'info'
   const div = document.createElement('div')
-  div.innerHTML = `Built with Emacs Org-mode • <a href='https://github.com/thewebmasterp/thewebmasterp.com'>Code</a> open sourced • Read the <a href='privacy-policy.html'>Privacy Policy</a> • <a href="contact.html">Contact me</a>`
+  div.innerHTML = `Built with Emacs Org-mode • <a href='https://github.com/thewebmasterp/thewebmasterp.com'>Code</a> open sourced • Read the <a href='/privacy-policy.html'>Privacy Policy</a> • <a href="/contact.html">Contact me</a>`
   info.appendChild(div)
 
   // Bottom

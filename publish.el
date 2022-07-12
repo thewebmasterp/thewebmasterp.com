@@ -55,20 +55,8 @@
 
 
 ;; Preambles
-(defvar pages-html-preamble
+(defvar def-html-preamble
   "<div id='mask'> <div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div> </div>
-<script>0</script>
-<nav id='topnav'>
-<a class='homeLink' href='index.html' title='The index, landing page of this website'>Home</a>
-<a class='blogLink' href='blog.html' title='My articles'>Blog</a>
-<a class='aboutLink' href='about.html' title='About the website and its owner'>About</a>
-<div class='sparse'>
-<div class='theme-changer'></div>
-</div>
-</nav>")
-
-(defvar blog-html-preamble
-  "<div id='mask'><div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div></div>
 <script>0</script>
 <nav id='topnav'>
 <a class='homeLink' href='/index.html' title='The index, landing page of this website'>Home</a>
@@ -76,7 +64,7 @@
 <a class='aboutLink' href='/about.html' title='About the website and its owner'>About</a>
 <div class='sparse'>
 <div class='theme-changer'></div>
-</div> 
+</div>
 </nav>")
 
 ;; Postambles
@@ -194,6 +182,8 @@
 ;;     This blog was built with %c and <a href='#'>the code</a> was open sourced. Hosted on <a href='../img/host.jpg'>my home Raspberry Pi</a>.
 ;;  </footer>")
 
+(setq org-html-viewport nil)       ; Boolean true value (non-nil)
+
 ;; Define the publishing project
 (setq org-publish-project-alist
 	  `(
@@ -203,7 +193,7 @@
 		 :publishing-function org-html-publish-to-html
 		 :base-extension "org"
 		 :recursive t
-		 :html-preamble ,blog-html-preamble
+		 :html-preamble ,def-html-preamble
 		 :html-postamble ,blog-html-postamble
 		 :auto-sitemap t
 		 :sitemap-title "Blog Posts"
@@ -217,7 +207,7 @@
 		 :publishing-function org-html-publish-to-html
 		 :base-extension "org"
 		 :recursive t
-		 :html-preamble ,pages-html-preamble
+		 :html-preamble ,def-html-preamble
 		 :html-postamble ,pages-html-postamble)
 
 		("static"

@@ -1,7 +1,7 @@
 #+setupfile: ../../../.org-templates/level/1.org
 #+title: Bits Of Tips #1
 #+description: Bits of Tips is a series of posts containing bits of practical JavaScript tips and tricks.
-* Numeric Separators
+* 1. Numeric Separators
   It is a simple stylistic improvement that will make your code a bit more comprehensible by human beings.
   
   #+begin_src js -n
@@ -27,7 +27,7 @@
     let bint_num = 1_000_000_000_000_000_000_000n
     
   #+end_src
-* Defined vs Declared
+* 2. Defined vs Declared
 The declaration is the creation of a reference in a scope. Unless the reference is assigned a value it is undefined by default. Definition, on the other hand, could refer to assigned value or documentation of an expected data type 
 (for languages that support it).
 
@@ -41,7 +41,7 @@ This example should clear the fog:
   let a = 1; //declared and defined
   
 #+end_src
-* Debunking complex Destructuring Assignments
+* 3. Debunking complex Destructuring Assignments
 This bit assumes that you already understand destructuring and explains to you how to "de-bug" or "de-bunk" or understand complex destructuring.
 
 #+begin_src js -n

@@ -79,7 +79,7 @@ Then I lost it all... 😵💸. I got hacked. Spyware or something. [[https://ww
 
 The last year or so, the main topic of my work has been "Scripting i3 window manager with JavaScript", I built [[https://www.npmjs.com/~thewebmasterp][some npm packages]] like the config-modules (link soon) and I also got into Emacs.
 
-A few months before graduating, I set this goal that I want to get a job with JavaScript and since then I've been revising my definitive guide, solving katas on [[https://www.codewars.com/users/thewebmasterp][Code Wars]], building this website and fixing bugs in my portfolio projects.
+A few months before graduating, I set this goal that I want to get a job with JavaScript and since then I've been revising my definitive guide, solving katas on [[https://www.codewars.com/users/thewebmasterp][Codewars]], building this website and fixing bugs in my portfolio projects.
 
 I used to be very active over at [[https://www.instagram.com/webmaster_project/][Instagram]] which contains many highlights of my programming journey.
 
