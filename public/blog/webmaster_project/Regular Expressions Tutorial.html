@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2022-07-20 Wed 17:17 -->
+<meta charset="utf-8" />
+<title>Regular Expressions Tutorial</title>
+<meta name="author" content="thewebmasterp" />
+<meta name="description" content="
+In this tutorial, I'll walk you through the most practical aspects of regular expressions and their use in JavaScript." />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, target-densityDpi=device-dpi, user-scalable=no, maximum-scale=0.8">
+<link rel="stylesheet" href="../../css/style.min.css" />
+<script src="../../js/app.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/meta/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/meta/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../img/meta/favicon-16x16.png">
+<link rel="manifest" href="../../site.webmanifest">
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div id='mask'> <div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div> </div>
+<script>0</script>
+<nav id='topnav'>
+<a class='homeLink' href='/index.html' title='The index, landing page of this website'>Home</a>
+<a class='blogLink' href='/blog.html' title='My articles'>Blog</a>
+<a class='aboutLink' href='/about.html' title='About the website and its owner'>About</a>
+<div class='sparse'>
+<div class='theme-changer'></div>
+</div>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Regular Expressions Tutorial</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgf4d0790">Introduction</a></li>
+<li><a href="#org187c2fc">Creating Regular Expressions</a></li>
+<li><a href="#orgd1db7cd">The very basics</a>
+<ul>
+<li><a href="#orgb7499a5">Usage in JavaScript</a>
+<ul>
+<li><a href="#org8b62591">str.match(regex)</a></li>
+<li><a href="#org861268f">regex.test(str)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgca900ff">Flags</a></li>
+<li><a href="#orgcbde880">Match anything with wildcard period</a></li>
+<li><a href="#orgc0b8f52">Match a single character with multiple possibilities</a>
+<ul>
+<li><a href="#org554e59f">More complex cases</a></li>
+<li><a href="#org85cc0b6">Common shorthands</a></li>
+<li><a href="#org33593d6">Reverse the character classes</a></li>
+</ul>
+</li>
+<li><a href="#orgbc858de">Match characters that occur one or more times</a></li>
+<li><a href="#org4f37b47">Look for patterns from the beginning or from the end of string</a></li>
+<li><a href="#orgef26054">Optional Character</a></li>
+<li><a href="#org26a2b62">Specify upper and lower limit of matches</a></li>
+<li><a href="#orgc8ca0dd">Match characters that occur multiple times</a>
+<ul>
+<li><a href="#org4b5dd5d">Match <b>one or more</b> characters</a></li>
+<li><a href="#org856c378">Match <b>zero or more</b> characters</a></li>
+<li><a href="#org3eda6fa">Match <b>zero or one</b> character</a></li>
+</ul>
+</li>
+<li><a href="#orgfac878d">Positive and negative lookahead</a></li>
+<li><a href="#orgd969263">Reusing patterns with <b>Capture Groups</b></a>
+<ul>
+<li><a href="#org5f187bf">First example</a></li>
+<li><a href="#org619bb14">Second example</a></li>
+<li><a href="#orgfa4837c">Third example</a></li>
+</ul>
+</li>
+<li><a href="#org4700741">All 8 JavaScript methods which use regex</a>
+<ul>
+<li><a href="#org0408a27"><b>str</b>.match(<b>regex</b>)</a></li>
+<li><a href="#orgce0ddbd"><b>regex</b>.exec(<b>str</b>)</a></li>
+<li><a href="#org19cc1ce"><b>str</b>.matchAll(<b>regex</b>)</a></li>
+<li><a href="#orge530817"><b>regex</b>.test(<b>str</b>)</a></li>
+<li><a href="#org113fffc"><b>str</b>.search(<b>regex</b>)</a></li>
+<li><a href="#orgb6720b6"><b>str</b>.split(<b>separator</b>)</a></li>
+<li><a href="#org837942c"><b>str</b>.replace(<b>from</b>, to)</a></li>
+<li><a href="#orgdbefc3d"><b>str</b>.replaceAll(<b>from</b>, to)</a></li>
+</ul>
+</li>
+<li><a href="#org60bebc5">Closing words</a>
+<ul>
+<li><a href="#contributors_table">Contributors</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-orgf4d0790" class="outline-2">
+<h2 id="orgf4d0790">Introduction</h2>
+<div class="outline-text-2" id="text-orgf4d0790">
+<p>
+A Regular Expression (I'll often call it a regex for short) is a sequence of characters that define a search pattern. It provides you with the syntax to very specifically match characters in a given string. And, it makes you look cool on <a href="https://www.codewars.com/users/thewebmasterp">Codewars</a> with those one-liner solutions 😃.
+</p>
+
+<p>
+Let's get our hands dirty right away with an example!
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">regex</span> = <span class="org-string">/[A-Z]\w+/</span>g;
+</pre>
+</div>
+<ul class="org-ul">
+<li><code>/.../g</code> - Just like the content of an array literal is enclosed between <code>[]</code>, a regular expression literal consists of a pattern enclosed between slashes <code>//</code>. <code>g</code> is called a flag, more on that later.</li>
+<li><code>[A-Z]</code> - Matches uppercase letters from A to Z</li>
+<li><code>\w</code> is a shorthand for <code>[A-Za-z0-9_]</code> (uppercase letters from A to Z, lowercase letters from a to z, numerals from 0 to 9, underscore)</li>
+<li><code>+</code> One or more instances of the preceding element (<code>\w</code>)</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">str</span> = <span class="org-string">'Nikola, Georgi and Viktoria are all coders who live in Bulgaria'</span>
+<span class="linenr">2: </span>
+<span class="linenr">3: </span>  console.log( str.match(regex) )
+<span class="linenr">4: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "Nikola", "Georgi", "Viktoria", "Bulgaria" ]</span>
+</pre>
+</div>
+<p>
+This operation can be performed using vanilla JavaScript but regular expressions are the better tool for that. You don't use a hammer to fasten some papers with a staple, do you?
+</p>
+</div>
+</div>
+<div id="outline-container-org187c2fc" class="outline-2">
+<h2 id="org187c2fc">Creating Regular Expressions</h2>
+<div class="outline-text-2" id="text-org187c2fc">
+<p>
+A regular expression can be created using a literal:
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">regex</span> = <span class="org-string">/[A-Z]\w+/</span>g;
+<span class="linenr">2: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">The content between /.../ is the actual regex.</span>
+<span class="linenr">3: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">The letter after the last slash is called a flag.</span>
+<span class="linenr">4: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">You can have multiple flags.</span>
+</pre>
+</div>
+<p>
+Or by calling the constructor function of the RegExp object:
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">regex</span> = <span class="org-keyword">new</span> <span class="org-type">RegExp</span>(<span class="org-string">'[A-Z]\w+'</span>, <span class="org-string">'g'</span>);
+<span class="linenr">2: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">First parameter is the actual regex, in a string.</span>
+<span class="linenr">3: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">Second parameter is a string containing flags.</span>
+</pre>
+</div>
+<p>
+Most of the time, you'd prefer using the literal expression as it is as well as with arrays  - you prefer <code>[1, 2]</code>, rather than <code>Array(1, 2)</code>. The constructor way of initializing a regular expression is useful when you want to pass the regex as a string, which is powerful. Your program can generate the string based on its state and on top of regex's power, this makes you invincible ⚡. Let's keep on rocking!
+</p>
+</div>
+</div>
+<div id="outline-container-orgd1db7cd" class="outline-2">
+<h2 id="orgd1db7cd">The very basics</h2>
+<div class="outline-text-2" id="text-orgd1db7cd">
+<p>
+Let's try to match the word "apple". <code>/apple/</code> would do the job. It, however, won't match "APPLE" or "aPpLe", because regex is case sensitive.
+</p>
+
+<p>
+To disable case sensitivity in regex use what's called an <code>i</code> flag, like this <code>/apple/i</code>. Now it will match "apple", "APPLE" &amp; "aPpLe"
+</p>
+
+<p>
+If you want to match two words in a single regex, use <code>/apple|nut/</code>.
+</p>
+</div>
+<div id="outline-container-orgb7499a5" class="outline-3">
+<h3 id="orgb7499a5">Usage in JavaScript</h3>
+<div class="outline-text-3" id="text-orgb7499a5">
+<p>
+Take this as an introduction to the most basic methods in JS for working with regexes.
+</p>
+</div>
+<div id="outline-container-org8b62591" class="outline-4">
+<h4 id="org8b62591">str.match(regex)</h4>
+<div class="outline-text-4" id="text-org8b62591">
+<p>
+returns an array with all the matches. However, there's a little catch here. If you try doing this:
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-string">"apple apple"</span>.match(<span class="org-string">/apple/</span>)
+</pre>
+</div>
+<p>
+you'd probably expect to get <code>[ 'apple', 'apple' ]</code> but that's not the case. Without its <code>g</code> flag, regex won't match multiple occurrences. So in that case, <code>/apple/</code> matches just the first occurrence of the substring "apple" and <code>/apple/g</code> matches all of the occurrences. 
+</p>
+</div>
+</div>
+<div id="outline-container-org861268f" class="outline-4">
+<h4 id="org861268f">regex.test(str)</h4>
+<div class="outline-text-4" id="text-org861268f">
+<p>
+Think of <code>regex</code> as a variable holding a RegExp object and <code>str</code> is the string you test against <code>regex</code>. The method returns a boolean indicating whether it matched or not.
+</p>
+
+<p>
+Let's play with all we've just learned:
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span>  <span class="org-keyword">let</span> <span class="org-variable-name">regex</span> = <span class="org-string">/code|easy/</span>i
+<span class="linenr"> 2: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">str</span> = <span class="org-string">"this code is EaSy super easy"</span>
+<span class="linenr"> 3: </span>  regex.test(str) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; true; we've got a match!</span>
+<span class="linenr"> 4: </span>
+<span class="linenr"> 5: </span>  str.match(regex) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "code", index: 5, input... ]</span>
+<span class="linenr"> 6: </span>
+<span class="linenr"> 7: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">Oops! We forgot adding the g flag</span>
+<span class="linenr"> 8: </span>  regex = <span class="org-string">/code|easy/</span>ig
+<span class="linenr"> 9: </span>
+<span class="linenr">10: </span>  str.match(regex) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "code", "EaSy", "easy" ]</span>
+<span class="linenr">11: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">Alright!</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgca900ff" class="outline-2">
+<h2 id="orgca900ff">Flags</h2>
+<div class="outline-text-2" id="text-orgca900ff">
+<p>
+Flags are like settings to your regular expression that help you control its behavior. They're placed after the last slash of a regex literal or in a string as a second parameter of the RegExp constructor.
+</p>
+
+<p>
+In JavaScript, we have 6 flags that affect the match
+</p>
+<ul class="org-ul">
+<li><code>i</code>
+Makes the match case-insensitive, i.e. make no difference between "C" and "c".</li>
+<li><code>g</code>
+Without this flag only the first match will be returned.</li>
+<li><code>m</code>
+Multiline mode; only affects the behavior of <code>^</code> and <code>$</code> (more on these, later).</li>
+<li><code>s</code>
+Dotall mode; Allows wildcard period <code>.</code> to match newline character <code>\n</code>.</li>
+<li><code>u</code>
+Enables full unicode support.</li>
+<li><code>y</code>
+Sticky mode. Enables searching at a specific position.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcbde880" class="outline-2">
+<h2 id="orgcbde880">Match anything with wildcard period</h2>
+<div class="outline-text-2" id="text-orgcbde880">
+<p>
+Now that we've covered the very basics, let the real fun begin!
+</p>
+
+<p>
+We've learned how to statically match a word like <code>/hug/</code>. Now what if we want to match "hu​<span class="underline">h</span>", "hu​<span class="underline">b</span>", "hu​<span class="underline">g</span>", "hu​<span class="underline">m</span>" all with the same regular expression? Wildcard on help!
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-string">/hu./</span>
+</pre>
+</div>
+<p>
+The above regular expression will match "hu&lt;any character here&gt;"
+</p>
+</div>
+</div>
+<div id="outline-container-orgc0b8f52" class="outline-2">
+<h2 id="orgc0b8f52">Match a single character with multiple possibilities</h2>
+<div class="outline-text-2" id="text-orgc0b8f52">
+<p>
+The Wildcard period is way too loose in most cases and you need to match only a specific set of characters. That's when you need the <code>[]</code> construct to do something like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-string">/hu[hb]/</span>
+</pre>
+</div>
+<p>
+Which will match "hu​<span class="underline">h</span>", "hu​<span class="underline">b</span>" but not "hu​<span class="underline">g</span>" or "hu​<span class="underline">m</span>".
+</p>
+</div>
+<div id="outline-container-org554e59f" class="outline-3">
+<h3 id="org554e59f">More complex cases</h3>
+<div class="outline-text-3" id="text-org554e59f">
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-string">"abcdefghijklmnopqr"</span>.match(<span class="org-string">/[defghij]/</span>g)
+<span class="linenr">2: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "d", "e", "f", "g", "h", "i", "j" ]</span>
+<span class="linenr">3: </span>
+<span class="linenr">4: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">Same as</span>
+<span class="linenr">5: </span>  
+<span class="linenr">6: </span>  <span class="org-string">"abcdefghijklmnopqr"</span>.match(<span class="org-string">/[d-j]/</span>g)
+<span class="linenr">7: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "d", "e", "f", "g", "h", "i", "j" ]</span>
+</pre>
+</div>
+
+<p>
+And
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-string">"1234567890"</span>.match(<span class="org-string">/[456789]/</span>g)
+<span class="linenr">2: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "4", "5", "6", "7", "8", "9" ]</span>
+<span class="linenr">3: </span>
+<span class="linenr">4: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">Same as</span>
+<span class="linenr">5: </span>
+<span class="linenr">6: </span>  <span class="org-string">"1234567890"</span>.match(<span class="org-string">/[4-9]/</span>g)
+<span class="linenr">7: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "4", "5", "6", "7", "8", "9" ]</span>
+</pre>
+</div>
+
+<p>
+You can also combine multiple rules like <code>[A-Za-z0-9_]</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org85cc0b6" class="outline-3">
+<h3 id="org85cc0b6">Common shorthands</h3>
+<div class="outline-text-3" id="text-org85cc0b6">
+<ul class="org-ul">
+<li>Instead of <code>[A-Za-z0-9]</code>, simply use <code>\w</code>.</li>
+<li>Instead of <code>[^A-Za-z0-9]</code>, simply use <code>\w</code>.</li>
+<li>Instead of <code>[0-9]</code>, simply use <code>\d</code>.</li>
+<li>Instead of <code>[^0-9]</code>, simply use <code>\D</code>.</li>
+<li>Instead of <code>[\r\t\f\n\v]</code> (matches all kinds of whitespaces), simply use <code>\s</code>.</li>
+<li>Instead of <code>[^\r\t\f\n\v]</code>, simply use <code>\​S</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org33593d6" class="outline-3">
+<h3 id="org33593d6">Reverse the character classes</h3>
+<div class="outline-text-3" id="text-org33593d6">
+<p>
+<code>[a-z]</code> will match all letters from a to z. To invert this selection and match all symbols <b>except</b> the ones specified, use <code>[^a-z]</code>. Note that <code>^</code> character has a completely different behavior used outside of <code>[]</code>.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbc858de" class="outline-2">
+<h2 id="orgbc858de">Match characters that occur one or more times</h2>
+<div class="outline-text-2" id="text-orgbc858de">
+<p>
+With the <code>+</code> character that matches one or more instances of the preceding element. Best show you an example:
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">regex</span> = <span class="org-string">/a+/</span>g
+<span class="linenr"> 2: </span>  <span class="org-string">"abc"</span>.match(regex)    <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ 'a' ]</span>
+<span class="linenr"> 3: </span>  <span class="org-string">"aabc"</span>.match(regex)   <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ 'aa' ]</span>
+<span class="linenr"> 4: </span>  <span class="org-string">"aabac"</span>.match(regex) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ 'aa', 'a' ]</span>
+<span class="linenr"> 5: </span>  <span class="org-string">"bbc"</span>.match(regex)    <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; null</span>
+<span class="linenr"> 6: </span>
+<span class="linenr"> 7: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">regex</span> = <span class="org-string">/a/</span>g
+<span class="linenr"> 8: </span>  <span class="org-string">"abc"</span>.match(regex)    <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ 'a' ]</span>
+<span class="linenr"> 9: </span>  <span class="org-string">"aabc"</span>.match(regex)   <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ 'a', 'a' ]</span>
+<span class="linenr">10: </span>  <span class="org-string">"aabac"</span>.match(regex) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ 'a', 'a', 'a' ]</span>
+<span class="linenr">11: </span>  <span class="org-string">"bbc"</span>.match(regex)    <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; null</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4f37b47" class="outline-2">
+<h2 id="org4f37b47">Look for patterns from the beginning or from the end of string</h2>
+<div class="outline-text-2" id="text-org4f37b47">
+<p>
+To search for a character from the beginning of a string, use <code>^</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">regex</span> = <span class="org-string">/^K/</span>
+<span class="linenr">2: </span>  regex.test(<span class="org-string">"__K_K_"</span>) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; false: K is not exactly in the beginning</span>
+<span class="linenr">3: </span>  regex.test(<span class="org-string">"K__K__"</span>) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; true: K is in the beginning</span>
+</pre>
+</div>
+
+<p>
+To search for a character from the end of a string, use <code>$</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">regex</span> = <span class="org-string">/K$/</span>
+<span class="linenr">2: </span>  regex.test(<span class="org-string">"__K_K_"</span>) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; false: K is not exactly in the end</span>
+<span class="linenr">3: </span>  regex.test(<span class="org-string">"__K"</span>) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; true: K is in the end</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgef26054" class="outline-2">
+<h2 id="orgef26054">Optional Character</h2>
+<div class="outline-text-2" id="text-orgef26054">
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">regex</span> = <span class="org-string">/colou?r/</span> <span class="org-comment-delimiter">// </span><span class="org-comment">Makes "u" optional</span>
+<span class="linenr">2: </span>
+<span class="linenr">3: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">american</span> = <span class="org-string">"color"</span>
+<span class="linenr">4: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">british</span> = <span class="org-string">"colour"</span>
+<span class="linenr">5: </span>
+<span class="linenr">6: </span>  regex.test(american) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; true</span>
+<span class="linenr">7: </span>  regex.test(british)  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; true</span>
+<span class="linenr">8: </span>  regex.test(<span class="org-string">"cologr"</span>) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; false</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org26a2b62" class="outline-2">
+<h2 id="org26a2b62">Specify upper and lower limit of matches</h2>
+<div class="outline-text-2" id="text-org26a2b62">
+<p>
+What if you want to match a sequence of characters that repeats X times? <code>/a{5}/</code> would do the trick!
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">str</span> = <span class="org-string">"ama baalo maaaaamal aaaaa"</span>
+<span class="linenr">2: </span>  console.log( str.match( <span class="org-string">/a{5}/</span>g ) ) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "aaaaa", "aaaaa" ]</span>
+</pre>
+</div>
+<p>
+To match "m" letter followed by 5 times "a": <code>/ma{5}/</code>. To match an empty space followed by 4 times "a": <code>/\sa{4}/</code>.
+</p>
+
+<p>
+Now, what if you want to match from <b>m</b> to <b>p</b> repeating characters? <code>/a{1,3}/</code> applied to <code>str</code> (from the last example) would match "a", "aa" and "aaa". If any of <b>m</b> or <b>p</b> needs to be infinity (<i>[1, ∞]</i> or <i>[∞, 3]</i>) we can omit an argument, respectively like <code>/a{1,}/</code> or <code>/a{,3}/</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc8ca0dd" class="outline-2">
+<h2 id="orgc8ca0dd">Match characters that occur multiple times</h2>
+<div class="outline-text-2" id="text-orgc8ca0dd">
+</div>
+<div id="outline-container-org4b5dd5d" class="outline-3">
+<h3 id="org4b5dd5d">Match <b>one or more</b> characters</h3>
+<div class="outline-text-3" id="text-org4b5dd5d">
+<p>
+<code>+</code> after the target character
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">str</span> = <span class="org-string">"ama baalo maaaaamal"</span>
+<span class="linenr">2: </span>
+<span class="linenr">3: </span>  console.log( str.match( <span class="org-string">/a+/</span>g ) )
+<span class="linenr">4: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["a", "a", "aa", "aaaaa", "a"]</span>
+<span class="linenr">5: </span>
+<span class="linenr">6: </span>  console.log( str.match( <span class="org-string">/a/</span>g ) )
+<span class="linenr">7: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "a", "a", "a", "a", "a", "a", "a", "a", "a", "a" ]</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org856c378" class="outline-3">
+<h3 id="org856c378">Match <b>zero or more</b> characters</h3>
+<div class="outline-text-3" id="text-org856c378">
+<p>
+<code>*</code> after the target character
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">str</span> = <span class="org-string">"aaa"</span>
+<span class="linenr">2: </span>
+<span class="linenr">3: </span>  console.log( str.match( <span class="org-string">/a*/</span>g ) )
+<span class="linenr">4: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["aaa", ""]</span>
+<span class="linenr">5: </span>
+<span class="linenr">6: </span>  console.log( str.match( <span class="org-string">/a/</span>g ) )
+<span class="linenr">7: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["a", "a", "a"]</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3eda6fa" class="outline-3">
+<h3 id="org3eda6fa">Match <b>zero or one</b> character</h3>
+<div class="outline-text-3" id="text-org3eda6fa">
+<p>
+<code>?</code> after the target character
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">str</span> = <span class="org-string">"aaa"</span>
+<span class="linenr">2: </span>  console.log( str.match( <span class="org-string">/a?/</span>g ) )
+<span class="linenr">3: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["a", "a", "a", ""]</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfac878d" class="outline-2">
+<h2 id="orgfac878d">Positive and negative lookahead</h2>
+<div class="outline-text-2" id="text-orgfac878d">
+<p>
+This is considered to be one of the abstract topics in regex, but I will try to cover 80/100 of what you need to know.
+</p>
+
+<ul class="org-ul">
+<li><code>a(?=g)</code> - Positive LookAhead. Matches all "a" that are <b>followed</b> by "g", without making the "g" part of the match.</li>
+
+<li><code>a(?!g)</code> - Negative LookAhead. Matches all "a" that are <b>not followed</b> by "g", without making "g" part of the match.</li>
+</ul>
+
+<p>
+Positive/Negative LookAhead is a powerful feature. consider this: <code>(?=regex)</code> or <code>(?!regex)</code>. You can replace regex with any valid regular expression!
+</p>
+
+<p>
+Let's play with it a little;
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">str</span> = <span class="org-string">"IsFunBaloonIsLearningRegExIsLean"</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">Matches the 2nd "Is", right before "Learning"</span>
+<span class="linenr"> 4: </span>  console.log( str.match( <span class="org-string">/Is(?=Learning)/</span> ) )
+<span class="linenr"> 5: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "Is", index: 11, ... ]</span>
+<span class="linenr"> 6: </span>
+<span class="linenr"> 7: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">Matches the 3rd "Is", right before "Lean"</span>
+<span class="linenr"> 8: </span>  console.log( str.match( <span class="org-string">/Is(?=Lean)/</span> ) )
+<span class="linenr"> 9: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "Is", index: 26, ... ]</span>
+<span class="linenr">10: </span>
+<span class="linenr">11: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">Matches all "Is" that are followed by "L"</span>
+<span class="linenr">12: </span>  console.log( str.match( <span class="org-string">/Is(?=L)/</span>g ) )
+<span class="linenr">13: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "Is", "Is" ]</span>
+<span class="linenr">14: </span>
+<span class="linenr">15: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">Match all "Is" that aren't followed by "L"</span>
+<span class="linenr">16: </span>  console.log( str.match( <span class="org-string">/Is(?!L)/</span> ) )
+<span class="linenr">17: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; [ "Is", index: 0, ... ]</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd969263" class="outline-2">
+<h2 id="orgd969263">Reusing patterns with <b>Capture Groups</b></h2>
+<div class="outline-text-2" id="text-orgd969263">
+<p>
+We all know and should obey the DRY principle. Capture groups help us do exactly this. No better way to explain it than a few good examples:
+</p>
+</div>
+<div id="outline-container-org5f187bf" class="outline-3">
+<h3 id="org5f187bf">First example</h3>
+<div class="outline-text-3" id="text-org5f187bf">
+<p>
+<code>/(bamm+)\w\1/g</code> same as
+</p>
+
+<p>
+<code>/(bamm+)\w(bamm+)/g</code> same as
+</p>
+
+<p>
+<code>/bamm+\wbamm+/g</code>
+</p>
+</div>
+</div>
+<div id="outline-container-org619bb14" class="outline-3">
+<h3 id="org619bb14">Second example</h3>
+<div class="outline-text-3" id="text-org619bb14">
+<p>
+<code>/(\w+)\s(\1\1\1)\2/g</code> same as
+</p>
+
+<p>
+<code>/(\w+)\s\1\1\1\1\1\1/g</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgfa4837c" class="outline-3">
+<h3 id="orgfa4837c">Third example</h3>
+<div class="outline-text-3" id="text-orgfa4837c">
+<p>
+<code>/(\w+)\s\1\1\1/g</code> same as
+</p>
+
+<p>
+<code>/\w+\s\w+\w+\w+/g</code>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4700741" class="outline-2">
+<h2 id="org4700741">All 8 JavaScript methods which use regex</h2>
+<div class="outline-text-2" id="text-org4700741">
+</div>
+<div id="outline-container-org0408a27" class="outline-3">
+<h3 id="org0408a27"><b>str</b>.match(<b>regex</b>)</h3>
+<div class="outline-text-3" id="text-org0408a27">
+<p>
+Finds all matches of <b>regex</b> in the string <b>str</b> and returns an array of those matches.
+</p>
+</div>
+</div>
+<div id="outline-container-orgce0ddbd" class="outline-3">
+<h3 id="orgce0ddbd"><b>regex</b>.exec(<b>str</b>)</h3>
+<div class="outline-text-3" id="text-orgce0ddbd">
+<p>
+Similar to the <code>.match()</code> method but it's meant to be used in a loop when the <b>regex</b> is stored in a global variable but not passed directly.
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">let</span> <span class="org-variable-name">re</span> = <span class="org-string">/bla/</span>g
+<span class="linenr">2: </span>  <span class="org-keyword">let</span> <span class="org-variable-name">str</span> = <span class="org-string">'bla and yeah bla yeh'</span>
+<span class="linenr">3: </span>
+<span class="linenr">4: </span>  re.exec(str) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["bla", index: 0, ...]</span>
+<span class="linenr">5: </span>  re.exec(str) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["bla", index: 13, ...]</span>
+<span class="linenr">6: </span>  re.exec(str) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; null</span>
+<span class="linenr">7: </span>  re.exec(str) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["bla", index: 0, ...]: Starts again.</span>
+</pre>
+</div>
+<p>
+Usage with a loop:
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">let</span> <span class="org-variable-name">match</span>, <span class="org-variable-name">str</span> = <span class="org-string">'bla and yeah bla yeh ble'</span>
+<span class="linenr">2: </span>  <span class="org-keyword">while</span> (match = re.exec(str)) {
+<span class="linenr">3: </span>    console.log(match)
+<span class="linenr">4: </span>  }
+<span class="linenr">5: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["bla", index: 0, input: ...]</span>
+<span class="linenr">6: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["bla", index: 13, input: ...]</span>
+</pre>
+</div>
+<p>
+<code>.match()</code> compared to <code>.exec()</code> is pretty simple:
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  str.match(re)
+<span class="linenr">2: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["bla", "bla"]</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org19cc1ce" class="outline-3">
+<h3 id="org19cc1ce"><b>str</b>.matchAll(<b>regex</b>)</h3>
+<div class="outline-text-3" id="text-org19cc1ce">
+<p>
+An improvement over the previously covered <code>.match()</code> method, <code>matchAll()</code> was introduced in ES2020
+</p>
+
+<p>
+<code>.matchAll()</code> is introduced in ES2020 and it is an improvement on the <code>.match()</code> method. There are three differences between the two:
+</p>
+<ol class="org-ol">
+<li><code>.matchAll()</code> returns an iterable object with matches instead of an array.</li>
+<li>Each match is in the same format as <code>str.match()</code> without the 'g' flag.</li>
+<li>If there are no matches, it returns an empty iterable object, rather than null if you used <code>.match()</code></li>
+</ol>
+<p>
+I think this method is most usable when a 'g' flag is added to the <b>regex</b>.
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">let</span> <span class="org-variable-name">regexp</span> = <span class="org-string">/bla/</span>g
+<span class="linenr">2: </span>  <span class="org-keyword">let</span> <span class="org-variable-name">str</span> = <span class="org-string">'bla and yeah bla yeh'</span>
+<span class="linenr">3: </span>  <span class="org-keyword">const</span> <span class="org-variable-name">matches</span> = str.matchAll(regexp)
+<span class="linenr">4: </span>  <span class="org-keyword">for</span> (<span class="org-keyword">let</span> <span class="org-variable-name">match</span> <span class="org-keyword">of</span> matches) {
+<span class="linenr">5: </span>    console.log(match)
+<span class="linenr">6: </span>  }
+<span class="linenr">7: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["bla", index: 0, ...]</span>
+<span class="linenr">8: </span>  <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; ["bla", index: 13, ...]</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge530817" class="outline-3">
+<h3 id="orge530817"><b>regex</b>.test(<b>str</b>)</h3>
+<div class="outline-text-3" id="text-orge530817">
+<p>
+Looks for at least one match of <b>regex</b> in <b>str</b>. If found, returns true. Otherwise, false.
+</p>
+</div>
+</div>
+<div id="outline-container-org113fffc" class="outline-3">
+<h3 id="org113fffc"><b>str</b>.search(<b>regex</b>)</h3>
+<div class="outline-text-3" id="text-org113fffc">
+<p>
+Returns the index of the first available match. If no match is found, it returns -1.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb6720b6" class="outline-3">
+<h3 id="orgb6720b6"><b>str</b>.split(<b>separator</b>)</h3>
+<div class="outline-text-3" id="text-orgb6720b6">
+<p>
+Instead of passing a simple string to <b>separator</b> like '' (in the most frequent case), we can also pass regex for more precise split.
+</p>
+</div>
+</div>
+<div id="outline-container-org837942c" class="outline-3">
+<h3 id="org837942c"><b>str</b>.replace(<b>from</b>, to)</h3>
+<div class="outline-text-3" id="text-org837942c">
+<p>
+<b>from</b> is what to match. It can be a string or regex. The first match will be replaced with the string you have passed to the <b>to</b> argument. Instead of a string, you can pass a function too.
+</p>
+
+<p>
+If you add a 'g' flag to the regex, <code>.replace()</code> starts working like the next and final method: 
+</p>
+</div>
+</div>
+<div id="outline-container-orgdbefc3d" class="outline-3">
+<h3 id="orgdbefc3d"><b>str</b>.replaceAll(<b>from</b>, to)</h3>
+<div class="outline-text-3" id="text-orgdbefc3d">
+<p>
+Same as <code>.replace()</code>, except that instead of replacing only the first match, it will replace all matches with the provided <b>to</b>.
+</p>
+
+<p>
+A comparison between the last two:
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>  <span class="org-keyword">let</span> <span class="org-variable-name">str</span> = <span class="org-string">"stuffed str living fforever pff"</span>
+<span class="linenr">2: </span>  <span class="org-keyword">let</span> <span class="org-variable-name">regex</span> = <span class="org-string">/f+/</span> <span class="org-comment-delimiter">// </span><span class="org-comment">Match one or more 'f'</span>
+<span class="linenr">3: </span>
+<span class="linenr">4: </span>  str.replace(regex, <span class="org-string">'*'</span>) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; 'stu*ed str living fforever pff'</span>
+<span class="linenr">5: </span>  str.replaceAll(regex, <span class="org-string">'*'</span>) <span class="org-comment-delimiter">// </span><span class="org-comment">=&gt; 'stu*ed str living *orever p*'</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org60bebc5" class="outline-2">
+<h2 id="org60bebc5">Closing words</h2>
+<div class="outline-text-2" id="text-org60bebc5">
+<p>
+Congratulations! Now you have the understanding to start using regular expressions in your practice.
+</p>
+
+<p>
+Please, ask your questions and leave your suggestions down in the comments. They'll help me understand where my explanation is lacking and therefore improve it. Know that this is a dynamic article: One changing over time in dependence on the feedback I get. Let us together make this the best introduction to regular expressions available on the web!
+</p>
+</div>
+
+<div id="outline-container-contributors_table" class="outline-3">
+<h3 id="contributors_table">Contributors</h3>
+<div class="outline-text-3" id="text-contributors_table">
+<p>
+No contribution is left unnoticed. The people who helped this article evolve into what it is today are listed here:
+</p>
+<ul class="org-ul">
+<li>thewebmasterp</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div id='remark42'></div>
+   <script>
+   	 var remark_config = {
+	 	host: 'https://remark42.thewebmasterp.com',
+	 	site_id: 'remark42.thewebmasterp.com',
+	 }
+   </script>
+   <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement('script'),c='.js',d=n.head||n.body;'noModule'in r?(r.type='module',c='.mjs'):r.async=!0,r.defer=!0,r.src=remark_config.host+'/web/'+e[o]+c,d.appendChild(r)}}(remark_config.components||['embed'],document);</script>
+   <xml>
+     <socmedia>
+       <entry>
+         <label>Github</label>
+         <href>https://github.com/thewebmasterp</href>
+         <icon>github.svg</icon>
+       </entry>
+       <entry>
+         <label>Instagram</label>
+         <href>https://www.instagram.com/webmaster_project</href>
+         <icon>instagram.svg</icon>
+       </entry>
+       <entry>
+         <label>Twitter</label>
+         <href>https://twitter.com/thewebmasterp</href>
+         <icon>twitter.svg</icon>
+       </entry>
+       <entry>
+         <label>Codepen</label>
+         <href>https://codepen.io/thewebmasterp</href>
+         <icon>codepen.svg</icon>
+       </entry>
+       <entry>
+         <label>Blog RSS Feed</label>
+         <href>/blog.xml</href>
+         <icon>rss.svg</icon>
+       </entry>
+     </socmedia>
+     <subscribe>
+       <cta></cta>
+     </subscribe>
+     <info>
+     </info>
+   </xml>
+</div>
+</body>
+</html>

@@ -214,7 +214,7 @@
 		 :base-directory "./content"
 		 :publishing-directory "./public"
 		 :publishing-function org-publish-attachment
-		 :base-extension "txt\\|jpg\\|gif\\|png\\|svg\\|webmanifest\\|woff\\|woff2\\|html"
+		 :base-extension "txt\\|jpg\\|gif\\|png\\|svg\\|webmanifest\\|woff\\|woff2\\|html\\|mp3"
 		 :recursive t)
 
 		("blog-rss"

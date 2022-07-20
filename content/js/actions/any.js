@@ -155,6 +155,30 @@ const any = sp => {
         console.error('missing xml in .socMediaBox!')
       }
     })
+
+    // Play little hard rock guitar solo when "rocking" from "keep on rocking" is clicked.
+    //document.body.innerHTML.replace(/keep on rocking/g, 'occurrence')
+    ;[...document.getElementsByTagName('p')].forEach(p => {
+      const regexp = /keep on rocking/g
+      if (regexp.test(p.innerHTML)) {
+        const onClick = function() {
+          //e.preventDefault()
+          const audio = new Audio('/sounds/guitar-hard-rock.mp3')
+          audio.play()
+        }
+        const safeStr = onClick
+          .toString()
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;')
+        p.innerHTML = p.innerHTML.replace(
+          regexp,
+          `keep on <a href="javascript:;" onclick="( ${safeStr} )()" >rocking</a>`
+        )
+      }
+    })
   } else if (sp.beforeunload) {
   }
 }

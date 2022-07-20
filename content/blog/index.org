@@ -3,4 +3,5 @@
 - *Desktop Setup/*
   - {{{timestamp(2022-06-09)}}} [[file:Desktop Setup/The Arch Linux journey.org][The Arch Linux journey]] 
 - *webmaster_project/*
+  - {{{timestamp(2022-07-18)}}} [[file:webmaster_project/Regular Expressions Tutorial.org][Regular Expressions Tutorial]] 
   - {{{timestamp(2022-06-09)}}} [[file:webmaster_project/Bits Of Tips %231.org][Bits Of Tips #1]] 

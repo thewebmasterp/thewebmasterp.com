@@ -14,8 +14,8 @@
   <link></link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Tue, 12 Jul 2022 15:35:58 +0300</pubDate>
-  <lastBuildDate>Tue, 12 Jul 2022 15:35:58 +0300</lastBuildDate>
+  <pubDate>Wed, 20 Jul 2022 17:17:54 +0300</pubDate>
+  <lastBuildDate>Wed, 20 Jul 2022 17:17:54 +0300</lastBuildDate>
   <generator>Emacs 28.0 Org-mode 9.5.2</generator>
   <webMaster>thewebmasterp@gmail.com (thewebmasterp)</webMaster>
   <image>
@@ -44,6 +44,7 @@
     </ul></li>
     <li><b>webmaster_project/</b>
     <ul class="org-ul">
+    <li><span class="timestamp">[2022-07-18]</span> <a href="blog/webmaster_project/Regular Expressions Tutorial.html">Regular Expressions Tutorial</a></li>
     <li><span class="timestamp">[2022-06-09]</span> <a href="blog/webmaster_project/Bits Of Tips %231.html">Bits Of Tips #1</a></li>
     </ul></li>
     </ul>

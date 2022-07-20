@@ -1,0 +1,333 @@
+#+setupfile: ../../../.org-templates/level/1.org
+#+title: Regular Expressions Tutorial
+#+description: In this tutorial, I'll walk you through the most practical aspects of regular expressions and their use in JavaScript.
+* Introduction
+A Regular Expression (I'll often call it a regex for short) is a sequence of characters that define a search pattern. It provides you with the syntax to very specifically match characters in a given string. And, it makes you look cool on [[https://www.codewars.com/users/thewebmasterp][Codewars]] with those one-liner solutions 😃.
+
+Let's get our hands dirty right away with an example!
+#+begin_src js -n
+  const regex = /[A-Z]\w+/g;
+#+end_src
++ ~/.../g~ - Just like the content of an array literal is enclosed between ~[]~, a regular expression literal consists of a pattern enclosed between slashes ~//~. ~g~ is called a flag, more on that later.
++ ~[A-Z]~ - Matches uppercase letters from A to Z
++ ~\w~ is a shorthand for ~[A-Za-z0-9_]~ (uppercase letters from A to Z, lowercase letters from a to z, numerals from 0 to 9, underscore)
++ ~+~ One or more instances of the preceding element (~\w~)
+#+begin_src js -n
+  const str = 'Nikola, Georgi and Viktoria are all coders who live in Bulgaria'
+
+  console.log( str.match(regex) )
+  // => [ "Nikola", "Georgi", "Viktoria", "Bulgaria" ]
+#+end_src
+This operation can be performed using vanilla JavaScript but regular expressions are the better tool for that. You don't use a hammer to fasten some papers with a staple, do you?
+* Creating Regular Expressions
+A regular expression can be created using a literal:
+#+begin_src js -n
+  const regex = /[A-Z]\w+/g;
+  // The content between /.../ is the actual regex.
+  // The letter after the last slash is called a flag.
+  // You can have multiple flags.
+#+end_src
+Or by calling the constructor function of the RegExp object:
+#+begin_src js -n
+  const regex = new RegExp('[A-Z]\w+', 'g');
+  // First parameter is the actual regex, in a string.
+  // Second parameter is a string containing flags.
+#+end_src
+Most of the time, you'd prefer using the literal expression as it is as well as with arrays  - you prefer ~[1, 2]~, rather than ~Array(1, 2)~. The constructor way of initializing a regular expression is useful when you want to pass the regex as a string, which is powerful. Your program can generate the string based on its state and on top of regex's power, this makes you invincible ⚡. Let's keep on rocking!
+* The very basics
+Let's try to match the word "apple". ~/apple/~ would do the job. It, however, won't match "APPLE" or "aPpLe", because regex is case sensitive.
+
+To disable case sensitivity in regex use what's called an ~i~ flag, like this ~/apple/i~. Now it will match "apple", "APPLE" & "aPpLe"
+
+If you want to match two words in a single regex, use ~/apple|nut/~.
+** Usage in JavaScript
+Take this as an introduction to the most basic methods in JS for working with regexes.
+*** str.match(regex)
+returns an array with all the matches. However, there's a little catch here. If you try doing this:
+#+begin_src js -n
+  "apple apple".match(/apple/)
+#+end_src
+you'd probably expect to get ~[ 'apple', 'apple' ]~ but that's not the case. Without its ~g~ flag, regex won't match multiple occurrences. So in that case, ~/apple/~ matches just the first occurrence of the substring "apple" and ~/apple/g~ matches all of the occurrences. 
+*** regex.test(str)
+Think of ~regex~ as a variable holding a RegExp object and ~str~ is the string you test against ~regex~. The method returns a boolean indicating whether it matched or not.
+
+Let's play with all we've just learned:
+#+begin_src js -n
+  let regex = /code|easy/i
+  const str = "this code is EaSy super easy"
+  regex.test(str) // => true; we've got a match!
+
+  str.match(regex) // => [ "code", index: 5, input... ]
+
+  // Oops! We forgot adding the g flag
+  regex = /code|easy/ig
+
+  str.match(regex) // => [ "code", "EaSy", "easy" ]
+  // Alright!
+#+end_src
+* Flags
+Flags are like settings to your regular expression that help you control its behavior. They're placed after the last slash of a regex literal or in a string as a second parameter of the RegExp constructor.
+
+In JavaScript, we have 6 flags that affect the match
++ ~i~
+  Makes the match case-insensitive, i.e. make no difference between "C" and "c".
++ ~g~
+  Without this flag only the first match will be returned.
++ ~m~
+  Multiline mode; only affects the behavior of ~^~ and ~$~ (more on these, later).
++ ~s~
+  Dotall mode; Allows wildcard period ~.~ to match newline character ~\n~.
++ ~u~
+  Enables full unicode support.
++ ~y~
+  Sticky mode. Enables searching at a specific position.
+* Match anything with wildcard period
+Now that we've covered the very basics, let the real fun begin!
+
+We've learned how to statically match a word like ~/hug/~. Now what if we want to match "hu​_h_", "hu​_b_", "hu​_g_", "hu​_m_" all with the same regular expression? Wildcard on help!
+#+begin_src js -n
+  /hu./
+#+end_src
+The above regular expression will match "hu<any character here>"
+* Match a single character with multiple possibilities
+The Wildcard period is way too loose in most cases and you need to match only a specific set of characters. That's when you need the ~[]~ construct to do something like this:
+#+begin_src js -n
+  /hu[hb]/
+#+end_src
+Which will match "hu​_h_", "hu​_b_" but not "hu​_g_" or "hu​_m_".
+** More complex cases
+#+begin_src js -n
+  "abcdefghijklmnopqr".match(/[defghij]/g)
+  // => [ "d", "e", "f", "g", "h", "i", "j" ]
+
+  // Same as
+  
+  "abcdefghijklmnopqr".match(/[d-j]/g)
+  // => [ "d", "e", "f", "g", "h", "i", "j" ]
+#+end_src
+
+  And
+
+#+begin_src js -n
+  "1234567890".match(/[456789]/g)
+  // => [ "4", "5", "6", "7", "8", "9" ]
+
+  // Same as
+
+  "1234567890".match(/[4-9]/g)
+  // => [ "4", "5", "6", "7", "8", "9" ]
+#+end_src
+
+You can also combine multiple rules like ~[A-Za-z0-9_]~.
+** Common shorthands
++ Instead of ~[A-Za-z0-9]~, simply use ~\w~.
++ Instead of ~[^A-Za-z0-9]~, simply use ~\w~.
++ Instead of ~[0-9]~, simply use ~\d~.
++ Instead of ~[^0-9]~, simply use ~\D~.
++ Instead of ~[\r\t\f\n\v]~ (matches all kinds of whitespaces), simply use ~\s~.
++ Instead of ~[^\r\t\f\n\v]~, simply use ~\​S~.
+** Reverse the character classes
+~[a-z]~ will match all letters from a to z. To invert this selection and match all symbols *except* the ones specified, use ~[^a-z]~. Note that ~^~ character has a completely different behavior used outside of ~[]~.
+* Match characters that occur one or more times
+With the ~+~ character that matches one or more instances of the preceding element. Best show you an example:
+ #+begin_src js -n
+  const regex = /a+/g
+  "abc".match(regex)    // => [ 'a' ]
+  "aabc".match(regex)   // => [ 'aa' ]
+  "aabac".match(regex) // => [ 'aa', 'a' ]
+  "bbc".match(regex)    // => null
+
+  const regex = /a/g
+  "abc".match(regex)    // => [ 'a' ]
+  "aabc".match(regex)   // => [ 'a', 'a' ]
+  "aabac".match(regex) // => [ 'a', 'a', 'a' ]
+  "bbc".match(regex)    // => null
+#+end_src
+* Look for patterns from the beginning or from the end of string
+To search for a character from the beginning of a string, use ~^~.
+#+begin_src js -n
+  const regex = /^K/
+  regex.test("__K_K_") // => false: K is not exactly in the beginning
+  regex.test("K__K__") // => true: K is in the beginning
+#+end_src
+
+To search for a character from the end of a string, use ~$~.
+#+begin_src js -n
+  const regex = /K$/
+  regex.test("__K_K_") // => false: K is not exactly in the end
+  regex.test("__K") // => true: K is in the end
+#+end_src
+* Optional Character
+#+begin_src js -n
+  const regex = /colou?r/ // Makes "u" optional
+
+  const american = "color"
+  const british = "colour"
+
+  regex.test(american) // => true
+  regex.test(british)  // => true
+  regex.test("cologr") // => false
+#+end_src
+* Specify upper and lower limit of matches
+What if you want to match a sequence of characters that repeats X times? ~/a{5}/~ would do the trick!
+#+begin_src js -n
+  const str = "ama baalo maaaaamal aaaaa"
+  console.log( str.match( /a{5}/g ) ) // => [ "aaaaa", "aaaaa" ]
+#+end_src
+To match "m" letter followed by 5 times "a": ~/ma{5}/~. To match an empty space followed by 4 times "a": ~/\sa{4}/~.
+
+Now, what if you want to match from *m* to *p* repeating characters? ~/a{1,3}/~ applied to ~str~ (from the last example) would match "a", "aa" and "aaa". If any of *m* or *p* needs to be infinity (/[1, ∞]/ or /[∞, 3]/) we can omit an argument, respectively like ~/a{1,}/~ or ~/a{,3}/~.
+* Match characters that occur multiple times
+** Match *one or more* characters
+~+~ after the target character
+#+begin_src js -n
+  const str = "ama baalo maaaaamal"
+
+  console.log( str.match( /a+/g ) )
+  // => ["a", "a", "aa", "aaaaa", "a"]
+
+  console.log( str.match( /a/g ) )
+  // => [ "a", "a", "a", "a", "a", "a", "a", "a", "a", "a" ]
+#+end_src
+** Match *zero or more* characters
+~*~ after the target character
+#+begin_src js -n
+  const str = "aaa"
+
+  console.log( str.match( /a*/g ) )
+  // => ["aaa", ""]
+
+  console.log( str.match( /a/g ) )
+  // => ["a", "a", "a"]
+#+end_src
+** Match *zero or one* character
+~?~ after the target character
+#+begin_src js -n
+  const str = "aaa"
+  console.log( str.match( /a?/g ) )
+  // => ["a", "a", "a", ""]
+#+end_src
+* Positive and negative lookahead
+This is considered to be one of the abstract topics in regex, but I will try to cover 80/100 of what you need to know.
+
+ + ~a(?=g)~ - Positive LookAhead. Matches all "a" that are *followed* by "g", without making the "g" part of the match.
+
+ + ~a(?!g)~ - Negative LookAhead. Matches all "a" that are *not followed* by "g", without making "g" part of the match.
+
+Positive/Negative LookAhead is a powerful feature. consider this: ~(?=regex)~ or ~(?!regex)~. You can replace regex with any valid regular expression!
+
+Let's play with it a little;
+#+begin_src js -n
+  const str = "IsFunBaloonIsLearningRegExIsLean"
+
+  // Matches the 2nd "Is", right before "Learning"
+  console.log( str.match( /Is(?=Learning)/ ) )
+  // => [ "Is", index: 11, ... ]
+
+  // Matches the 3rd "Is", right before "Lean"
+  console.log( str.match( /Is(?=Lean)/ ) )
+  // => [ "Is", index: 26, ... ]
+
+  // Matches all "Is" that are followed by "L"
+  console.log( str.match( /Is(?=L)/g ) )
+  // => [ "Is", "Is" ]
+
+  // Match all "Is" that aren't followed by "L"
+  console.log( str.match( /Is(?!L)/ ) )
+  // => [ "Is", index: 0, ... ]
+#+end_src
+* Reusing patterns with *Capture Groups*
+We all know and should obey the DRY principle. Capture groups help us do exactly this. No better way to explain it than a few good examples:
+** First example
+~/(bamm+)\w\1/g~ same as
+
+~/(bamm+)\w(bamm+)/g~ same as
+
+~/bamm+\wbamm+/g~
+** Second example
+~/(\w+)\s(\1\1\1)\2/g~ same as
+
+~/(\w+)\s\1\1\1\1\1\1/g~
+** Third example
+~/(\w+)\s\1\1\1/g~ same as
+
+~/\w+\s\w+\w+\w+/g~
+* All 8 JavaScript methods which use regex
+** *str*.match(*regex*)
+Finds all matches of *regex* in the string *str* and returns an array of those matches.
+** *regex*.exec(*str*)
+Similar to the ~.match()~ method but it's meant to be used in a loop when the *regex* is stored in a global variable but not passed directly.
+#+begin_src js -n
+  let re = /bla/g
+  let str = 'bla and yeah bla yeh'
+
+  re.exec(str) // => ["bla", index: 0, ...]
+  re.exec(str) // => ["bla", index: 13, ...]
+  re.exec(str) // => null
+  re.exec(str) // => ["bla", index: 0, ...]: Starts again.
+#+end_src
+Usage with a loop:
+#+begin_src js -n
+  let match, str = 'bla and yeah bla yeh ble'
+  while (match = re.exec(str)) {
+    console.log(match)
+  }
+  // => ["bla", index: 0, input: ...]
+  // => ["bla", index: 13, input: ...]
+#+end_src
+~.match()~ compared to ~.exec()~ is pretty simple:
+#+begin_src js -n
+  str.match(re)
+  // => ["bla", "bla"]
+#+end_src
+** *str*.matchAll(*regex*)
+An improvement over the previously covered ~.match()~ method, ~matchAll()~ was introduced in ES2020
+
+~.matchAll()~ is introduced in ES2020 and it is an improvement on the ~.match()~ method. There are three differences between the two:
+1. ~.matchAll()~ returns an iterable object with matches instead of an array.
+2. Each match is in the same format as ~str.match()~ without the 'g' flag.
+3. If there are no matches, it returns an empty iterable object, rather than null if you used ~.match()~
+I think this method is most usable when a 'g' flag is added to the *regex*.
+#+begin_src js -n
+  let regexp = /bla/g
+  let str = 'bla and yeah bla yeh'
+  const matches = str.matchAll(regexp)
+  for (let match of matches) {
+    console.log(match)
+  }
+  // => ["bla", index: 0, ...]
+  // => ["bla", index: 13, ...]
+#+end_src
+** *regex*.test(*str*)
+Looks for at least one match of *regex* in *str*. If found, returns true. Otherwise, false.
+** *str*.search(*regex*)
+Returns the index of the first available match. If no match is found, it returns -1.
+** *str*.split(*separator*)
+Instead of passing a simple string to *separator* like '' (in the most frequent case), we can also pass regex for more precise split.
+** *str*.replace(*from*, to)
+*from* is what to match. It can be a string or regex. The first match will be replaced with the string you have passed to the *to* argument. Instead of a string, you can pass a function too.
+
+If you add a 'g' flag to the regex, ~.replace()~ starts working like the next and final method: 
+** *str*.replaceAll(*from*, to)
+Same as ~.replace()~, except that instead of replacing only the first match, it will replace all matches with the provided *to*.
+
+A comparison between the last two:
+#+begin_src js -n
+  let str = "stuffed str living fforever pff"
+  let regex = /f+/ // Match one or more 'f'
+
+  str.replace(regex, '*') // => 'stu*ed str living fforever pff'
+  str.replaceAll(regex, '*') // => 'stu*ed str living *orever p*'
+#+end_src
+* Closing words
+Congratulations! Now you have the understanding to start using regular expressions in your practice.
+
+Please, ask your questions and leave your suggestions down in the comments. They'll help me understand where my explanation is lacking and therefore improve it. Know that this is a dynamic article: One changing over time in dependence on the feedback I get. Let us together make this the best introduction to regular expressions available on the web!
+
+** Contributors
+:PROPERTIES:
+:CUSTOM_ID: contributors_table
+:END:
+No contribution is left unnoticed. The people who helped this article evolve into what it is today are listed here:
++ thewebmasterp
+
