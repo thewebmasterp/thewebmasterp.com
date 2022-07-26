@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2022-07-26 Tue 22:47 -->
+<meta charset="utf-8" />
+<title>config-modules</title>
+<meta name="author" content="thewebmasterp" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, target-densityDpi=device-dpi, user-scalable=no, maximum-scale=0.8"><meta property="og:title" content="thewebmasterp.com" /><meta property="og:type" content="website" /><meta property="og:url" content="https://thewebmasterp.com/" /><meta property="og:image" content="https://thewebmasterp.com/img/avatar.jpg" />
+<link rel="stylesheet" href="../../css/style.min.css" />
+<script src="../../js/app.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/meta/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/meta/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../img/meta/favicon-16x16.png">
+<link rel="manifest" href="../../site.webmanifest">
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div id='mask'> <div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div> </div>
+<script>0</script>
+<nav id='topnav'>
+<a class='homeLink' href='/index.html' title='The index, landing page of this website'>Home</a>
+<a class='blogLink' href='/blog.html' title='My articles'>Blog</a>
+<a class='aboutLink' href='/about.html' title='About the website and its owner'>About</a>
+<div class='sparse'>
+<div class='theme-changer'></div>
+</div>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">config-modules</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org2fa60de">What problem does config-modules solve?</a></li>
+<li><a href="#org0fa64a0">How does it solve it?</a></li>
+<li><a href="#org9f6d4e8">Features</a></li>
+<li><a href="#orgdbfd937">Similar projects</a></li>
+</ul>
+</div>
+</nav>
+<div id="slideshow" class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="../../img/projects/config-modules-demonstration-2.gif" style="width:100%">
+  <img src="../../img/projects/config-modules-demonstration-2.gif" style="width:100%">
+  <!-- <div class="text">a more descriptive gif</div> -->
+</div>
+
+<div class="mySlides fade">
+  <img src="../../img/projects/config-modules-demonstration-1.gif" style="width:100%">
+  <!-- <div class="text">i3wm, Alacritty, dunst, config-modules</div> -->
+</div>
+
+</div>
+
+<div class="btns">
+   <!-- <a href="https://google.com" class="btn live">Live</a> -->
+   <a href="https://github.com/thewebmasterp/config-modules" class="btn github">Github</a>
+   <a href="https://www.npmjs.com/package/config-modules" class="btn npm">Npm</a>
+</div>
+<div id="outline-container-org2fa60de" class="outline-2">
+<h2 id="org2fa60de">What problem does config-modules solve?</h2>
+<div class="outline-text-2" id="text-org2fa60de">
+<p>
+Many Linux programs are configured through what's called a config file. In most cases, it is simply a file where you can specify key-value pairs (properties) that modify the behavior (settings) of the given utility.
+</p>
+
+<p>
+To give you an example, let's say we have a hypothetical config file where we can set properties <code>A</code>, <code>B</code>, and <code>C</code>. By setting <code>A</code> we can change the color theme of the utility, for example, we can do <code>A=Adwaita</code> or <code>A=Dark</code> or <code>A=Light</code>. However, changing the theme would require us to enter that config file, modify the given property (in our case <code>A</code>) and most of the time run a command to update the program with the new configuration.
+</p>
+
+<p>
+This is a costly array of steps to do something as simple as changing the theme of a single utility. What if we have many of those programs and we want to change their themes all at once or from a single menu? I have <a href="https://i3wm.org/">i3wm</a>, <a href="https://alacritty.org/">Alacritty</a>, <a href="https://dunst-project.org/">Dunst</a>, <a href="https://www.gtk.org/">GTK</a>, <a href="https://github.com/davatorium/rofi">Rofi</a>. If I have to enter each of their configs to change the theme value, I better dump them and use Windows&#x2026; Just kidding.
+</p>
+
+<p>
+That's where config-modules come into play!
+</p>
+</div>
+</div>
+<div id="outline-container-org0fa64a0" class="outline-2">
+<h2 id="org0fa64a0">How does it solve it?</h2>
+<div class="outline-text-2" id="text-org0fa64a0">
+<p>
+Continuing the previous example, <code>A</code> is a dynamic property. It can hold <code>A=Adwaita</code> or <code>A=Dark</code> or <code>A=Light</code>, while <code>B</code> and <code>C</code> are static ones. The static ones we put in a file called <i>static</i>. Each one of the dynamic property possibilities (<code>A=Adwaita</code>, <code>A=Dark</code>, <code>A=Light</code>) we put into its own <i>module</i>. Later, by choosing a module, config-modules will concatenate the module to the static and output the resulting file to a specified location.
+</p>
+</div>
+</div>
+<div id="outline-container-org9f6d4e8" class="outline-2">
+<h2 id="org9f6d4e8">Features</h2>
+<div class="outline-text-2" id="text-org9f6d4e8">
+<p>
+I'll simply print the help menu for you, right there:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">  Usage: config-modules [options]
+
+  Options:
+    -h, --help                Print help menu.                           [boolean]
+    -v, --version             Display version information.               [boolean]
+    -e, --entry               Which entry do you wish to configure?       [string]
+    -m, --module              Which module do you wish to enable?         [string]
+        --module-first        Pass this option and I will place the chosen module
+                              before the static file<span class="org-keyword"> in</span> the generated, final confi
+                              guration.                                  [boolean]
+    -c, --config              Config file path.                           [string]
+        --config-modules-dir  What is the path to the folder containing the entrie
+                              s with their modules?                       [string]
+    -w, --without-preview     When selecting a module interactively, this option d
+                              isables the preview. In other words, it prevents app
+                              lying the module right on selection<span class="org-keyword"> in</span> the menu.
+                                                                         [boolean]
+
+  Examples:
+    config-modules                            Simply let me choose and entry and a
+                                               module I want to be applied to the
+                                              entry.
+    config-modules --without-preview          Simply let me choose and entry and a
+                                               module I want to be applied to the
+                                              entry and while scrolling the module
+                                              s, do not apply any of them (<span class="org-keyword">for</span> my
+                                              preview) <span class="org-keyword">until</span> I choose the one to b
+                                              e applied.
+    config-modules --entry i3-wm              Ask me which module I want to apply
+                                              to the entry i3-wm
+    config-modules --entry i3-wm --module Standard Change entry i3-wm module to Standar
+                                              d
+    config-modules --entry i3-wm --module Standard -- Change entry i3-wm module to Standar
+    module-first                              d and put the module at the top of t
+                                              he file
+</pre>
+</div>
+<p>
+It's important to note that config-modules is a cross-platform, general tool. <b>It's a concept</b>, rather than a thing that can be used just with window managers. That's the way I use it, it's visual, it's cool, but it can be used for anything where you see it fit.
+</p>
+
+<p>
+To learn more and look at the source code, visit its <a href="https://github.com/thewebmasterp/config-modules">Github repo</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdbfd937" class="outline-2">
+<h2 id="orgdbfd937">Similar projects</h2>
+<div class="outline-text-2" id="text-orgdbfd937">
+<p>
+A list of less relevant but still worth a mention CLI applications I've built:
+</p>
+<div class="similar-projects">
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div id='remark42'></div>
+   <script>
+   	 var remark_config = {
+	 	host: 'https://remark42.thewebmasterp.com',
+	 	site_id: 'remark42.thewebmasterp.com',
+	 }
+   </script>
+   <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement('script'),c='.js',d=n.head||n.body;'noModule'in r?(r.type='module',c='.mjs'):r.async=!0,r.defer=!0,r.src=remark_config.host+'/web/'+e[o]+c,d.appendChild(r)}}(remark_config.components||['embed'],document);</script>
+   <xml>
+     <socmedia>
+       <entry>
+         <label>Github</label>
+         <href>https://github.com/thewebmasterp</href>
+         <icon>github.svg</icon>
+       </entry>
+       <entry>
+         <label>Instagram</label>
+         <href>https://www.instagram.com/webmaster_project</href>
+         <icon>instagram.svg</icon>
+       </entry>
+       <entry>
+         <label>Twitter</label>
+         <href>https://twitter.com/thewebmasterp</href>
+         <icon>twitter.svg</icon>
+       </entry>
+       <entry>
+         <label>Codepen</label>
+         <href>https://codepen.io/thewebmasterp</href>
+         <icon>codepen.svg</icon>
+       </entry>
+       <entry>
+         <label>Blog RSS Feed</label>
+         <href>/blog.xml</href>
+         <icon>rss.svg</icon>
+       </entry>
+     </socmedia>
+     <subscribe>
+       <cta></cta>
+     </subscribe>
+     <info>
+     </info>
+   </xml>
+</div>
+</body>
+</html>

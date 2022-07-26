@@ -49,6 +49,13 @@ html {
 }
 
 #index {
+	overflow: hidden !important;
+	height: 100%;
+	width: 100%;
+	min-width: 300px;
+	position: absolute;
+	transform-style: preserve-3d;
+	display: block;
 	#mask {
 		width: 100vw;
 		opacity: 0;
@@ -117,8 +124,7 @@ html {
 					}
 				}
 			}
-		}
-		
+		}	
 	}
 	&.preload {
 		#parallax { // In index
@@ -132,13 +138,6 @@ html {
 			}
 		}
 	}
-	overflow: hidden !important;
-	height: 100%;
-	width: 100%;
-	min-width: 300px;
-	position: absolute;
-	transform-style: preserve-3d;
-	display: block;
 	.figure-number {
 		//Do not number image captions
 		display: none;

@@ -1,0 +1,54 @@
+#+setupfile: ../../.org-templates/level/1.org
+#+title: i3-status-bat/i3-status-kblayout
+
+#+begin_export html
+<div id="slideshow" class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="../../img/projects/i3-status-bat-or-kblayout-demonstration-1.png" style="width:100%">
+  <!--<div class="text">a more descriptive gif</div>-->
+</div>
+
+<div class="mySlides fade">
+  <img src="../../img/projects/i3-status-bat-or-kblayout-demonstration-2.png" style="width:100%">
+  <!--<div class="text">i3wm, Alacritty, dunst, config-modules</div>-->
+</div>
+
+</div>
+#+end_export
+*** i3-status-kblayout:
+#+begin_export html
+<div class="btns">
+   <!-- <a href="https://google.com" class="btn live">Live</a> -->
+   <a href="https://github.com/thewebmasterp/i3-status-kblayout" class="btn github">Github</a>
+   <a href="https://www.npmjs.com/package/i3-status-kblayout" class="btn npm">Npm</a>
+</div>
+#+end_export
+
+*** i3-status-bat:
+#+begin_export html
+<div class="btns">
+   <a href="https://github.com/thewebmasterp/i3-status-bat" class="btn github">Github</a>
+   <a href="https://www.npmjs.com/package/i3-status-bat" class="btn npm">Npm</a>
+</div>
+#+end_export
+
+** What problem do they solve?
+I use i3wm. I needed a JavaScript solution to generate its status bar and [[https://github.com/fehmer/i3-status][i3-status]] (different from [[https://i3wm.org/docs/i3status.html][i3status]]) was the only option. Not many people want JavaScript for their status bar generation, I chose it because it is the language I am most familiar with which will give me the ability to create powerful custom blocks.
+
+The one con to i3-status is that very few people use it, therefore it doesn't have many blocks to choose from (a block is an entry that displays certain data like battery, time/date, wifi on the status bar).
+
+That's why I decided to write a few blocks myself.
+**** [[https://www.npmjs.com/package/i3-status-kblayout][i3-status-kblayout]]:
+  A block that shows the current language layout (including a caps lock indicator).
+**** [[https://www.npmjs.com/package/i3-status-bat][i3-status-bat]]:
+  A block that shows the current battery percentage.
+** Similar projects
+#+begin_export html
+<div class="similar-projects">
+</div>
+#+end_export
+
+
+
+

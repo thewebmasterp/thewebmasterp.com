@@ -1,0 +1,89 @@
+#+setupfile: ../../.org-templates/level/1.org
+#+title: config-modules
+
+#+begin_export html
+<div id="slideshow" class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="../../img/projects/config-modules-demonstration-2.gif" style="width:100%">
+  <img src="../../img/projects/config-modules-demonstration-2.gif" style="width:100%">
+  <!-- <div class="text">a more descriptive gif</div> -->
+</div>
+
+<div class="mySlides fade">
+  <img src="../../img/projects/config-modules-demonstration-1.gif" style="width:100%">
+  <!-- <div class="text">i3wm, Alacritty, dunst, config-modules</div> -->
+</div>
+
+</div>
+#+end_export
+
+#+begin_export html
+<div class="btns">
+   <!-- <a href="https://google.com" class="btn live">Live</a> -->
+   <a href="https://github.com/thewebmasterp/config-modules" class="btn github">Github</a>
+   <a href="https://www.npmjs.com/package/config-modules" class="btn npm">Npm</a>
+</div>
+#+end_export
+** What problem does config-modules solve?
+Many Linux programs are configured through what's called a config file. In most cases, it is simply a file where you can specify key-value pairs (properties) that modify the behavior (settings) of the given utility.
+
+To give you an example, let's say we have a hypothetical config file where we can set properties ~A~, ~B~, and ~C~. By setting ~A~ we can change the color theme of the utility, for example, we can do ~A=Adwaita~ or ~A=Dark~ or ~A=Light~. However, changing the theme would require us to enter that config file, modify the given property (in our case ~A~) and most of the time run a command to update the program with the new configuration.
+
+This is a costly array of steps to do something as simple as changing the theme of a single utility. What if we have many of those programs and we want to change their themes all at once or from a single menu? I have [[https://i3wm.org/][i3wm]], [[https://alacritty.org/][Alacritty]], [[https://dunst-project.org/][Dunst]], [[https://www.gtk.org/][GTK]], [[https://github.com/davatorium/rofi][Rofi]]. If I have to enter each of their configs to change the theme value, I better dump them and use Windows... Just kidding.
+
+That's where config-modules come into play!
+** How does it solve it?
+Continuing the previous example, ~A~ is a dynamic property. It can hold ~A=Adwaita~ or ~A=Dark~ or ~A=Light~, while ~B~ and ~C~ are static ones. The static ones we put in a file called /static/. Each one of the dynamic property possibilities (~A=Adwaita~, ~A=Dark~, ~A=Light~) we put into its own /module/. Later, by choosing a module, config-modules will concatenate the module to the static and output the resulting file to a specified location.
+** Features
+I'll simply print the help menu for you, right there:
+#+BEGIN_SRC shell
+  Usage: config-modules [options]
+
+  Options:
+    -h, --help                Print help menu.                           [boolean]
+    -v, --version             Display version information.               [boolean]
+    -e, --entry               Which entry do you wish to configure?       [string]
+    -m, --module              Which module do you wish to enable?         [string]
+        --module-first        Pass this option and I will place the chosen module
+                              before the static file in the generated, final confi
+                              guration.                                  [boolean]
+    -c, --config              Config file path.                           [string]
+        --config-modules-dir  What is the path to the folder containing the entrie
+                              s with their modules?                       [string]
+    -w, --without-preview     When selecting a module interactively, this option d
+                              isables the preview. In other words, it prevents app
+                              lying the module right on selection in the menu.
+                                                                         [boolean]
+
+  Examples:
+    config-modules                            Simply let me choose and entry and a
+                                               module I want to be applied to the
+                                              entry.
+    config-modules --without-preview          Simply let me choose and entry and a
+                                               module I want to be applied to the
+                                              entry and while scrolling the module
+                                              s, do not apply any of them (for my
+                                              preview) until I choose the one to b
+                                              e applied.
+    config-modules --entry i3-wm              Ask me which module I want to apply
+                                              to the entry i3-wm
+    config-modules --entry i3-wm --module Standard Change entry i3-wm module to Standar
+                                              d
+    config-modules --entry i3-wm --module Standard -- Change entry i3-wm module to Standar
+    module-first                              d and put the module at the top of t
+                                              he file
+#+END_SRC
+It's important to note that config-modules is a cross-platform, general tool. *It's a concept*, rather than a thing that can be used just with window managers. That's the way I use it, it's visual, it's cool, but it can be used for anything where you see it fit.
+
+To learn more and look at the source code, visit its [[https://github.com/thewebmasterp/config-modules][Github repo]].
+** Similar projects
+A list of less relevant but still worth a mention CLI applications I've built:
+#+begin_export html
+<div class="similar-projects">
+</div>
+#+end_export
+
+
+
+

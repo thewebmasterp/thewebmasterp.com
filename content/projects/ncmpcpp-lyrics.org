@@ -1,0 +1,85 @@
+#+setupfile: ../../.org-templates/level/1.org
+#+title: ncmpcpp-lyrics
+
+#+begin_export html
+<div id="slideshow" class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="../../img/projects/ncmpcpp-lyrics-demonstration-1.gif" style="width:100%">
+  <div class="text">Running ncmpcpp-lyrics to fetch lyrics for a music library</div>
+</div>
+
+<div class="mySlides fade">
+  <img src="../../img/projects/config-modules-demonstration-2.png" style="width:100%">
+  <!-- <div class="text"></div> -->
+</div>
+
+</div>
+#+end_export
+
+#+begin_export html
+<div class="btns">
+   <!-- <a href="https://google.com" class="btn live">Live</a> -->
+   <a href="https://github.com/thewebmasterp/ncmpcpp-lyrics" class="btn github">Github</a>
+   <a href="https://www.npmjs.com/package/ncmpcpp-lyrics" class="btn npm">Npm</a>
+</div>
+#+end_export
+** What problem does ncmpcpp-lyrics solve?
+I love my [[https://github.com/ncmpcpp/ncmpcpp][ncmpcpp]] CLI music player and have spent countless hours building my library of stolen music while pretending I am programming. When the time to add lyrics to my few thousand music files came, I finally decided to harness my programming skills and code this tool that fetches the lyrics for each song and stores them in the appropriate format.
+** How does it solve it?
+To fetch the lyrics, ncmpcpp-lyrics uses the [[https://docs.genius.com/][Genius API]]. If it doesn't find lyrics for a song, it simply lists the song in red at the end. If it finds the lyrics it puts them in a text file and outputs them to the specified output directory.
+** Features
+I'll simply print the help menu for you, right there:
+#+BEGIN_SRC shell
+  NAME:
+    ncmpcpp-lyrics - Add lyrics to your music library. Compatible with ncmpcpp
+    music player.
+
+  SYNOPSIS:
+    ncmpcpp-lyrics [MUSIC LIBRARY DIR] [LYRICS DIR] -a [ACCESS TOKEN FILE PATH]
+    ncmpcpp-lyrics [MUSIC LIBRARY DIR] -a [ACCESS TOKEN FILE PATH] [LYRICS DIR]
+    ncmpcpp-lyrics -a [ACCESS TOKEN FILE PATH] [MUSIC LIBRARY DIR] [LYRICS DIR]
+
+  DESCRIPTION:
+     Iterate [MUSIC LIBRARY DIR] recursively and extract all paths to mp3 files.
+    From each mp3 file (from its file name) extract
+    author and title properties and using the Genius API fetch lyrics (only if
+    they do not already exist in [LYRICS DIR]). Save the lyrics to [LYRICS DIR]
+    in format '{author} - {title}.txt', the format used by the ncmpcpp music
+    player to read and write lyrics.
+
+     In order for this little CLI program to be able to fetch lyrics from the
+    Genius API, you need to provide it with a text file containing ACCESS_TOKEN
+    that you can obtain from https://genius.com/api-clients and set via the
+    --access-token-file flag
+
+     [MUSIC LIBRARY DIR] must contain mp3 files with file names describing
+    data like the title and author of the piece in format:
+    '{author} - {whatever you want} - {however you want} - {title}.mp3'
+     The only two requirements are that the file name starts with the
+    author of the song, separated from other metadata you might (or might not)
+    want to include with a dash (' - ') and ends with the title
+    of the musical piece.
+
+  FLAGS:
+
+    -a, --access-token-file
+      Path to a file containing in plain text access token for the Genius API
+
+    -h, --help
+      Print this help menu.
+
+  AUTHOR:
+    Written by Zdravko Dimov (thewebmasterp).
+#+END_SRC
+
+To learn more and look at the source code, visit its [[https://github.com/thewebmasterp/ncmpcpp-lyrics][Github repo]].
+** Similar projects
+#+begin_export html
+<div class="similar-projects">
+</div>
+#+end_export
+
+
+
+

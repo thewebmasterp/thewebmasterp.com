@@ -201,6 +201,15 @@
 		 :sitemap-format-entry my/org-sitemap-date-entry-format
 		 :sitemap-sort-files anti-chronologically)
 
+		("projects"
+		 :base-directory "./content/projects"
+		 :publishing-directory "./public/projects"
+		 :publishing-function org-html-publish-to-html
+		 :base-extension "org"
+		 :recursive t
+		 :html-preamble ,def-html-preamble
+		 :html-postamble ,blog-html-postamble)
+
 		("pages"
 		 :base-directory "./content"
 		 :publishing-directory "./public"
@@ -230,7 +239,7 @@
 		 :table-of-contents nil)
 
 		("thewebmasterp.com"
-		 :components ("pages" "blog" "static" "blog-rss"))
+		 :components ("pages" "blog" "projects" "static" "blog-rss"))
 		))
 
 ;; Generate the site output

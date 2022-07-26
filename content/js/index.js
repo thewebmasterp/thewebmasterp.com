@@ -7,6 +7,7 @@ import contactPage from './actions/contactPage'
 import blog from './actions/blog'
 import blogPage from './actions/blogPage'
 import blogArticle from './actions/blogArticle'
+import projects from './actions/projects'
 
 const CONFIG = {
   defaultTheme: 'dark',
@@ -82,6 +83,7 @@ const rules = [
     blogArticle,
     'article'
   ),
+  new Rule('project', path => path.includes('projects'), projects, 'project'),
 ]
 
 const main = (event, config) => {

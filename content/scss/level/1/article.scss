@@ -1,6 +1,10 @@
 #article {
 	#content {
+		min-width: 310px;
+		max-width: calc(100vw - 2em);
 		font-family: var(--sans-font);
+		overflow: hidden;
+		text-overflow: ellipsis;
 		#ArticleMetaData {
 			font-family: var(--mono-font);
 			color: var(--text-light);
@@ -29,6 +33,34 @@
 			p {
 				text-indent: 0;
 				font-size: 1em;
+			}
+		}
+		.list-insta-posts {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			height: auto;
+			iframe {
+				min-width: 0px !important;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 400px) {
+	html {
+		#article {
+			#content {
+				max-width: calc(1000px - 2em);
+				.list-insta-posts {
+					display: flex;
+					flex-direction: row;
+					width: 100%;
+					height: auto;
+					iframe {
+						min-width: 0px !important;
+					}
+				}
 			}
 		}
 	}

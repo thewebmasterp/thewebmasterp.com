@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2022-07-26 Tue 22:47 -->
+<meta charset="utf-8" />
+<title>ncmpcpp-lyrics</title>
+<meta name="author" content="thewebmasterp" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, target-densityDpi=device-dpi, user-scalable=no, maximum-scale=0.8"><meta property="og:title" content="thewebmasterp.com" /><meta property="og:type" content="website" /><meta property="og:url" content="https://thewebmasterp.com/" /><meta property="og:image" content="https://thewebmasterp.com/img/avatar.jpg" />
+<link rel="stylesheet" href="../../css/style.min.css" />
+<script src="../../js/app.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/meta/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/meta/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../img/meta/favicon-16x16.png">
+<link rel="manifest" href="../../site.webmanifest">
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div id='mask'> <div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div> </div>
+<script>0</script>
+<nav id='topnav'>
+<a class='homeLink' href='/index.html' title='The index, landing page of this website'>Home</a>
+<a class='blogLink' href='/blog.html' title='My articles'>Blog</a>
+<a class='aboutLink' href='/about.html' title='About the website and its owner'>About</a>
+<div class='sparse'>
+<div class='theme-changer'></div>
+</div>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">ncmpcpp-lyrics</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org06abd43">What problem does ncmpcpp-lyrics solve?</a></li>
+<li><a href="#orgbea54d2">How does it solve it?</a></li>
+<li><a href="#org0aedd0b">Features</a></li>
+<li><a href="#org2d4b6d9">Similar projects</a></li>
+</ul>
+</div>
+</nav>
+<div id="slideshow" class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="../../img/projects/ncmpcpp-lyrics-demonstration-1.gif" style="width:100%">
+  <div class="text">Running ncmpcpp-lyrics to fetch lyrics for a music library</div>
+</div>
+
+<div class="mySlides fade">
+  <img src="../../img/projects/config-modules-demonstration-2.png" style="width:100%">
+  <!-- <div class="text"></div> -->
+</div>
+
+</div>
+
+<div class="btns">
+   <!-- <a href="https://google.com" class="btn live">Live</a> -->
+   <a href="https://github.com/thewebmasterp/ncmpcpp-lyrics" class="btn github">Github</a>
+   <a href="https://www.npmjs.com/package/ncmpcpp-lyrics" class="btn npm">Npm</a>
+</div>
+<div id="outline-container-org06abd43" class="outline-2">
+<h2 id="org06abd43">What problem does ncmpcpp-lyrics solve?</h2>
+<div class="outline-text-2" id="text-org06abd43">
+<p>
+I love my <a href="https://github.com/ncmpcpp/ncmpcpp">ncmpcpp</a> CLI music player and have spent countless hours building my library of stolen music while pretending I am programming. When the time to add lyrics to my few thousand music files came, I finally decided to harness my programming skills and code this tool that fetches the lyrics for each song and stores them in the appropriate format.
+</p>
+</div>
+</div>
+<div id="outline-container-orgbea54d2" class="outline-2">
+<h2 id="orgbea54d2">How does it solve it?</h2>
+<div class="outline-text-2" id="text-orgbea54d2">
+<p>
+To fetch the lyrics, ncmpcpp-lyrics uses the <a href="https://docs.genius.com/">Genius API</a>. If it doesn't find lyrics for a song, it simply lists the song in red at the end. If it finds the lyrics it puts them in a text file and outputs them to the specified output directory.
+</p>
+</div>
+</div>
+<div id="outline-container-org0aedd0b" class="outline-2">
+<h2 id="org0aedd0b">Features</h2>
+<div class="outline-text-2" id="text-org0aedd0b">
+<p>
+I'll simply print the help menu for you, right there:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">  NAME:
+    ncmpcpp-lyrics - Add lyrics to your music library. Compatible with ncmpcpp
+    music player.
+
+  SYNOPSIS:
+    ncmpcpp-lyrics [MUSIC LIBRARY DIR] [LYRICS DIR] -a [ACCESS TOKEN FILE PATH]
+    ncmpcpp-lyrics [MUSIC LIBRARY DIR] -a [ACCESS TOKEN FILE PATH] [LYRICS DIR]
+    ncmpcpp-lyrics -a [ACCESS TOKEN FILE PATH] [MUSIC LIBRARY DIR] [LYRICS DIR]
+
+  DESCRIPTION:
+     Iterate [MUSIC LIBRARY DIR] recursively and extract all paths to mp3 files.
+    From each mp3 file (from its file name) extract
+    author and title properties and using the Genius API fetch lyrics (only if
+    they do not already exist<span class="org-keyword"> in</span> [LYRICS DIR])<span class="org-builtin">.</span> Save the lyrics to [LYRICS DIR]
+    <span class="org-keyword">in</span> format <span class="org-string">'{author} - {title}.txt'</span>, the format used by the ncmpcpp music
+    player to read and write lyrics.
+
+     In order for this little CLI program to be able to fetch lyrics from the
+    Genius API, you need to provide it with a text file containing ACCESS_TOKEN
+    that you can obtain from https://genius.com/api-clients and set via the
+    --access-token-file flag
+
+     [MUSIC LIBRARY DIR] must contain mp3 files with file names describing
+    data like the title and author of the piece<span class="org-keyword"> in</span> format:
+    <span class="org-string">'{author} - {whatever you want} - {however you want} - {title}.mp3'</span>
+     The only two requirements are that the file name starts with the
+    author of the song, separated from other metadata you might (or might not)
+    want to include with a dash (<span class="org-string">' - '</span>) and ends with the title
+    of the musical piece.
+
+  FLAGS:
+
+    -a, --access-token-file
+      Path to a file containing<span class="org-keyword"> in</span> plain text access token for the Genius API
+
+    -h, --help
+      Print this help menu.
+
+  AUTHOR:
+    Written by Zdravko Dimov (thewebmasterp)<span class="org-builtin">.</span>
+</pre>
+</div>
+
+<p>
+To learn more and look at the source code, visit its <a href="https://github.com/thewebmasterp/ncmpcpp-lyrics">Github repo</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-org2d4b6d9" class="outline-2">
+<h2 id="org2d4b6d9">Similar projects</h2>
+<div class="outline-text-2" id="text-org2d4b6d9">
+<div class="similar-projects">
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div id='remark42'></div>
+   <script>
+   	 var remark_config = {
+	 	host: 'https://remark42.thewebmasterp.com',
+	 	site_id: 'remark42.thewebmasterp.com',
+	 }
+   </script>
+   <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement('script'),c='.js',d=n.head||n.body;'noModule'in r?(r.type='module',c='.mjs'):r.async=!0,r.defer=!0,r.src=remark_config.host+'/web/'+e[o]+c,d.appendChild(r)}}(remark_config.components||['embed'],document);</script>
+   <xml>
+     <socmedia>
+       <entry>
+         <label>Github</label>
+         <href>https://github.com/thewebmasterp</href>
+         <icon>github.svg</icon>
+       </entry>
+       <entry>
+         <label>Instagram</label>
+         <href>https://www.instagram.com/webmaster_project</href>
+         <icon>instagram.svg</icon>
+       </entry>
+       <entry>
+         <label>Twitter</label>
+         <href>https://twitter.com/thewebmasterp</href>
+         <icon>twitter.svg</icon>
+       </entry>
+       <entry>
+         <label>Codepen</label>
+         <href>https://codepen.io/thewebmasterp</href>
+         <icon>codepen.svg</icon>
+       </entry>
+       <entry>
+         <label>Blog RSS Feed</label>
+         <href>/blog.xml</href>
+         <icon>rss.svg</icon>
+       </entry>
+     </socmedia>
+     <subscribe>
+       <cta></cta>
+     </subscribe>
+     <info>
+     </info>
+   </xml>
+</div>
+</body>
+</html>

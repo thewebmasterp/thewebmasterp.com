@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2022-07-26 Tue 22:47 -->
+<meta charset="utf-8" />
+<title>i3-status-bat/i3-status-kblayout</title>
+<meta name="author" content="thewebmasterp" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, target-densityDpi=device-dpi, user-scalable=no, maximum-scale=0.8"><meta property="og:title" content="thewebmasterp.com" /><meta property="og:type" content="website" /><meta property="og:url" content="https://thewebmasterp.com/" /><meta property="og:image" content="https://thewebmasterp.com/img/avatar.jpg" />
+<link rel="stylesheet" href="../../css/style.min.css" />
+<script src="../../js/app.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/meta/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/meta/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../img/meta/favicon-16x16.png">
+<link rel="manifest" href="../../site.webmanifest">
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div id='mask'> <div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div> </div>
+<script>0</script>
+<nav id='topnav'>
+<a class='homeLink' href='/index.html' title='The index, landing page of this website'>Home</a>
+<a class='blogLink' href='/blog.html' title='My articles'>Blog</a>
+<a class='aboutLink' href='/about.html' title='About the website and its owner'>About</a>
+<div class='sparse'>
+<div class='theme-changer'></div>
+</div>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">i3-status-bat/i3-status-kblayout</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5c40afe">i3-status-kblayout:</a></li>
+<li><a href="#org63f3e1b">i3-status-bat:</a></li>
+</ul>
+</li>
+<li><a href="#org0d15eac">What problem do they solve?</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orga49351f">i3-status-kblayout:</a></li>
+<li><a href="#org0a13615">i3-status-bat:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org7392f9e">Similar projects</a></div>
+</nav>
+<div id="slideshow" class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="../../img/projects/i3-status-bat-or-kblayout-demonstration-1.png" style="width:100%">
+  <!--<div class="text">a more descriptive gif</div>-->
+</div>
+
+<div class="mySlides fade">
+  <img src="../../img/projects/i3-status-bat-or-kblayout-demonstration-2.png" style="width:100%">
+  <!--<div class="text">i3wm, Alacritty, dunst, config-modules</div>-->
+</div>
+
+</div>
+<div id="outline-container-org5c40afe" class="outline-3">
+<h3 id="org5c40afe">i3-status-kblayout:</h3>
+<div class="outline-text-3" id="text-org5c40afe">
+<div class="btns">
+   <!-- <a href="https://google.com" class="btn live">Live</a> -->
+   <a href="https://github.com/thewebmasterp/i3-status-kblayout" class="btn github">Github</a>
+   <a href="https://www.npmjs.com/package/i3-status-kblayout" class="btn npm">Npm</a>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org63f3e1b" class="outline-3">
+<h3 id="org63f3e1b">i3-status-bat:</h3>
+<div class="outline-text-3" id="text-org63f3e1b">
+<div class="btns">
+   <a href="https://github.com/thewebmasterp/i3-status-bat" class="btn github">Github</a>
+   <a href="https://www.npmjs.com/package/i3-status-bat" class="btn npm">Npm</a>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0d15eac" class="outline-2">
+<h2 id="org0d15eac">What problem do they solve?</h2>
+<div class="outline-text-2" id="text-org0d15eac">
+<p>
+I use i3wm. I needed a JavaScript solution to generate its status bar and <a href="https://github.com/fehmer/i3-status">i3-status</a> (different from <a href="https://i3wm.org/docs/i3status.html">i3status</a>) was the only option. Not many people want JavaScript for their status bar generation, I chose it because it is the language I am most familiar with which will give me the ability to create powerful custom blocks.
+</p>
+
+<p>
+The one con to i3-status is that very few people use it, therefore it doesn't have many blocks to choose from (a block is an entry that displays certain data like battery, time/date, wifi on the status bar).
+</p>
+
+<p>
+That's why I decided to write a few blocks myself.
+</p>
+</div>
+<div id="outline-container-orga49351f" class="outline-4">
+<h4 id="orga49351f"><a href="https://www.npmjs.com/package/i3-status-kblayout">i3-status-kblayout</a>:</h4>
+<div class="outline-text-4" id="text-orga49351f">
+<p>
+A block that shows the current language layout (including a caps lock indicator).
+</p>
+</div>
+</div>
+<div id="outline-container-org0a13615" class="outline-4">
+<h4 id="org0a13615"><a href="https://www.npmjs.com/package/i3-status-bat">i3-status-bat</a>:</h4>
+<div class="outline-text-4" id="text-org0a13615">
+<p>
+A block that shows the current battery percentage.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7392f9e" class="outline-2">
+<h2 id="org7392f9e">Similar projects</h2>
+<div class="outline-text-2" id="text-org7392f9e">
+<div class="similar-projects">
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div id='remark42'></div>
+   <script>
+   	 var remark_config = {
+	 	host: 'https://remark42.thewebmasterp.com',
+	 	site_id: 'remark42.thewebmasterp.com',
+	 }
+   </script>
+   <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement('script'),c='.js',d=n.head||n.body;'noModule'in r?(r.type='module',c='.mjs'):r.async=!0,r.defer=!0,r.src=remark_config.host+'/web/'+e[o]+c,d.appendChild(r)}}(remark_config.components||['embed'],document);</script>
+   <xml>
+     <socmedia>
+       <entry>
+         <label>Github</label>
+         <href>https://github.com/thewebmasterp</href>
+         <icon>github.svg</icon>
+       </entry>
+       <entry>
+         <label>Instagram</label>
+         <href>https://www.instagram.com/webmaster_project</href>
+         <icon>instagram.svg</icon>
+       </entry>
+       <entry>
+         <label>Twitter</label>
+         <href>https://twitter.com/thewebmasterp</href>
+         <icon>twitter.svg</icon>
+       </entry>
+       <entry>
+         <label>Codepen</label>
+         <href>https://codepen.io/thewebmasterp</href>
+         <icon>codepen.svg</icon>
+       </entry>
+       <entry>
+         <label>Blog RSS Feed</label>
+         <href>/blog.xml</href>
+         <icon>rss.svg</icon>
+       </entry>
+     </socmedia>
+     <subscribe>
+       <cta></cta>
+     </subscribe>
+     <info>
+     </info>
+   </xml>
+</div>
+</body>
+</html>

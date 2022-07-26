@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2022-07-26 Tue 22:47 -->
+<meta charset="utf-8" />
+<title>Code Explainer</title>
+<meta name="author" content="thewebmasterp" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, target-densityDpi=device-dpi, user-scalable=no, maximum-scale=0.8"><meta property="og:title" content="thewebmasterp.com" /><meta property="og:type" content="website" /><meta property="og:url" content="https://thewebmasterp.com/" /><meta property="og:image" content="https://thewebmasterp.com/img/avatar.jpg" />
+<link rel="stylesheet" href="../../css/style.min.css" />
+<script src="../../js/app.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/meta/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/meta/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../img/meta/favicon-16x16.png">
+<link rel="manifest" href="../../site.webmanifest">
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div id='mask'> <div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div> </div>
+<script>0</script>
+<nav id='topnav'>
+<a class='homeLink' href='/index.html' title='The index, landing page of this website'>Home</a>
+<a class='blogLink' href='/blog.html' title='My articles'>Blog</a>
+<a class='aboutLink' href='/about.html' title='About the website and its owner'>About</a>
+<div class='sparse'>
+<div class='theme-changer'></div>
+</div>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Code Explainer</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4110a46">What is the Code Explainer?</a></li>
+<li><a href="#org9c1c732">Features</a>
+<ul>
+<li><a href="#orgebc13b6">Code clicking</a></li>
+<li><a href="#org89dee5b">Unknown term info</a></li>
+<li><a href="#org43765eb">Sliding</a></li>
+</ul>
+</li>
+<li><a href="#orgc108032">Similar projects</a></li>
+</ul>
+</div>
+</nav>
+<div id="slideshow" class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="../../img/projects/code-explainer-demonstration-1.png">
+  <!-- <div class="text">a more descriptive gif</div> -->
+</div>
+
+<div class="mySlides fade">
+  <img src="../../img/projects/code-explainer-demonstration-2.png">
+  <!-- <div class="text">i3wm, Alacritty, dunst, config-modules</div> -->
+</div>
+
+</div>
+
+<div class="btns">
+   <a href="https://code-explainer.thewebmasterp.com" class="btn live">Live</a>
+   <a href="https://github.com/thewebmasterp/code-explainer" class="btn github">Github</a>
+</div>
+<div id="outline-container-org4110a46" class="outline-2">
+<h2 id="org4110a46">What is the Code Explainer?</h2>
+<div class="outline-text-2" id="text-org4110a46">
+<p>
+The Code Explainer is a platform for presenting code to people, built with React. Words lose meaning when you can just <a href="https://code-explainer.thewebmasterp.com">test out</a> the application and see for yourself. Right now it consists only of a front-end implementation, lacking any serious backend but I aim at changing that in the future to allow users to present/view/discuss code explanations.
+</p>
+
+<p>
+To learn more and look at the source code, visit its <a href="https://github.com/thewebmasterp/code-explainer">Github repo</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-org9c1c732" class="outline-2">
+<h2 id="org9c1c732">Features</h2>
+<div class="outline-text-2" id="text-org9c1c732">
+</div>
+<div id="outline-container-orgebc13b6" class="outline-3">
+<h3 id="orgebc13b6">Code clicking</h3>
+<div class="outline-text-3" id="text-orgebc13b6">
+
+<figure id="orgc0f2f1a">
+<img src="../../img/projects/clickcode.gif" alt="clickcode.gif">
+
+</figure>
+
+<p>
+You click on a code line and the appropriate slide gets activated to explain to you what this line does.
+</p>
+</div>
+</div>
+<div id="outline-container-org89dee5b" class="outline-3">
+<h3 id="org89dee5b">Unknown term info</h3>
+<div class="outline-text-3" id="text-org89dee5b">
+
+<figure id="orgc2ed60b">
+<img src="../../img/projects/popup.gif" alt="popup.gif">
+
+</figure>
+
+<p>
+You read through the slide and it mentions <i>terms</i>, <i>variables</i>, <i>topics</i>. You don't know any of them? Click on it. A popup will appear giving you more details. You don't understand some term/variable/topic from the popup? Click on it. You can do this forever until you understand the topic, close all the popups and continue sliding!
+</p>
+</div>
+</div>
+<div id="outline-container-org43765eb" class="outline-3">
+<h3 id="org43765eb">Sliding</h3>
+<div class="outline-text-3" id="text-org43765eb">
+
+<figure id="orgba749e6">
+<img src="../../img/projects/nextprev.gif" alt="nextprev.gif">
+
+</figure>
+
+<p>
+You finished reading the current slide? Tap on the arrows to view the next/previous one.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc108032" class="outline-2">
+<h2 id="orgc108032">Similar projects</h2>
+<div class="outline-text-2" id="text-orgc108032">
+<p>
+A list of less relevant but still worth a mention CLI applications I've built:
+</p>
+<div class="similar-projects">
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div id='remark42'></div>
+   <script>
+   	 var remark_config = {
+	 	host: 'https://remark42.thewebmasterp.com',
+	 	site_id: 'remark42.thewebmasterp.com',
+	 }
+   </script>
+   <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement('script'),c='.js',d=n.head||n.body;'noModule'in r?(r.type='module',c='.mjs'):r.async=!0,r.defer=!0,r.src=remark_config.host+'/web/'+e[o]+c,d.appendChild(r)}}(remark_config.components||['embed'],document);</script>
+   <xml>
+     <socmedia>
+       <entry>
+         <label>Github</label>
+         <href>https://github.com/thewebmasterp</href>
+         <icon>github.svg</icon>
+       </entry>
+       <entry>
+         <label>Instagram</label>
+         <href>https://www.instagram.com/webmaster_project</href>
+         <icon>instagram.svg</icon>
+       </entry>
+       <entry>
+         <label>Twitter</label>
+         <href>https://twitter.com/thewebmasterp</href>
+         <icon>twitter.svg</icon>
+       </entry>
+       <entry>
+         <label>Codepen</label>
+         <href>https://codepen.io/thewebmasterp</href>
+         <icon>codepen.svg</icon>
+       </entry>
+       <entry>
+         <label>Blog RSS Feed</label>
+         <href>/blog.xml</href>
+         <icon>rss.svg</icon>
+       </entry>
+     </socmedia>
+     <subscribe>
+       <cta></cta>
+     </subscribe>
+     <info>
+     </info>
+   </xml>
+</div>
+</body>
+</html>

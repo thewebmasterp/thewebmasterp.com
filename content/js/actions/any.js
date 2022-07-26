@@ -38,21 +38,26 @@ const any = sp => {
     // NOTE: If you use any special characters like # or sth else in your filenames, list them here.
     const specChar = ['#']
     ;[...contentAnchors].forEach(a => {
-      const href = a.getAttribute('href')
-      if (href.startsWith('https://') || href.startsWith('http://')) {
-        a.setAttribute('target', '_blank')
-      } else if (
-        href
-          .substring(1)
-          .split('')
-          .some(str => specChar.includes(str)) ||
-        decodeURIComponent(href.substring(1))
-          .split('')
-          .some(str => specChar.includes(str))
-      ) {
-        console.log(href)
-        const newHref = encodeURIComponent(href)
-        a.setAttribute('href', newHref)
+      const href = a?.getAttribute?.('href')
+      try {
+        if (href?.startsWith?.('https://') || href?.startsWith?.('http://')) {
+          a.setAttribute('target', '_blank')
+        } else if (
+          href
+            .substring(1)
+            .split('')
+            .some(str => specChar.includes(str)) ||
+          decodeURIComponent(href.substring(1))
+            .split('')
+            .some(str => specChar.includes(str))
+        ) {
+          console.log(href)
+          const newHref = encodeURIComponent(href)
+          a.setAttribute('href', newHref)
+        }
+      } catch (e) {
+        // throw e
+        /*Note: throw if something isn't quite alright with links!*/
       }
     })
 

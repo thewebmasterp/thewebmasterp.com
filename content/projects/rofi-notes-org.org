@@ -1,0 +1,43 @@
+#+setupfile: ../../.org-templates/level/1.org
+#+title: rofi-notes-org
+
+#+begin_export html
+<div id="slideshow" class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="../../img/projects/rofi-notes-org-demonstration-1.gif" style="width:100%">
+  <!--<div class="text">a more descriptive gif</div>-->
+</div>
+
+<div class="mySlides fade">
+  <img src="../../img/projects/rofi-notes-org-demonstration-2.png" style="width:100%">
+  <!--<div class="text">i3wm, Alacritty, dunst, config-modules</div>-->
+</div>
+
+</div>
+#+end_export
+
+#+begin_export html
+<div class="btns">
+   <!-- <a href="https://google.com" class="btn live">Live</a> -->
+   <a href="https://github.com/thewebmasterp/rofi-notes-org" class="btn github">Github</a>
+   <a href="https://www.npmjs.com/package/rofi-notes-org" class="btn npm">Npm</a>
+</div>
+#+end_export
+** What problem does rofi-notes-org solve?
+It helps you write down your thoughts/idas/todos while programming just in the matter of hitting a key, thus freeing your mind from overwhelming thoughts and distractions while at the same time keeping you in the zone.
+
+It should also be considered a great component of your GTD system.
+** How does it solve it?
+Creating and accessing a sticky note should be very, very simple, up to the point that such a common operation doesn't even need its own application. rofi-notes-org uses [[https://github.com/davatorium/rofi][Rofi]] to gather input from the user and Emacs [[https://orgmode.org/][Org-mode]] format to store its data in a plain text file. It's not a standalone application but rather an extension to Rofi.
+
+To learn more and look at the source code, visit its [[https://github.com/thewebmasterp/rofi-notes-org][Github repo]].
+** Similar projects
+#+begin_export html
+<div class="similar-projects">
+</div>
+#+end_export
+
+
+
+

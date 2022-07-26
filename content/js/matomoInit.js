@@ -1,7 +1,4 @@
 const matomoInit = () => {
-  // TODO: Enable and debug this script after pushed to production
-  console.log('hi from matomo!')
-
   var _paq = (window._paq = window._paq || [])
   // tracker methods like "setCustomDimension" should be called before "trackPageView"
   _paq.push(['trackPageView'])
