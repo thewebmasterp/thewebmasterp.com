@@ -45,7 +45,34 @@ That's why I decided to write a few blocks myself.
   A block that shows the current battery percentage.
 ** Similar projects
 #+begin_export html
-<div class="similar-projects">
+<div class="projects">
+  <div class="card">
+     <div class="thumbnail">
+       <img src="../../img/thumbnails/thumbnail_config-modules.gif">
+     </div>
+     <a href="./config-modules.html" class="title"><h4>config-modules</h4></a>
+     <span class="description">
+       Static config files to dynamic in a modular approach
+     </span>
+  </div>
+  <div class="card">
+     <div class="thumbnail">
+       <img src="../../img/thumbnails/thumbnail_rofi-notes-org.gif">
+     </div>
+     <a href="./rofi-notes-org.html" class="title"><h4>rofi-notes-org</h4></a>
+     <span class="description">
+       Catch and access sticky notes with rofi
+     </span>
+  </div>
+  <div class="card">
+     <div class="thumbnail">
+       <img src="../../img/thumbnails/thumbnail_ncmpcpp-lyrics.png">
+     </div>
+     <a href="./ncmpcpp-lyrics.html" class="title"><h4>ncmpcpp-lyrics</h4></a>
+     <span class="description">
+       Add lyrics to your music library
+     </span>
+  </div>
 </div>
 #+end_export
 

@@ -76,8 +76,35 @@ I'll simply print the help menu for you, right there:
 To learn more and look at the source code, visit its [[https://github.com/thewebmasterp/ncmpcpp-lyrics][Github repo]].
 ** Similar projects
 #+begin_export html
-<div class="similar-projects">
-</div>
+<div class="projects">
+  <div class="card">
+     <div class="thumbnail">
+       <img src="../../img/thumbnails/thumbnail_config-modules.gif">
+     </div>
+     <a href="./config-modules.html" class="title"><h4>config-modules</h4></a>
+     <span class="description">
+       Static config files to dynamic in a modular approach
+     </span>
+  </div>
+  <div class="card">
+     <div class="thumbnail">
+       <img src="../../img/thumbnails/thumbnail_rofi-notes-org.gif">
+     </div>
+     <a href="./rofi-notes-org.html" class="title"><h4>rofi-notes-org</h4></a>
+     <span class="description">
+       Catch and access sticky notes with rofi
+     </span>
+  </div>
+  <div class="card">
+     <div class="thumbnail">
+       <img src="../../img/thumbnails/thumbnail_i3-status-bat-or-kblayout.png">
+     </div>
+     <a href="./i3-status-kblayout-or-bat.html" class="title"><h4>i3-status (-kblayout/-bat)</h4></a>
+     <span class="description">
+       Modules for i3-status
+     </span>
+  </div>
+</div
 #+end_export
 
 
