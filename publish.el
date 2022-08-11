@@ -95,6 +95,11 @@
          <icon>github.svg</icon>
        </entry>
        <entry>
+        <label>LinkedIn</label>
+        <href>https://www.linkedin.com/in/thewebmasterp/</href>
+        <icon>linkedin.svg</icon>
+      </entry>
+       <entry>
          <label>Instagram</label>
          <href>https://www.instagram.com/webmaster_project</href>
          <icon>instagram.svg</icon>
@@ -223,7 +228,7 @@
 		 :base-directory "./content"
 		 :publishing-directory "./public"
 		 :publishing-function org-publish-attachment
-		 :base-extension "txt\\|jpg\\|gif\\|png\\|svg\\|webmanifest\\|woff\\|woff2\\|html\\|mp3"
+		 :base-extension "txt\\|jpg\\|gif\\|png\\|svg\\|webmanifest\\|woff\\|woff2\\|html\\|mp3\\|pdf"
 		 :recursive t)
 
 		("blog-rss"

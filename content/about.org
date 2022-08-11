@@ -20,7 +20,7 @@ Hi, I am Zdravko Dimov, aka thewebmasterp.
 
 I am a self-taught *front-end web developer* specializing in *JavaScript* and its ecosystem, including React, aiming at full-stack and a broader understanding of software engineering.
 
-I love [[https://www.gnu.org/philosophy/free-sw.html][Free and open-source software]] and some of its deserving-a-mention representatives like [[https://archlinux.org/about/][Arch Linux]] and [[https://www.gnu.org/software/emacs/][GNU Emacs]] are deeply ingrained into my development workflow, just like the moral principles they convey.
+I love [[https://www.gnu.org/philosophy/free-sw.html][Free and open-source software]], and some of its deserving-a-mention representatives like [[https://archlinux.org/about/][Arch Linux]] and [[https://www.gnu.org/software/emacs/][GNU Emacs]] are deeply ingrained into my development workflow, just like the moral principles they convey.
 
 In my spare time, I do Aikido.
 
@@ -35,6 +35,11 @@ To [[./contact.org][contact me]], E-mail ~zdimovv~ at ~thewebmasterp.com~ or hit
         <label>Github</label>
         <href>https://github.com/thewebmasterp</href>
         <icon>github.svg</icon>
+      </entry>
+      <entry>
+        <label>LinkedIn</label>
+        <href>https://www.linkedin.com/in/thewebmasterp/</href>
+        <icon>linkedin.svg</icon>
       </entry>
       <entry>
         <label>Instagram</label>
@@ -80,24 +85,15 @@ To [[./contact.org][contact me]], E-mail ~zdimovv~ at ~thewebmasterp.com~ or hit
        A platform for presenting code
      </span>
   </div>
-  <div class="card others" onClick="location.href='./projects/all-projects.html'" style="height: 246px;"><i class="bulb-icon" title="See other projects" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(1.1036 0 0 1.1036 25.226 -16.122)" stroke-width=".90613">
-<path d="m-13.76 32.782v1.3755c0 1.0087 0.81772 1.8265 1.8265 1.8265 1.0087 0 1.8265-0.81772 1.8265-1.8265v-1.3755z" fill="#c7cfe2"></path>
-<path d="m-12.376 34.158v-1.3755h-1.3831v1.3755c0 1.0087 0.81772 1.8265 1.8265 1.8265 0.24481 0 0.47818-0.04849 0.69156-0.13593-0.66573-0.27263-1.1349-0.92663-1.1349-1.6905z" enable-background="new" opacity=".1"></path>
-<path d="m-11.854 18.274c-3.1466-0.0426-5.7808 2.5546-5.7808 5.7014 0 1.2542 0.4053 2.4136 1.0916 3.3551 1.1014 1.8338 1.6245 2.6882 1.7825 3.8077 0.06771 0.47996 0.4778 0.8372 0.9625 0.8372h3.7308c0.4847 0 0.89475-0.35728 0.9625-0.8372 0.15795-1.1194 0.6811-1.9738 1.7825-3.8077 0.68631-0.94145 1.0916-2.1009 1.0916-3.3551 0-3.1228-2.5104-5.6593-5.6231-5.7014z" fill="#ffd782"></path>
-<path d="m-12.917 31.138c-0.15795-1.1194-0.68106-1.9738-1.7825-3.8077-0.68631-0.94145-1.0916-2.1009-1.0916-3.3551 0-2.8092 2.0993-5.1802 4.7883-5.6264-0.27762-0.04561-0.56207-0.07114-0.85168-0.07512-3.1466-0.0426-5.7808 2.5546-5.7808 5.7014 0 1.2542 0.4053 2.4136 1.0916 3.3551 1.1014 1.8339 1.6245 2.6882 1.7825 3.8077 0.06771 0.47996 0.4778 0.83715 0.9625 0.83715h1.8442c-0.48474 8.5e-5 -0.89483-0.35715-0.96254-0.83711z" enable-background="new" opacity=".1"></path>
-<path d="m-9.3579 32.782-2.5752-0.8073-2.5752 0.8073c-0.44587 0-0.8073 0.36147-0.8073 0.8073 0 0.44587 0.36147 0.80734 0.8073 0.80734h5.1503c0.44587 0 0.8073-0.36147 0.8073-0.80734 4.2e-5 -0.44583-0.36143-0.8073-0.80726-0.8073z" fill="#b4bbcc"></path>
-<path d="m-13.471 33.59c0-0.44587 0.36147-0.8073 0.80734-0.8073l1.6531-0.5182-0.9221-0.28906-2.5752 0.8073c-0.44587 0-0.80734 0.36147-0.80734 0.8073 0 0.44587 0.36147 0.80734 0.80734 0.80734h1.8442c-0.44587-8.5e-5 -0.80734-0.36147-0.80734-0.80738z" enable-background="new" opacity=".1"></path>
-<path d="m-9.3579 31.168h-5.1504c-0.44587 0-0.8073 0.36147-0.8073 0.8073 0 0.44587 0.36147 0.8073 0.8073 0.8073h5.1503c0.44587 0 0.8073-0.36147 0.8073-0.8073 4.2e-5 -0.44583-0.36143-0.8073-0.80726-0.8073z" fill="#c7cfe2"></path>
-<path d="m-13.471 31.975c0-0.44587 0.36147-0.8073 0.80734-0.8073h-1.8442c-0.44587 0-0.80734 0.36147-0.80734 0.8073 0 0.44587 0.36147 0.8073 0.80734 0.8073h1.8442c-0.44587 0-0.80734-0.36139-0.80734-0.8073z" enable-background="new" opacity=".1"></path>
-<path d="m-12.279 14.994v1.8795c0 0.19098 0.15482 0.3458 0.3458 0.3458s0.3458-0.15482 0.3458-0.3458v-1.8795c0-0.19098-0.15482-0.3458-0.3458-0.3458s-0.3458 0.15482-0.3458 0.3458z"></path>
-<path d="m-17.38 16.469 0.89902 1.6505c0.06276 0.11522 0.18141 0.18044 0.30396 0.18044 0.0559 0 0.11256-0.01355 0.16511-0.04218 0.16774-0.09134 0.2296-0.30138 0.13826-0.46908l-0.89902-1.6505c-0.09134-0.16774-0.30138-0.22965-0.46908-0.13826-0.16765 0.09139-0.22956 0.30138-0.13826 0.46908z"></path>
-<path d="m-21.153 20.205 1.579 1.0194c0.05802 0.03748 0.12298 0.0553 0.18722 0.0553 0.11345 0 0.22465-0.05581 0.29084-0.15829 0.10358-0.16045 0.05751-0.37447-0.10294-0.47805l-1.579-1.0194c-0.16049-0.10362-0.37447-0.05755-0.47805 0.10294-0.10362 0.16045-0.05751 0.37452 0.10294 0.4781z"></path>
-<path d="m-6.625 16c-0.16782-0.09138-0.37778-0.02943-0.46908 0.13826l-0.89898 1.6505c-0.09134 0.16774-0.02947 0.37769 0.13822 0.46908 0.05255 0.02863 0.10921 0.04218 0.16511 0.04218 0.12255 0 0.24121-0.0653 0.30396-0.18044l0.89898-1.6505c0.09138-0.16774 0.02947-0.37769-0.13822-0.46908z"></path>
-<path d="m-3.0881 19.624-1.579 1.0194c-0.16045 0.10358-0.20657 0.3176-0.10294 0.47805 0.06615 0.10244 0.17731 0.15829 0.29084 0.15829 0.06428 0 0.12928-0.01787 0.18722-0.0553l1.579-1.0194c0.16045-0.10358 0.20657-0.3176 0.10294-0.47805-0.10358-0.16045-0.31777-0.20648-0.47805-0.10299z"></path>
-<path d="m-7.9966 28.458c0.0553 0.03282 0.11616 0.04844 0.17612 0.04844 0.11806 0 0.23312-0.06047 0.2977-0.16939 0.13877-0.23388 0.28969-0.48512 0.45413-0.75885l0.03447-0.05738c0.75161-1.0365 1.1487-2.2624 1.1487-3.5462 0-1.6009-0.61936-3.1099-1.744-4.2489-1.1236-1.138-2.6224-1.7767-4.2202-1.7983-1.6635-0.021-3.2851 0.66688-4.452 1.8912-0.13178 0.13826-0.12653 0.35711 0.01177 0.48889 0.13826 0.13174 0.35715 0.12653 0.48889-0.01177 1.0346-1.0856 2.4714-1.6976 3.9421-1.6769 1.4151 0.01918 2.7424 0.58481 3.7375 1.5927 0.99604 1.0088 1.5446 2.3452 1.5446 3.763 0 1.1416-0.35448 2.2313-1.0252 3.1514-0.0061 0.0083-0.01173 0.01681-0.01702 0.02562l-0.04226 0.07034c-0.16511 0.27487-0.31671 0.52722-0.45608 0.76207-0.09748 0.1643-0.04336 0.37642 0.12086 0.4739z"></path>
-<path d="m-8.3376 29.052c-0.16977-0.08723-0.37828-0.02037-0.4656 0.14953-0.3115 0.60619-0.49753 1.1061-0.59912 1.6205h-5.0615c-0.20593-1.044-0.73772-1.9292-1.7214-3.5667l-0.06187-0.10294c-0.0053-0.0088-0.01097-0.01732-0.01702-0.02566-0.67069-0.92011-1.0252-2.0099-1.0252-3.1514 0-0.92278 0.24642-1.837 0.7127-2.6438 0.09558-0.16532 0.03896-0.37684-0.12636-0.47238-0.16528-0.09558-0.3768-0.039-0.47238 0.12636-0.52692 0.91185-0.80544 1.9457-0.80544 2.9898 0 1.2838 0.39713 2.5096 1.1487 3.5462l0.05408 0.08999c0.9882 1.6451 1.4708 2.4487 1.6453 3.3952-0.31777 0.20555-0.52866 0.56279-0.52866 0.9686 0 0.31413 0.12636 0.59912 0.33081 0.8073-0.20441 0.20818-0.33081 0.49321-0.33081 0.8073 0 0.63584 0.51731 1.1531 1.1531 1.1531h0.48347c0.25789 0.9232 1.1089 1.5872 2.0917 1.5872s1.8338-0.664 2.0917-1.5873h0.48347c0.63584 0 1.1531-0.51731 1.1531-1.1531 0-0.31413-0.12636-0.59912-0.33081-0.8073 0.20441-0.20818 0.33081-0.49321 0.33081-0.8073 0-0.40581-0.21089-0.76309-0.52866-0.9686 0.08639-0.46971 0.25052-0.9152 0.54534-1.489 0.08732-0.16985 0.02032-0.37833-0.14948-0.4656zm-3.5955 6.5866c-0.60192 0-1.1313-0.36524-1.3601-0.89572h2.7201c-0.2288 0.53048-0.75822 0.89572-1.3601 0.89572zm1.6135-2.5104h0.96161c0.2545 0 0.4615 0.20708 0.4615 0.4615 0 0.2545-0.20708 0.46154-0.4615 0.46154h-5.1504c-0.2545 0-0.4615-0.20708-0.4615-0.46154 0-0.25446 0.20708-0.4615 0.4615-0.4615h2.8216c0.19098 0 0.3458-0.15482 0.3458-0.3458s-0.15482-0.3458-0.3458-0.3458h-2.8216c-0.2545 0-0.4615-0.20708-0.4615-0.4615 0-0.20839 0.13886-0.38476 0.32886-0.44193 0.01783-0.0053 0.03604-0.0094 0.05446-0.01249 0.0055-9.67e-4 0.01105-0.0018 0.01664-0.0025 0.02033-0.0027 0.04082-0.0046 0.06153-0.0046h5.1503c0.02075 0 0.0412 0.0019 0.06153 0.0046 0.0056 7.25e-4 0.01114 0.0016 0.01673 0.0026 0.01825 0.0031 0.03633 0.0071 0.05404 0.01241 0.19018 0.05704 0.32925 0.23346 0.32925 0.44202 0 0.2545-0.20708 0.4615-0.4615 0.4615h-0.96162c-0.19098 0-0.3458 0.15482-0.3458 0.3458 0 0.19098 0.15482 0.34576 0.3458 0.34576z"></path>
-</g></svg></i><a href="./projects/all-projects.html"><h4>Other projects</h4></a></div>
-</div
+  <div class="card">
+     <div class="thumbnail">
+       <img src="../../img/thumbnails/thumbnail_bulb.svg">
+     </div>
+     <a href="./projects/all-projects.html" class="title"><h4>See all projects</h4></a>
+     <span class="description">
+     </span>
+  </div>
+</div>
 #+end_export
 ** My Writings
 :PROPERTIES:
@@ -105,26 +101,50 @@ To [[./contact.org][contact me]], E-mail ~zdimovv~ at ~thewebmasterp.com~ or hit
 :END:
 I've been actively working on [[https://www.instagram.com/webmaster_project/][webmaster_project]] (2019 - 2021) - Without false modesty, it is the most in-depth coverage of various JavaScript concepts available on Instagram.
 
-At the end of May 2022, after a while of keeping my mouth shut and just coding, I felt that my view on things has changed and webmaster_project, with its JavaScript-centric content and audience, is no longer the right stage for my voice, burning to speak out in a broader than "Just JavaScript" fashion. This was why this blog was born, as well as out of the necessity of selling my skills to potential allies.
-** Work Experience, My Journey, Getting Personal
-Well, this year (2022) I've just graduated from high school. I started doing graphic design 5 years ago since this was the specialty of my class.
+At the end of May 2022, after a while of keeping my mouth shut and just coding, I felt that my view on things has changed, and webmaster_project, with its JavaScript-centric content and audience, is no longer the right stage for my voice, burning to speak out in a broader than "Just JavaScript" fashion. This was why this blog was born, as well as out of the necessity of selling my skills to potential allies.
+** Certifications
+:PROPERTIES:
+:CUSTOM_ID: certifications
+:ID:       08d899ca-7967-4847-933d-3ddb80a87a3e
+:END:
+*** FreeCodeCamp
+**** Responsive Web Design
+***** [[https://www.freecodecamp.org/certification/thewebmasterp/responsive-web-design][View Certificate]]
+***** See [[https://github.com/thewebmasterp/freecodecamp/tree/master/Responsive%20Web%20Design/Solutions][my solutions]] (open-sourced)
 
-This got me interested in HTML and CSS, soon after that, I had to learn JavaScript which eventually turned into my beloved programming language. Now I know that there's no such a thing as a favorite language, it's all the same, the same patterns repeating over and over in most programming languages and it's all about the problem solving;
+**** JavaScript Algorithms and Data Structures
+***** [[https://www.freecodecamp.org/certification/thewebmasterp/javascript-algorithms-and-data-structures][View Certificate]]
+***** See [[https://github.com/thewebmasterp/freecodecamp/tree/master/JavaScript%20Algorithms%20and%20DataStructures/Solutions][my solutions]] (open-sourced)
 
-Back on topic, soon after that I started [[https://www.instagram.com/webmaster_project/][webmaster_project]] where I covered many JavaScript & React concepts, Algorithms & DS, people liked it so I got a few little gigs (all by their request), like modifying a Shopify theme, teaching JavaScript and Algorithms & DS to beginners (the guy got a job lol) and even writing JavaScript homeworks for university students haha. I regret doing this evil... Anyway, it got me some #goodForAKid bucks.
+**** Front End Development Libraries
+***** [[https://www.freecodecamp.org/certification/thewebmasterp/front-end-development-libraries][View Certificate]]
+***** See [[https://github.com/thewebmasterp/freecodecamp/tree/master/Front%20End%20Libraries/Solutions][my solutions]] (open-sourced)
 
-Then I lost it all... 😵💸. I got hacked. Spyware or something. [[https://www.google.com/search?q=dd+disk+destroyer&client=firefox-b-d&sxsrf=ALiCzsY0HsDygDjQRwOxu3HwvTA_rmHg5A%3A1657544747729&ei=KyDMYs3xK9ioxc8P69Wx8A0&ved=0ahUKEwiNs4yv8_D4AhVYVPEDHetqDN4Q4dUDCA0&uact=5&oq=dd+disk+destroyer&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECc6BwgAEEcQsAM6BwgAELADEEM6CggAEOQCELADGAE6DwguENQCEMgDELADEEMYAjoICC4QgAQQ1AI6BAgAEEM6BQgAEIAEOgcIIxDqAhAnOgcILhDUAhBDOgsILhCABBDHARDRAzoKCAAQgAQQhwIQFDoFCAAQkQI6BggAEB4QFjoICAAQHhAWEAo6BQghEKABOggIABCABBDJAzoKCC4QxwEQ0QMQQzoECC4QQzoICAAQHhAPEBZKBAhBGABKBAhGGAFQ1AdYlTZgpjdoCnABeAGAAcECiAHnKJIBCDAuMTkuNy4xmAEAoAEBsAEKyAERwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz][dd]] Windows. Install Arch Linux (Read more about my [[./blog/Desktop Setup/The Arch Linux journey.org][Arch Linux Journey]]). Which led me to a whole year away from JavaScript and full involvement in the exploration of Linux. Then, after doing math for a few months because I understood it will help me with programming, I was back with the Code Explainer (live link soon) built with React, hosted on my [[./img/host.jpg][Raspberry Pi]] (same I use for this website) which I got part-by-part from China (No budget ¯\_(ツ)_/¯ who knows why... 🥲).
+*** Udemy
+**** Become a WordPress Developer: Unlocking Power With Code
+***** [[https://udemy-certificate.s3.amazonaws.com/image/UC-IZB1061Z.jpg?v=1574896727000][View Certificate]]
 
-The last year or so, the main topic of my work has been "Scripting i3 window manager with JavaScript", I built [[https://www.npmjs.com/~thewebmasterp][some npm packages]] like the config-modules (link soon) and I also got into Emacs.
+**** React - The Complete Guide (incl Hooks, React Router, Redux)
+***** [[https://udemy-certificate.s3.amazonaws.com/image/UC-3bac9172-4baa-44e0-b98f-a72e7ef8b269.jpg?v=1583652395000][View Certificate]]
 
-A few months before graduating, I set this goal that I want to get a job with JavaScript and since then I've been revising my definitive guide, solving katas on [[https://www.codewars.com/users/thewebmasterp][Codewars]], building this website and fixing bugs in my portfolio projects.
+**** Git & GitHub For Beginners - Master Git and GitHub
+***** [[https://udemy-certificate.s3.amazonaws.com/image/UC-05c32772-e0b0-40d6-8e6b-84bc05a127cd.jpg?v=1649513249000][View Certificate]]
 
-I used to be very active over at [[https://www.instagram.com/webmaster_project/][Instagram]] which contains many highlights of my programming journey.
 
-*** Getting personal 
- A word about my personality is that I hate being rejected & being cheeky which turns into a whole philosophy of "Be the best so that you'll be the one needed, not the one in need".
- 
-  For good or bad, I am a perfectionist - Just look at this website - It is simple but perfect. Hell, look at it, it has a [[./SomeStupidPage.org][404 page]] and a bunch of other error pages, if you send the joke that you see on the [[./contact.org][contact me]] page in the message section, the mail will auto reply with the answer, It has a nice spinning loader, dark and light color themes, a beautiful parallax effect (on the [[./index.org][home]] page) made with CSS only, custom Webpack config and as I am speaking about this website...
+** Work Experience and Story
+Well, this year (2022), I've just graduated from high school. I started doing graphic design five years ago since this was the speciality of my class.
+
+Design got me interested in HTML and CSS, and soon after that, I had to learn JavaScript, which eventually became my beloved programming language. Now I know that there's no such a thing as a favourite language. It's all the same, the same patterns repeating over and over in most programming languages, and it's all about the problem solving;
+
+Back on topic, soon after that, I started [[https://www.instagram.com/webmaster_project/][webmaster_project,]] where I covered many JavaScript & React concepts, Algorithms & DS. People liked it, so I got a few little gigs (all by their request), like modifying a Shopify theme, teaching JavaScript and Algorithms & DS to beginners (the guy got a job lol) and even writing JavaScript homework for university students, haha. I regret doing this evil... Anyway, it got me some #goodForAKid bucks.
+
+Then I lost it all... 😵💸. I got hacked. Spyware or something. [[https://www.google.com/search?q=dd+disk+destroyer&client=firefox-b-d&sxsrf=ALiCzsY0HsDygDjQRwOxu3HwvTA_rmHg5A%3A1657544747729&ei=KyDMYs3xK9ioxc8P69Wx8A0&ved=0ahUKEwiNs4yv8_D4AhVYVPEDHetqDN4Q4dUDCA0&uact=5&oq=dd+disk+destroyer&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECc6BwgAEEcQsAM6BwgAELADEEM6CggAEOQCELADGAE6DwguENQCEMgDELADEEMYAjoICC4QgAQQ1AI6BAgAEEM6BQgAEIAEOgcIIxDqAhAnOgcILhDUAhBDOgsILhCABBDHARDRAzoKCAAQgAQQhwIQFDoFCAAQkQI6BggAEB4QFjoICAAQHhAWEAo6BQghEKABOggIABCABBDJAzoKCC4QxwEQ0QMQQzoECC4QQzoICAAQHhAPEBZKBAhBGABKBAhGGAFQ1AdYlTZgpjdoCnABeAGAAcECiAHnKJIBCDAuMTkuNy4xmAEAoAEBsAEKyAERwAEB2gEGCAEQARgJ2gEGCAIQARgI&sclient=gws-wiz][dd]] Windows. Install Arch Linux (Read more about my [[./blog/Desktop Setup/The Arch Linux journey.org][Arch Linux Journey]]). Which led me to a whole year away from JavaScript and full involvement in the exploration of Linux. Then, after doing math for a few months because I understood it would help me with programming, I was back with the [[./projects/code-explainer.org][Code Explainer]], built with React, hosted on my [[./img/host.jpg][Raspberry Pi]] (the same I use for this website), which I got part-by-part from China (No budget ¯\_(ツ)_/¯ who knows why... 🥲).
+
+For the last year or so, the main topic of my work has been "Scripting i3 window manager with JavaScript", I built [[https://www.npmjs.com/~thewebmasterp][some npm packages]] like the [[./projects/config-modules.org][config-modules]], and I also got into Emacs.
+
+A few months before graduating, I set the goal that I want to get a job with JavaScript. Since then, I've been revising my definitive guide, solving katas on [[https://www.codewars.com/users/thewebmasterp][Codewars]], building this website and fixing bugs in my portfolio projects.
+
+I used to be active over on [[https://www.instagram.com/webmaster_project/][Instagram]], which contains many highlights of my programming journey.
 ** Colophon
 :PROPERTIES:
 :ID:       35401c86-1bc8-43c3-8a7f-78a52ef77d1e
@@ -153,8 +173,8 @@ For deploying the build to [[./img/host.jpg][my Raspberry Pi B]]  and Github (so
 :PROPERTIES:
 :ID:       bdce058e-fda8-4e27-937b-533595cf82c5
 :END:
- For the backend, I try not to reinvent the wheel and just stick to self-hosting the best bug-proven, free and open-source software available, each instance residing into its own Docker container, isolated from the rest, ready to serve its API for our needs.
-Currently I self-host the following services:
+ For the backend, I try not to reinvent the wheel and just stick to self-hosting the best bug-proven, free and open-source software available, each instance residing in its own Docker container, isolated from the rest, ready to serve its API for our needs.
+Currently, I self-host the following services:
 + [[https://remark42.com/][Remark42]]: Commenting Engine; located at ~remark42.thewebmasterp.com~
 + [[https://matomo.org/][Matomo]]: Web Analytics; located at ~matomo.thewebmasterp.com~
 

@@ -1,3 +1,4 @@
+// Note: repeating function
 const iconGenerator = (label, innerHTML, tooltip) => {
   const icon = document.createElement('i')
   icon.classList.add(`${label}-icon`)

@@ -128,7 +128,9 @@ const any = sp => {
     // Every image in #content, on click should be opened in a new tab.
     const imgs = sp.content?.getElementsByTagName('img')
     ;[...imgs].forEach(img => {
-      img.addEventListener('click', sp.openImageOn)
+      if (!img.hasAttribute('data-no-defclick')) {
+        img.addEventListener('click', sp.openImageOn)
+      }
     })
   } else if (sp.load) {
     // Remove the class of .preload of the body when the whole page's loaded.

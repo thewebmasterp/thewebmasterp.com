@@ -5,15 +5,17 @@ const aboutPage = sp => {
     sp.setActiveNavEntr('aboutLink')
 
     // Give some custom structure to aboutme
+
     const me = document.getElementById('me')
-    me.addEventListener('load', () => {
-      const textAboutme = document.getElementById('text-aboutme')
-      const figure = me.parentElement
-      const figureHTML = figure.cloneNode(true).outerHTML
-      figure.remove()
-      textAboutme.innerHTML = `${figureHTML}<div>${textAboutme.innerHTML}</div>`
-      document.getElementById('me').addEventListener('click', sp.openImageOn)
-    })
+    // This me.addevent... is needless. Idk why I added it, it only blocks loading. Will leave it for now and see. I shouldn't have just done such a stupid mistake soo
+    //me.addEventListener('load', () => {
+    const textAboutme = document.getElementById('text-aboutme')
+    const figure = me.parentElement
+    const figureHTML = figure.cloneNode(true).outerHTML
+    figure.remove()
+    textAboutme.innerHTML = `${figureHTML}<div>${textAboutme.innerHTML}</div>`
+    document.getElementById('me').addEventListener('click', sp.openImageOn)
+    //})
   } else if (sp.load) {
     // Overwrite .projects .card .thumbnail img "src" attribute to a better one
     // TODO: Remove this and merge it with the one in projects

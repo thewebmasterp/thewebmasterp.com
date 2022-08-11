@@ -62,6 +62,14 @@ To learn more and look at the source code, visit its [[https://github.com/theweb
        Add lyrics to your music library
      </span>
   </div>
+  <div class="card">
+     <div class="thumbnail">
+       <img src="../../img/thumbnails/thumbnail_bulb.svg">
+     </div>
+     <a href="./all-projects.html" class="title"><h4>See all projects</h4></a>
+     <span class="description">
+     </span>
+  </div>
 </div>
 #+end_export
 

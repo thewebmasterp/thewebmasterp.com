@@ -73,6 +73,14 @@ That's why I decided to write a few blocks myself.
        Add lyrics to your music library
      </span>
   </div>
+  <div class="card">
+     <div class="thumbnail">
+       <img src="../../img/thumbnails/thumbnail_bulb.svg">
+     </div>
+     <a href="./all-projects.html" class="title"><h4>See all projects</h4></a>
+     <span class="description">
+     </span>
+  </div>
 </div>
 #+end_export
 

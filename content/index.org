@@ -12,9 +12,10 @@
 Hi, I am a self-taught *front-end web developer* specializing in *JavaScript* and its ecosystem, including React.
 >_ Read more [[./about.org][about]] me.
 
-Let my *new* blog be a place where you'll find anything JavaScript / Linux related.
+Let my *new* blog be a place where you'll find anything JavaScript / Linux-related.
 >_ Take a look at the [[./blog.org][blog]].
 
-Just started looking for a *remote JavaScript / React* position recently. If you know a good company I should apply to, [[./contact.org][hit me up]]! Until I get this job, I am open for freelance projects as well.
+I just started looking for a *JavaScript / React* position recently. If you know a good company I should apply to, [[./contact.org][hit me up]]! Until I get this job, I am open to freelance projects as well.
+>_ Take a look at my [[./Zdravko-Dimov-Front-End-Engineer-Resume.pdf][resume]].
 
 Enjoy your stay! 😊
